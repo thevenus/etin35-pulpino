@@ -13,6 +13,6 @@
 
 int main()
 {
-  printf("Simon is a bastard! \n");
+  printf("Simon, Fuad, Viktor\n");
   return 0;
 }

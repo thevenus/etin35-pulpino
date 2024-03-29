@@ -87,7 +87,7 @@ set(CMAKE_CXX_FLAGS    "${CMAKE_C_FLAGS}")
 set(CMAKE_ASM_COMPILER "${CMAKE_C_COMPILER}")
 set(CMAKE_ASM_FLAGS    "${CMAKE_C_FLAGS}")
 
-set(PULP_MODELSIM_DIRECTORY "" CACHE PATH "Path to the ModelSim PULPino build")
+set(PULP_MODELSIM_DIRECTORY "../" CACHE PATH "Path to the ModelSim PULPino build")
 set(VSIM "vsim" CACHE FILEPATH "Path to the vsim executable")
 
 ################################################################################
@@ -124,27 +124,27 @@ set(VSIM "vsim" CACHE FILEPATH "Path to the vsim executable")
 
 
 add_custom_target(vcompile
-  COMMAND tcsh -c "/h/dc/o/si3116uw-s/etin35_project/pulpino/vsim/vcompile/build_rtl_sim.csh"
+  COMMAND tcsh -c "./vcompile/build_rtl_sim.csh"
   WORKING_DIRECTORY ${PULP_MODELSIM_DIRECTORY}
   ${USES_TERMINAL})
 
 add_custom_target(vcompile.ps
-  COMMAND tcsh -c "env PL_NETLIST=${PL_NETLIST} /h/dc/o/si3116uw-s/etin35_project/pulpino/vsim/vcompile/vcompile_ps.csh"
+  COMMAND tcsh -c "env PL_NETLIST=${PL_NETLIST} ./vcompile/vcompile_ps.csh"
   WORKING_DIRECTORY ${PULP_MODELSIM_DIRECTORY}
   ${USES_TERMINAL})
 
 add_custom_target(vcompile.pl
-  COMMAND tcsh -c "env PL_NETLIST=${PL_NETLIST} /h/dc/o/si3116uw-s/etin35_project/pulpino/vsim/vcompile/vcompile_pl.csh"
+  COMMAND tcsh -c "env PL_NETLIST=${PL_NETLIST} ./vcompile/vcompile_pl.csh"
   WORKING_DIRECTORY ${PULP_MODELSIM_DIRECTORY}
   ${USES_TERMINAL})
 
 add_custom_target(vcompile.core.riscy
-  COMMAND tcsh /h/dc/o/si3116uw-s/etin35_project/pulpino/vsim/vcompile/vcompile_riscv.csh
+  COMMAND tcsh ./vcompile/vcompile_riscv.csh
   WORKING_DIRECTORY ${PULP_MODELSIM_DIRECTORY}
   ${USES_TERMINAL})
 
 add_custom_target(vcompile.core.zero
-  COMMAND tcsh /h/dc/o/si3116uw-s/etin35_project/pulpino/vsim/vcompile/vcompile_zero-riscy.csh
+  COMMAND tcsh ./vcompile/vcompile_zero-riscy.csh
   WORKING_DIRECTORY ${PULP_MODELSIM_DIRECTORY}
   ${USES_TERMINAL})
 
