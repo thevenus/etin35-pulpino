@@ -15,7 +15,7 @@
   task mem_preload;
     integer      addr;
     integer      mem_addr;
-    integer      bidx;
+    integer      row_addr;
     integer      instr_size;
     integer      instr_width;
     integer      data_size;
@@ -49,42 +49,66 @@
 
 
       // preload data memory
-      for(addr = 0; addr < data_size/4; addr = addr) begin
+      for(addr = 0; addr < data_size/4; addr++) begin
+        mem_addr = addr % 2048;
+        row_addr = addr / 2048;
+        data = data_mem[addr];
 
-        for(bidx = 0; bidx < data_width/8; bidx++) begin
-          mem_addr = addr / (data_width/32);
-          data = data_mem[addr];
+        if (row_addr == 0) begin
+          tb.top_i.core_region_i.data_mem.sp_ram_i.ram_row[0].ram_byte[0].sram_2k1.Mem[mem_addr] = data[ 7: 0];
+          tb.top_i.core_region_i.data_mem.sp_ram_i.ram_row[0].ram_byte[1].sram_2k1.Mem[mem_addr] = data[15: 8];
+          tb.top_i.core_region_i.data_mem.sp_ram_i.ram_row[0].ram_byte[2].sram_2k1.Mem[mem_addr] = data[23:16];
+          tb.top_i.core_region_i.data_mem.sp_ram_i.ram_row[0].ram_byte[3].sram_2k1.Mem[mem_addr] = data[31:24];
 
-          if (bidx%4 == 0)
-            tb.top_i.core_region_i.data_mem.sp_ram_i.mem[mem_addr][bidx] = data[ 7: 0];
-          else if (bidx%4 == 1)
-            tb.top_i.core_region_i.data_mem.sp_ram_i.mem[mem_addr][bidx] = data[15: 8];
-          else if (bidx%4 == 2)
-            tb.top_i.core_region_i.data_mem.sp_ram_i.mem[mem_addr][bidx] = data[23:16];
-          else if (bidx%4 == 3)
-            tb.top_i.core_region_i.data_mem.sp_ram_i.mem[mem_addr][bidx] = data[31:24];
+        end else if (row_addr == 1) begin
+          tb.top_i.core_region_i.data_mem.sp_ram_i.ram_row[1].ram_byte[0].sram_2k1.Mem[mem_addr] = data[ 7: 0];
+          tb.top_i.core_region_i.data_mem.sp_ram_i.ram_row[1].ram_byte[1].sram_2k1.Mem[mem_addr] = data[15: 8];
+          tb.top_i.core_region_i.data_mem.sp_ram_i.ram_row[1].ram_byte[2].sram_2k1.Mem[mem_addr] = data[23:16];
+          tb.top_i.core_region_i.data_mem.sp_ram_i.ram_row[1].ram_byte[3].sram_2k1.Mem[mem_addr] = data[31:24];
 
-          if (bidx%4 == 3) addr++;
+        end else if (row_addr == 2) begin
+          tb.top_i.core_region_i.data_mem.sp_ram_i.ram_row[2].ram_byte[0].sram_2k1.Mem[mem_addr] = data[ 7: 0];
+          tb.top_i.core_region_i.data_mem.sp_ram_i.ram_row[2].ram_byte[1].sram_2k1.Mem[mem_addr] = data[15: 8];
+          tb.top_i.core_region_i.data_mem.sp_ram_i.ram_row[2].ram_byte[2].sram_2k1.Mem[mem_addr] = data[23:16];
+          tb.top_i.core_region_i.data_mem.sp_ram_i.ram_row[2].ram_byte[3].sram_2k1.Mem[mem_addr] = data[31:24];
+
+        end else if (row_addr == 3) begin
+          tb.top_i.core_region_i.data_mem.sp_ram_i.ram_row[3].ram_byte[0].sram_2k1.Mem[mem_addr] = data[ 7: 0];
+          tb.top_i.core_region_i.data_mem.sp_ram_i.ram_row[3].ram_byte[1].sram_2k1.Mem[mem_addr] = data[15: 8];
+          tb.top_i.core_region_i.data_mem.sp_ram_i.ram_row[3].ram_byte[2].sram_2k1.Mem[mem_addr] = data[23:16];
+          tb.top_i.core_region_i.data_mem.sp_ram_i.ram_row[3].ram_byte[3].sram_2k1.Mem[mem_addr] = data[31:24];
         end
       end
 
       // preload instruction memory
-      for(addr = 0; addr < instr_size/4; addr = addr) begin
+      for(addr = 0; addr < instr_size/4; addr++) begin
+        mem_addr = addr % 2048;
+        row_addr = addr / 2048;
+        data = instr_mem[addr];
 
-        for(bidx = 0; bidx < instr_width/8; bidx++) begin
-          mem_addr = addr / (instr_width/32);
-          data = instr_mem[addr];
+        if (row_addr == 0) begin
+          tb.top_i.core_region_i.instr_mem.sp_ram_wrap_i.sp_ram_i.ram_row[0].ram_byte[0].sram_2k1.Mem[mem_addr] = data[ 7: 0];
+          tb.top_i.core_region_i.instr_mem.sp_ram_wrap_i.sp_ram_i.ram_row[0].ram_byte[1].sram_2k1.Mem[mem_addr] = data[15: 8];
+          tb.top_i.core_region_i.instr_mem.sp_ram_wrap_i.sp_ram_i.ram_row[0].ram_byte[2].sram_2k1.Mem[mem_addr] = data[23:16];
+          tb.top_i.core_region_i.instr_mem.sp_ram_wrap_i.sp_ram_i.ram_row[0].ram_byte[3].sram_2k1.Mem[mem_addr] = data[31:24];
 
-          if (bidx%4 == 0)
-            tb.top_i.core_region_i.instr_mem.sp_ram_wrap_i.sp_ram_i.mem[mem_addr][bidx] = data[ 7: 0];
-          else if (bidx%4 == 1)
-            tb.top_i.core_region_i.instr_mem.sp_ram_wrap_i.sp_ram_i.mem[mem_addr][bidx] = data[15: 8];
-          else if (bidx%4 == 2)
-            tb.top_i.core_region_i.instr_mem.sp_ram_wrap_i.sp_ram_i.mem[mem_addr][bidx] = data[23:16];
-          else if (bidx%4 == 3)
-            tb.top_i.core_region_i.instr_mem.sp_ram_wrap_i.sp_ram_i.mem[mem_addr][bidx] = data[31:24];
+        end else if (row_addr == 1) begin
+          tb.top_i.core_region_i.instr_mem.sp_ram_wrap_i.sp_ram_i.ram_row[1].ram_byte[0].sram_2k1.Mem[mem_addr] = data[ 7: 0];
+          tb.top_i.core_region_i.instr_mem.sp_ram_wrap_i.sp_ram_i.ram_row[1].ram_byte[1].sram_2k1.Mem[mem_addr] = data[15: 8];
+          tb.top_i.core_region_i.instr_mem.sp_ram_wrap_i.sp_ram_i.ram_row[1].ram_byte[2].sram_2k1.Mem[mem_addr] = data[23:16];
+          tb.top_i.core_region_i.instr_mem.sp_ram_wrap_i.sp_ram_i.ram_row[1].ram_byte[3].sram_2k1.Mem[mem_addr] = data[31:24];
 
-          if (bidx%4 == 3) addr++;
+        end else if (row_addr == 2) begin
+          tb.top_i.core_region_i.instr_mem.sp_ram_wrap_i.sp_ram_i.ram_row[2].ram_byte[0].sram_2k1.Mem[mem_addr] = data[ 7: 0];
+          tb.top_i.core_region_i.instr_mem.sp_ram_wrap_i.sp_ram_i.ram_row[2].ram_byte[1].sram_2k1.Mem[mem_addr] = data[15: 8];
+          tb.top_i.core_region_i.instr_mem.sp_ram_wrap_i.sp_ram_i.ram_row[2].ram_byte[2].sram_2k1.Mem[mem_addr] = data[23:16];
+          tb.top_i.core_region_i.instr_mem.sp_ram_wrap_i.sp_ram_i.ram_row[2].ram_byte[3].sram_2k1.Mem[mem_addr] = data[31:24];
+
+        end else if (row_addr == 3) begin
+          tb.top_i.core_region_i.instr_mem.sp_ram_wrap_i.sp_ram_i.ram_row[3].ram_byte[0].sram_2k1.Mem[mem_addr] = data[ 7: 0];
+          tb.top_i.core_region_i.instr_mem.sp_ram_wrap_i.sp_ram_i.ram_row[3].ram_byte[1].sram_2k1.Mem[mem_addr] = data[15: 8];
+          tb.top_i.core_region_i.instr_mem.sp_ram_wrap_i.sp_ram_i.ram_row[3].ram_byte[2].sram_2k1.Mem[mem_addr] = data[23:16];
+          tb.top_i.core_region_i.instr_mem.sp_ram_wrap_i.sp_ram_i.ram_row[3].ram_byte[3].sram_2k1.Mem[mem_addr] = data[31:24];
         end
       end
     end
