@@ -69,65 +69,22 @@ module sp_ram_wrap
     );
 
   `else
-    // new SRAM consists of 4 banks, 2048x32 each
-    logic [3:0][7:0] st_ram_rdata_o[4];
-    logic [7:0] st_ram_wdata_i[16];
-    logic [14:0] st_ram_addr_i;
-    logic [3:0] st_ram_row_en;
-    
-    // choosing SRAM banks based on the given address
-    always @(*) begin
-      if (en_i) begin
-        case (st_ram_addr_i[14:13]) begin
-          2'b00   :   st_ram_en = 4'b1110;
-          2'b01   :   st_ram_en = 4'b1101;
-          2'b10   :   st_ram_en = 4'b1011;
-          2'b11   :   st_ram_en = 4'b0111; 
-        endcase
-      end else begin
-        st_ram_en = 4'b0000;
-      end
-    end
-    // TODO: Implement write data signal selection
+     sp_ram
+     #(
+       .ADDR_WIDTH ( ADDR_WIDTH ),
+       .DATA_WIDTH ( DATA_WIDTH ),
+       .NUM_WORDS  ( RAM_SIZE   )
+     )
+     sp_ram_i
+     (
+       .clk     ( clk       ),
 
-    // generate 16 RAM cells
-    genvar i,j;
-    generate
-      for (i=1; i<=4; i++) begin: gen_ram_rows
-        for (j=1; j<=4; j++) begin: gen_ram_cells
-          ST_SPHDL_2048x8m8_L
-          sram_2048_8_i
-          (
-            .Q        ( st_ram_rdata_o[i][j]  ),
-            .RY       (                       ),
-            .CK       ( clk                   ),
-            .CSN      ( st_ram_en[i]          ),
-            .TBYPASS  (                       ),
-            .WEN      ( ~(we_i & be_i[j])     ),
-            .A        ( st_ram_addr_i[12:2]   ),
-            .D        ( wdata_i               )
-          );
-        end
-      end
-    endgenerate
-
-    sp_ram
-    #(
-      .ADDR_WIDTH ( ADDR_WIDTH ),
-      .DATA_WIDTH ( DATA_WIDTH ),
-      .NUM_WORDS  ( RAM_SIZE   )
-    )
-    sp_ram_i
-    (
-      .clk     ( clk       ),
-
-      .en_i    ( en_i      ),
-      .addr_i  ( addr_i    ),
-      .wdata_i ( wdata_i   ),
-      .rdata_o ( rdata_o   ),
-      .we_i    ( we_i      ),
-      .be_i    ( be_i      )
-    );
+       .en_i    ( en_i      ),
+       .addr_i  ( addr_i    ),
+       .wdata_i ( wdata_i   ),
+       .rdata_o ( rdata_o   ),
+       .we_i    ( we_i      ),
+       .be_i    ( be_i      )
+     );
   `endif
-
 endmodule
