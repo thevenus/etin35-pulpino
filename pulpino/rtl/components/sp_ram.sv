@@ -25,36 +25,55 @@ module sp_ram
     input  logic [DATA_WIDTH/8-1:0] be_i
   );
 
-  localparam words = NUM_WORDS/(DATA_WIDTH/8);
+  logic [3:0][7:0]    st_ram_rrowd_o  [4];
+  logic [3:0]         st_ram_row_en;
+  logic [3:0][3:0]    st_ram_ready; 
+  logic               st_ram_tbypass;
 
-  logic [DATA_WIDTH/8-1:0][7:0] mem[words];
-  logic [DATA_WIDTH/8-1:0][7:0] wdata;
-  logic [ADDR_WIDTH-1-$clog2(DATA_WIDTH/8):0] addr;
+  assign st_ram_tbypass = 1'b0;
 
-  integer i;
-
-
-  assign addr = addr_i[ADDR_WIDTH-1:$clog2(DATA_WIDTH/8)];
-
-
-  always @(posedge clk)
-  begin
-    if (en_i && we_i)
-    begin
-      for (i = 0; i < DATA_WIDTH/8; i++) begin
-        if (be_i[i])
-          mem[addr][i] <= wdata[i];
-      end
+  // choosing SRAM banks based on the given address
+  always @(*) begin
+    if (en_i) begin
+      case (addr_i[14:13]) 
+        2'b00   :   st_ram_row_en = 4'b1110;
+        2'b01   :   st_ram_row_en = 4'b1101;
+        2'b10   :   st_ram_row_en = 4'b1011;
+        2'b11   :   st_ram_row_en = 4'b0111; 
+      endcase
+    end else begin
+      st_ram_row_en = 4'b1111;
     end
-
-    rdata_o <= mem[addr];
   end
 
-  genvar w;
-  generate for(w = 0; w < DATA_WIDTH/8; w++)
-    begin
-      assign wdata[w] = wdata_i[(w+1)*8-1:w*8];
+  // generate 16 RAM cells
+  genvar i,j;
+  generate
+    for (i=0; i<4; i++) begin: ram_row
+      for (j=0; j<4; j++) begin: ram_byte
+        ST_SPHDL_2048x8m8_L
+        sram_2k1
+        (
+          .Q        ( st_ram_rrowd_o[i][j]      ),
+          .RY       ( st_ram_ready[i][j]        ),
+          .CK       ( clk                       ),
+          .CSN      ( st_ram_row_en[i]          ),
+          .TBYPASS  ( st_ram_tbypass            ),
+          .WEN      ( ~(we_i & be_i[j])         ),
+          .A        ( addr_i[12:2]              ),
+          .D        ( wdata_i[(j+1)*8-1:j*8]    )
+        );
+      end
     end
   endgenerate
 
+  // Multiplex output from all rows into one
+  always @(*) begin
+    case (addr_i[14:13]) 
+      2'b00   :   rdata_o = st_ram_rrowd_o[0];
+      2'b01   :   rdata_o = st_ram_rrowd_o[1];
+      2'b10   :   rdata_o = st_ram_rrowd_o[2];
+      2'b11   :   rdata_o = st_ram_rrowd_o[3]; 
+    endcase
+  end
 endmodule
