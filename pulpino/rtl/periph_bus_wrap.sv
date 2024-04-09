@@ -10,6 +10,8 @@
 
 `include "apb_bus.sv"
 
+ //Updated wrapper to exclude peripherals that were removed from "pulpino_top.sv" and "peripherals.sv"
+
 module periph_bus_wrap
   #(
     parameter APB_ADDR_WIDTH = 32,
@@ -22,11 +24,11 @@ module periph_bus_wrap
     APB_BUS.Slave     apb_slave,
 
     APB_BUS.Master    uart_master,
-    APB_BUS.Master    gpio_master,
+    //APB_BUS.Master    gpio_master,
     APB_BUS.Master    spi_master,
     APB_BUS.Master    timer_master,
     APB_BUS.Master    event_unit_master,
-    APB_BUS.Master    i2c_master,
+    //APB_BUS.Master    i2c_master,
     APB_BUS.Master    fll_master,
     APB_BUS.Master    soc_ctrl_master,
     APB_BUS.Master    debug_master
@@ -58,9 +60,9 @@ module periph_bus_wrap
   assign s_start_addr[0] = `UART_START_ADDR;
   assign s_end_addr[0]   = `UART_END_ADDR;
 
-  `APB_ASSIGN_MASTER(s_masters[1], gpio_master);
+  /*`APB_ASSIGN_MASTER(s_masters[1], gpio_master);
   assign s_start_addr[1] = `GPIO_START_ADDR;
-  assign s_end_addr[1]   = `GPIO_END_ADDR;
+  assign s_end_addr[1]   = `GPIO_END_ADDR;*/
 
   `APB_ASSIGN_MASTER(s_masters[2], spi_master);
   assign s_start_addr[2] = `SPI_START_ADDR;
@@ -74,9 +76,9 @@ module periph_bus_wrap
   assign s_start_addr[4] = `EVENT_UNIT_START_ADDR;
   assign s_end_addr[4]   = `EVENT_UNIT_END_ADDR;
 
-  `APB_ASSIGN_MASTER(s_masters[5], i2c_master);
+  /*`APB_ASSIGN_MASTER(s_masters[5], i2c_master);
   assign s_start_addr[5] = `I2C_START_ADDR;
-  assign s_end_addr[5]   = `I2C_END_ADDR;
+  assign s_end_addr[5]   = `I2C_END_ADDR;*/
 
   `APB_ASSIGN_MASTER(s_masters[6], fll_master);
   assign s_start_addr[6] = `FLL_START_ADDR;

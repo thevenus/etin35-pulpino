@@ -17,6 +17,8 @@
 `define AXI_ID_SLAVE_WIDTH      4
 `define AXI_USER_WIDTH          1
 
+//Removed GPIO, Pulpino and i2c peripherals
+
 module pulpino_top
   #(
     parameter USE_ZERO_RISCY       = 0,
@@ -64,12 +66,12 @@ module pulpino_top
     input  logic              spi_master_sdi2_i,
     input  logic              spi_master_sdi3_i,
 
-    input  logic              scl_pad_i,
+    /*input  logic              scl_pad_i,
     output logic              scl_pad_o,
     output logic              scl_padoen_o,
     input  logic              sda_pad_i,
     output logic              sda_pad_o,
-    output logic              sda_padoen_o,
+    output logic              sda_padoen_o,*/
 
     output logic              uart_tx,
     input  logic              uart_rx,
@@ -78,21 +80,21 @@ module pulpino_top
     input  logic              uart_cts,
     input  logic              uart_dsr,
 
-    input  logic       [31:0] gpio_in,
+    /*input  logic       [31:0] gpio_in,
     output logic       [31:0] gpio_out,
     output logic       [31:0] gpio_dir,
-    output logic [31:0] [5:0] gpio_padcfg,
+    output logic [31:0] [5:0] gpio_padcfg,*/
 
     // JTAG signals
     input  logic              tck_i,
     input  logic              trstn_i,
     input  logic              tms_i,
     input  logic              tdi_i,
-    output logic              tdo_o,
+    output logic              tdo_o
 
     // PULPino specific pad config
-    output logic [31:0] [5:0] pad_cfg_o,
-    output logic       [31:0] pad_mux_o
+    //output logic [31:0] [5:0] pad_cfg_o,
+    //output logic       [31:0] pad_mux_o
   );
 
   logic        clk_int;
@@ -258,17 +260,17 @@ module pulpino_top
     .spi_master_sdi2 ( spi_master_sdi2_i ),
     .spi_master_sdi3 ( spi_master_sdi3_i ),
 
-    .scl_pad_i       ( scl_pad_i         ),
+    /*.scl_pad_i       ( scl_pad_i         ),
     .scl_pad_o       ( scl_pad_o         ),
     .scl_padoen_o    ( scl_padoen_o      ),
     .sda_pad_i       ( sda_pad_i         ),
     .sda_pad_o       ( sda_pad_o         ),
-    .sda_padoen_o    ( sda_padoen_o      ),
+    .sda_padoen_o    ( sda_padoen_o      ),*/
 
-    .gpio_in         ( gpio_in           ),
+    /*.gpio_in         ( gpio_in           ),
     .gpio_out        ( gpio_out          ),
     .gpio_dir        ( gpio_dir          ),
-    .gpio_padcfg     ( gpio_padcfg       ),
+    .gpio_padcfg     ( gpio_padcfg       ),*/
 
     .core_busy_i     ( core_busy_int     ),
     .irq_o           ( irq_to_core_int   ),
@@ -283,8 +285,8 @@ module pulpino_top
     .fll1_ack_i      ( cfgack_fll_int    ),
     .fll1_rdata_i    ( cfgq_fll_int      ),
     .fll1_lock_i     ( lock_fll_int      ),
-    .pad_cfg_o       ( pad_cfg_o         ),
-    .pad_mux_o       ( pad_mux_o         ),
+    //.pad_cfg_o       ( pad_cfg_o         ),
+    //.pad_mux_o       ( pad_mux_o         ),
     .boot_addr_o     ( boot_addr_int     )
   );
 

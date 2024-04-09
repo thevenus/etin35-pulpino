@@ -13,6 +13,8 @@
 `include "debug_bus.sv"
 `include "config.sv"
 
+//Removed GPIO, Pulpino and i2c peripherals
+
 module peripherals
   #(
     parameter AXI_ADDR_WIDTH       = 32,
@@ -68,17 +70,17 @@ module peripherals
     input  logic              spi_master_sdi2,
     input  logic              spi_master_sdi3,
 
-    input  logic              scl_pad_i,
+    /*input  logic              scl_pad_i,
     output logic              scl_pad_o,
     output logic              scl_padoen_o,
     input  logic              sda_pad_i,
     output logic              sda_pad_o,
-    output logic              sda_padoen_o,
+    output logic              sda_padoen_o,*/
 
-    input  logic       [31:0] gpio_in,
+    /*input  logic       [31:0] gpio_in,
     output logic       [31:0] gpio_out,
     output logic       [31:0] gpio_dir,
-    output logic [31:0] [5:0] gpio_padcfg,
+    output logic [31:0] [5:0] gpio_padcfg,*/
 
     input  logic              core_busy_i,
     output logic [31:0]       irq_o,
@@ -94,8 +96,8 @@ module peripherals
     input  logic [31:0]       fll1_rdata_i,
     input  logic              fll1_lock_i,
 
-    output logic [31:0] [5:0] pad_cfg_o,
-    output logic       [31:0] pad_mux_o,
+    //output logic [31:0] [5:0] pad_cfg_o,
+    //output logic       [31:0] pad_mux_o,
     output logic       [31:0] boot_addr_o
   );
 
@@ -105,11 +107,11 @@ module peripherals
   APB_BUS s_apb_bus();
 
   APB_BUS s_uart_bus();
-  APB_BUS s_gpio_bus();
+  //APB_BUS s_gpio_bus();
   APB_BUS s_spi_bus();
   APB_BUS s_timer_bus();
   APB_BUS s_event_unit_bus();
-  APB_BUS s_i2c_bus();
+  //APB_BUS s_i2c_bus();
   APB_BUS s_fll_bus();
   APB_BUS s_soc_ctrl_bus();
   APB_BUS s_debug_bus();
@@ -119,8 +121,8 @@ module peripherals
   logic [31:0]  peripheral_clock_gate_ctrl;
   logic [31:0]  clk_int;
   logic         s_uart_event;
-  logic         i2c_event;
-  logic         s_gpio_event;
+  //logic         i2c_event;
+  //logic         s_gpio_event;
 
   //////////////////////////////////////////////////////////////////
   ///                                                            ///
@@ -220,11 +222,11 @@ module peripherals
      .apb_slave         ( s_apb_bus        ),
 
      .uart_master       ( s_uart_bus       ),
-     .gpio_master       ( s_gpio_bus       ),
+     //.gpio_master       ( s_gpio_bus       ),
      .spi_master        ( s_spi_bus        ),
      .timer_master      ( s_timer_bus      ),
      .event_unit_master ( s_event_unit_bus ),
-     .i2c_master        ( s_i2c_bus        ),
+     //.i2c_master        ( s_i2c_bus        ),
      .fll_master        ( s_fll_bus        ),
      .soc_ctrl_master   ( s_soc_ctrl_bus   ),
      .debug_master      ( s_debug_bus      )
@@ -294,7 +296,7 @@ module peripherals
   ///                                                            ///
   //////////////////////////////////////////////////////////////////
 
-  apb_gpio apb_gpio_i
+  /*apb_gpio apb_gpio_i
   (
     .HCLK       ( clk_int[2]   ),
     .HRESETn    ( rst_n        ),
@@ -313,7 +315,7 @@ module peripherals
     .gpio_dir     ( gpio_dir      ),
     .gpio_padcfg  ( gpio_padcfg   ),
     .interrupt    ( s_gpio_event  )
-  );
+  );*/
 
   //////////////////////////////////////////////////////////////////
   ///                                                            ///
@@ -403,8 +405,8 @@ module peripherals
     .PREADY           ( s_event_unit_bus.pready     ),
     .PSLVERR          ( s_event_unit_bus.pslverr    ),
 
-    .irq_i            ( {timer_irq, s_spim_event, s_gpio_event, s_uart_event, i2c_event, 23'b0} ),
-    .event_i          ( {timer_irq, s_spim_event, s_gpio_event, s_uart_event, i2c_event, 23'b0} ),
+    .irq_i            ( {timer_irq, s_spim_event, /*s_gpio_event,*/ s_uart_event, /*i2c_event,*/ 23'b0} ),
+    .event_i          ( {timer_irq, s_spim_event, /*s_gpio_event,*/ s_uart_event, /*i2c_event,*/ 23'b0} ),
     .irq_o            ( irq_o              ),
 
     .fetch_enable_i   ( fetch_enable_i     ),
@@ -419,7 +421,7 @@ module peripherals
   ///                                                            ///
   //////////////////////////////////////////////////////////////////
 
-  apb_i2c
+  /*apb_i2c
   apb_i2c_i
   (
     .HCLK         ( clk_int[6]    ),
@@ -440,7 +442,7 @@ module peripherals
     .sda_pad_i    ( sda_pad_i     ),
     .sda_pad_o    ( sda_pad_o     ),
     .sda_padoen_o ( sda_padoen_o  )
-  );
+  );*/
 
 
   //////////////////////////////////////////////////////////////////
@@ -504,7 +506,7 @@ module peripherals
       .PREADY      ( s_soc_ctrl_bus.pready     ),
       .PSLVERR     ( s_soc_ctrl_bus.pslverr    ),
 
-      .pad_cfg_o   ( pad_cfg_o                  ),
+      //.pad_cfg_o   ( pad_cfg_o                  ),
       .clk_gate_o  ( peripheral_clock_gate_ctrl ),
       .pad_mux_o   ( pad_mux_o                  ),
       .boot_addr_o ( boot_addr_o                )
