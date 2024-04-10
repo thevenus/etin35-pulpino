@@ -25,12 +25,19 @@ module sp_ram
     input  logic [DATA_WIDTH/8-1:0] be_i
   );
 
-  logic [3:0][7:0]    st_ram_rrowd_o  [4];
+  logic [3:0][7:0]    st_ram_rrowd_o[4];
   logic [3:0]         st_ram_row_en;
   logic [3:0][3:0]    st_ram_ready; 
   logic               st_ram_tbypass;
+  logic [1:0]         addr_rowsel_reg;
 
   assign st_ram_tbypass = 1'b0;
+
+  // Register for address row selection bits(14:13)
+  // to delay it one cc
+  always @(posedge clk) begin
+    addr_rowsel_reg <= addr_i[14:13];
+  end
 
   // choosing SRAM banks based on the given address
   always @(*) begin
@@ -69,7 +76,7 @@ module sp_ram
 
   // Multiplex output from all rows into one
   always @(*) begin
-    case (addr_i[14:13]) 
+    case (addr_rowsel_reg) 
       2'b00   :   rdata_o = st_ram_rrowd_o[0];
       2'b01   :   rdata_o = st_ram_rrowd_o[1];
       2'b10   :   rdata_o = st_ram_rrowd_o[2];
