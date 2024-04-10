@@ -13,6 +13,17 @@
 
 int main()
 {
-  printf("Simon, Fuad, Viktor\n");
+  int a, b, c;
+  a = 5;
+  b = 6; 
+  c = 7;
+
+  int d, e, f;
+  d = a+b;
+  e = a-b-c;
+  f = a*b*c;
+  printf("%d + %d = %d\n", a, b, d);
+  printf("%d - %d - %d = %d\n", a, b, c, e);
+  printf("%d * %d * %d = %d\n", a, b, c, f);
   return 0;
 }
