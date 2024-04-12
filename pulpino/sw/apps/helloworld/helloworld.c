@@ -13,6 +13,19 @@
 
 int main()
 {
-  printf("Simon, Fuad, Viktor\n");
+
+  int x = 354;
+  int y = 983;
+  int z = 1727;
+
+  int a,b,c,d;
+
+  a = x*y;
+  b = x+z;
+  c = z/x;
+  d = z-y;
+
+  printf("Multiply is %d\nAdd is %d\nDivide is %d\nSubtract is %d\n",a,b,c,d);
+  //printf("Simon, Fuad, Viktor\n");
   return 0;
 }
