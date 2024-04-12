@@ -17,8 +17,10 @@ module axi_spi_slave_wrap
     parameter AXI_USER_WIDTH    = 10
   )
 (
-    input logic              clk_i,
-    input logic              rst_ni,
+    //input logic              clk_i,
+    input logic              clk,
+    //input logic              rst_ni,
+    input logic              rst_n,
 
     input logic              test_mode,
 
@@ -46,8 +48,8 @@ module axi_spi_slave_wrap
     )
   axi_spi_slave_i
   (
-    .axi_aclk             ( clk_i                ),
-    .axi_aresetn          ( rst_ni               ),
+    .axi_aclk             ( clk                ), //Changed
+    .axi_aresetn          ( rst_n               ), //Changed
 
     .axi_master_aw_valid  ( axi_master.aw_valid  ),
     .axi_master_aw_id     ( axi_master.aw_id     ),

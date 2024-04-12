@@ -25,5 +25,6 @@ int main()
   printf("%d + %d = %d\n", a, b, d);
   printf("%d - %d - %d = %d\n", a, b, c, e);
   printf("%d * %d * %d = %d\n", a, b, c, f);
+
   return 0;
 }
