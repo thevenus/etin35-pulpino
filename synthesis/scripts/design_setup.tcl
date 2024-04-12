@@ -22,7 +22,11 @@ SPHDL100909_nom_1.20V_25C.lib  \
 Pads_Oct2012.lib} /
 
 # put all your design files here
-set SV_DESIGN_FILES "${RTL}/includes/apb_bus.sv ${RTL}/includes/apu_defines.sv ${RTL}/includes/axi_bus.sv ${RTL}/includes/config.sv ${RTL}/includes/debug_bus.sv ${RTL}/components/cluster_clock_gating.sv ${RTL}/components/cluster_clock_inverter.sv ${RTL}/components/cluster_clock_mux2.sv ${RTL}/components/dp_ram.sv ${RTL}/components/generic_fifo.sv ${RTL}/components/pulp_clock_gating.sv ${RTL}/components/pulp_clock_inverter.sv ${RTL}/components/pulp_clock_mux2.sv ${RTL}/components/rstgen.sv ${RTL}/components/sp_ram.sv ${RTL}/apb_mock_uart.sv ${RTL}/axi2apb_wrap.sv ${RTL}/axi_mem_if_SP_wrap.sv ${RTL}/axi_node_intf_wrap.sv ${RTL}/axi_slice_wrap.sv ${RTL}/axi_spi_slave_wrap.sv ${RTL}/boot_code.sv ${RTL}/boot_rom_wrap.sv ${RTL}/clk_rst_gen.sv ${RTL}/core2axi_wrap.sv ${RTL}/core_region.sv ${RTL}/dp_ram_wrap.sv ${RTL}/instr_ram_wrap.sv ${RTL}/iterate.sh ${RTL}/periph_bus_wrap.sv ${RTL}/peripherals.sv ${RTL}/pulpino_top.sv ${RTL}/ram_mux.sv ${RTL}/random_stalls.sv ${RTL}/sp_ram_wrap.sv"
+set SV_DESIGN_INC_FILES "${RTL}/includes/config.sv ${RTL}/includes/apb_bus.sv ${RTL}/includes/apu_defines.sv ${RTL}/includes/axi_bus.sv ${RTL}/includes/debug_bus.sv"
+
+set SV_DESIGN_COMPONENT_FILES "${RTL}/components/cluster_clock_gating.sv ${RTL}/components/cluster_clock_inverter.sv ${RTL}/components/cluster_clock_mux2.sv ${RTL}/components/dp_ram.sv ${RTL}/components/generic_fifo.sv ${RTL}/components/pulp_clock_gating.sv ${RTL}/components/pulp_clock_inverter.sv ${RTL}/components/pulp_clock_mux2.sv ${RTL}/components/rstgen.sv ${RTL}/components/sp_ram.sv"
+
+set SV_DESIGN_FILES "${RTL}/apb_mock_uart.sv ${RTL}/axi2apb_wrap.sv ${RTL}/axi_mem_if_SP_wrap.sv ${RTL}/axi_node_intf_wrap.sv ${RTL}/axi_slice_wrap.sv ${RTL}/axi_spi_slave_wrap.sv ${RTL}/boot_code.sv ${RTL}/boot_rom_wrap.sv ${RTL}/clk_rst_gen.sv ${RTL}/core2axi_wrap.sv ${RTL}/core_region.sv ${RTL}/dp_ram_wrap.sv ${RTL}/instr_ram_wrap.sv ${RTL}/iterate.sh ${RTL}/periph_bus_wrap.sv ${RTL}/peripherals.sv ${RTL}/pulpino_top.sv ${RTL}/ram_mux.sv ${RTL}/random_stalls.sv ${RTL}/sp_ram_wrap.sv"
 
 set SYN_EFF medium 
 set MAP_EFF medium 
