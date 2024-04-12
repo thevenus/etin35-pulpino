@@ -31,6 +31,7 @@ module pulpino_top
     input logic               clk /*verilator clocker*/,
     input logic               rst_n,
 
+    input  logic              testmode_i,
     input  logic              fetch_enable_i,
 
     //SPI Slave
@@ -114,6 +115,7 @@ module pulpino_top
     .clk            ( clk           ), //Changed 
     .rst_n          ( rst_n          ), //Changed 
 
+    .testmode_i     ( testmode_i        ),
     .fetch_enable_i ( fetch_enable_int  ),
     .irq_i          ( irq_to_core_int   ),
     .core_busy_o    ( core_busy_int     ),
@@ -153,6 +155,7 @@ module pulpino_top
     .debug           ( debug             ),
 
     .spi_clk_i       ( spi_clk_i         ),
+    .testmode_i      ( testmode_i        ),
     .spi_cs_i        ( spi_cs_i          ),
     .spi_mode_o      ( spi_mode_o        ),
     .spi_sdo0_o      ( spi_sdo0_o        ),
@@ -200,7 +203,7 @@ module pulpino_top
   (
     .clk       ( clk    ), 
     .rst_n     ( rst_n   ), 
-
+    .test_en_i ( testmode_i ),
     .master    ( slaves     ),
     .slave     ( masters    ),
 

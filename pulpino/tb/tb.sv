@@ -93,6 +93,7 @@ module tb;
     .clk               ( s_clk        ),
     .rst_n             ( s_rst_n      ),
 
+    .testmode_i        ( 1'b0         ),
     .fetch_enable_i    ( fetch_enable ),
 
     .spi_clk_i         ( spi_sck      ),
