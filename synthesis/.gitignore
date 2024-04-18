@@ -1,0 +1,8 @@
+comp.dv
+medfilt.cmd
+modelsim.ini
+netlists/
+soc/
+testvectors.txt
+vhdl/
+WORK/
