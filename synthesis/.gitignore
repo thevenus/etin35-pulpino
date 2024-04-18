@@ -1,3 +1,7 @@
+.synopsys_dc.setup
+fv/
+outputs/
+reports/
 comp.dv
 medfilt.cmd
 modelsim.ini

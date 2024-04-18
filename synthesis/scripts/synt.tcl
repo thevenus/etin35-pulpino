@@ -1,4 +1,4 @@
-set ROOT "./"
+set ROOT "../"
 
 set SYNT_SCRIPT    "${ROOT}/synthesis/scripts"
 set SYNT_OUT       "${ROOT}/synthesis/outputs"
@@ -12,7 +12,9 @@ puts "\n\n\n DESIGN FILES \n\n\n"
 source $SYNT_SCRIPT/design_setup.tcl
 
 puts "\n\n\n ANALYZE HDL DESIGN \n\n\n"
-read_hdl -sv ${SV_DESIGN_FILES}
+read_hdl -sv ${DESIGN_FILES_SV} 
+read_hdl -vhdl ${DESIGN_FILES_VHDL}
+read_hdl ${DESIGN_FILES_V}
 
 puts "\n\n\n ELABORATE \n\n\n"
 elaborate ${DESIGN}
@@ -33,7 +35,7 @@ puts "\n\n\n SYN_OPT \n\n\n"
 syn_opt
 
 puts "\n\n\n EXPORT DESIGN \n\n\n"
-write_hdl    > ${SYNT_OUT}/${DESIGN}.v
+write_hdl    > ${SYNT_OUT}/${DESIGN}.sv
 write_sdc    > ${SYNT_OUT}/${DESIGN}.sdc
 write_sdf   -version 2.1  > ${SYNT_OUT}/${DESIGN}.sdf
 
