@@ -58,6 +58,8 @@ module tb;
   logic         s_uart_dtr;
   logic         s_uart_rts;
 
+  logic  gpio_out8; //Readded gpio
+
   logic [31:0]  recv_data;
 
   jtag_i jtag_if();
@@ -114,6 +116,8 @@ module tb;
     .uart_dtr          ( s_uart_dtr   ),
     .uart_cts          ( 1'b0         ),
     .uart_dsr          ( 1'b0         ),
+     
+    .gpio_out8         ( gpio_out8     ), //Readded gpio
 
     .tck_i             ( jtag_if.tck     ),
     .trstn_i           ( jtag_if.trstn   ),
@@ -201,9 +205,9 @@ module tb;
     //Wait is needed here in place of gpio_out[8] for end of computation. Recommended to save gpio_out[8] pin for FPGA implementation 
 
     // end of computation
-    //if (~gpio_out[8])
-      //wait(gpio_out[8]);
-    #1000us;
+    if (~gpio_out8)
+      wait(gpio_out8);
+    // #1000us;
     spi_check_return_codes(exit_status);
 
     $fflush();
