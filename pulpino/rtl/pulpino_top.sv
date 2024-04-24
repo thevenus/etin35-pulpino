@@ -53,6 +53,8 @@ module pulpino_top
     output logic              uart_dtr,
     input  logic              uart_cts,
     input  logic              uart_dsr,
+    
+    output logic              gpio_out8, //Readded gpio 
 
     // JTAG signals
     input  logic              tck_i,
@@ -72,6 +74,7 @@ module pulpino_top
 
   logic        rstn_int;
   logic [31:0] boot_addr_int;
+  logic [30:0] gpio_out;
 
   AXI_BUS
   #(
@@ -175,6 +178,8 @@ module pulpino_top
     .uart_dtr        ( uart_dtr          ),
     .uart_cts        ( uart_cts          ),
     .uart_dsr        ( uart_dsr          ),
+
+    .gpio_out        ( {gpio_out[30:8], gpio_out8, gpio_out[7:0]} ), //Readded gpio
 
     .core_busy_i     ( core_busy_int     ),
     .irq_o           ( irq_to_core_int   ),

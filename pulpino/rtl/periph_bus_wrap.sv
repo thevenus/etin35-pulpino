@@ -24,6 +24,7 @@ module periph_bus_wrap
     APB_BUS.Slave     apb_slave,
 
     APB_BUS.Master    uart_master,
+    APB_BUS.Master    gpio_master,  //Readded gpio
     APB_BUS.Master    timer_master,
     APB_BUS.Master    event_unit_master,
     APB_BUS.Master    soc_ctrl_master,
@@ -56,21 +57,25 @@ module periph_bus_wrap
   assign s_start_addr[0] = `UART_START_ADDR;
   assign s_end_addr[0]   = `UART_END_ADDR;
 
-  `APB_ASSIGN_MASTER(s_masters[3], timer_master);
-  assign s_start_addr[3] = `TIMER_START_ADDR;
-  assign s_end_addr[3]   = `TIMER_END_ADDR;
+  `APB_ASSIGN_MASTER(s_masters[1], gpio_master); //Readded gpio
+  assign s_start_addr[1] = `GPIO_START_ADDR;
+  assign s_end_addr[1]   = `GPIO_END_ADDR;
 
-  `APB_ASSIGN_MASTER(s_masters[4], event_unit_master);
-  assign s_start_addr[4] = `EVENT_UNIT_START_ADDR;
-  assign s_end_addr[4]   = `EVENT_UNIT_END_ADDR;
+  `APB_ASSIGN_MASTER(s_masters[2], timer_master);
+  assign s_start_addr[2] = `TIMER_START_ADDR;
+  assign s_end_addr[2]   = `TIMER_END_ADDR;
 
-  `APB_ASSIGN_MASTER(s_masters[7], soc_ctrl_master);
-  assign s_start_addr[7] = `SOC_CTRL_START_ADDR;
-  assign s_end_addr[7]   = `SOC_CTRL_END_ADDR;
+  `APB_ASSIGN_MASTER(s_masters[3], event_unit_master);
+  assign s_start_addr[3] = `EVENT_UNIT_START_ADDR;
+  assign s_end_addr[3]   = `EVENT_UNIT_END_ADDR;
 
-  `APB_ASSIGN_MASTER(s_masters[8], debug_master);
-  assign s_start_addr[8] = `DEBUG_START_ADDR;
-  assign s_end_addr[8]   = `DEBUG_END_ADDR;
+  `APB_ASSIGN_MASTER(s_masters[4], soc_ctrl_master);
+  assign s_start_addr[4] = `SOC_CTRL_START_ADDR;
+  assign s_end_addr[4]   = `SOC_CTRL_END_ADDR;
+
+  `APB_ASSIGN_MASTER(s_masters[5], debug_master);
+  assign s_start_addr[5] = `DEBUG_START_ADDR;
+  assign s_end_addr[5]   = `DEBUG_END_ADDR;
 
   //********************************************************
   //**************** SOC BUS *******************************
