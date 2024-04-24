@@ -15,7 +15,7 @@
 `include "config.sv"
 
 // SOC PERIPHERALS APB BUS PARAMETRES
-`define NB_MASTER  9
+`define NB_MASTER  6
 
 // MASTER PORT TO CVP
 `define UART_START_ADDR       32'h1A10_0000
