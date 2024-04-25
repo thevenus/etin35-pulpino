@@ -52,6 +52,8 @@ module peripherals
     output logic              uart_dtr,
     input  logic              uart_cts,
     input  logic              uart_dsr,
+  
+    output logic       [31:0] gpio_out, //Readded gpio
 
     input  logic              core_busy_i,
     output logic [31:0]       irq_o,
@@ -63,11 +65,12 @@ module peripherals
   );
 
   localparam APB_ADDR_WIDTH  = 32;
-  localparam APB_NUM_SLAVES  = 8;
+  localparam APB_NUM_SLAVES  = 5;
 
   APB_BUS s_apb_bus();
 
   APB_BUS s_uart_bus();
+  APB_BUS s_gpio_bus();  //Readded gpio
   APB_BUS s_spi_bus();
   APB_BUS s_timer_bus();
   APB_BUS s_event_unit_bus();
@@ -79,6 +82,7 @@ module peripherals
   logic [31:0]  peripheral_clock_gate_ctrl;
   logic [31:0]  clk_int;
   logic         s_uart_event;
+  logic         s_gpio_event;  //Readded gpio
 
   //////////////////////////////////////////////////////////////////
   ///                                                            ///
@@ -178,6 +182,7 @@ module peripherals
      .apb_slave         ( s_apb_bus        ),
 
      .uart_master       ( s_uart_bus       ),
+     .gpio_master       ( s_gpio_bus       ),  //Readded gpio
      .timer_master      ( s_timer_bus      ),
      .event_unit_master ( s_event_unit_bus ),
      .soc_ctrl_master   ( s_soc_ctrl_bus   ),
@@ -243,6 +248,31 @@ module peripherals
   `endif
 
 
+
+  //////////////////////////////////////////////////////////////////
+  ///                                                            ///
+  /// APB Slave 1: APB GPIO interface                            ///
+  ///                                                            ///
+  //////////////////////////////////////////////////////////////////
+
+  apb_gpio
+  apb_gpio_i
+    (
+      .HCLK       ( clk_int[2]   ),
+      .HRESETn    ( rst_n        ),
+      .PADDR      ( s_gpio_bus.paddr[11:0]),
+      .PWDATA     ( s_gpio_bus.pwdata     ),
+      .PWRITE     ( s_gpio_bus.pwrite     ),
+      .PSEL       ( s_gpio_bus.psel       ),
+      .PENABLE    ( s_gpio_bus.penable    ),
+      .PRDATA     ( s_gpio_bus.prdata     ),
+      .PREADY     ( s_gpio_bus.pready     ), //THIS IS THE REASON WHY WE CANNOT GET ERROR VALUES IN QUESTASIM
+      .PSLVERR    ( s_gpio_bus.pslverr    ),
+      .gpio_out     ( gpio_out      ),
+      .interrupt    ( s_gpio_event  )
+    );
+ 
+
   //////////////////////////////////////////////////////////////////
   ///                                                            ///
   /// APB Slave 3: Timer Unit                                    ///
@@ -252,7 +282,7 @@ module peripherals
   apb_timer
   apb_timer_i
   (
-    .HCLK       ( clk_int[4]   ),
+    .HCLK       ( clk_int[3]   ),
     .HRESETn    ( rst_n        ),
 
     .PADDR      ( s_timer_bus.paddr[11:0]),
@@ -277,7 +307,7 @@ module peripherals
   apb_event_unit_i
   (
     .clk_i            ( clk        ), 
-    .HCLK             ( clk_int[5]   ),
+    .HCLK             ( clk_int[4]   ),
     .HRESETn          ( rst_n        ),
 
     .PADDR            ( s_event_unit_bus.paddr[11:0]),
@@ -289,8 +319,8 @@ module peripherals
     .PREADY           ( s_event_unit_bus.pready     ),
     .PSLVERR          ( s_event_unit_bus.pslverr    ),
 
-    .irq_i            ( {timer_irq, s_spim_event, s_uart_event, 23'b0} ),
-    .event_i          ( {timer_irq, s_spim_event, s_uart_event, 23'b0} ),
+    .irq_i            ( {timer_irq, s_spim_event, s_gpio_event, s_uart_event, 24'b0} ),  //Readded gpio 
+    .event_i          ( {timer_irq, s_spim_event, s_gpio_event, s_uart_event, 24'b0} ),
     .irq_o            ( irq_o              ),
 
     .fetch_enable_i   ( fetch_enable_i     ),
