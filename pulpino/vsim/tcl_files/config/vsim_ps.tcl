@@ -1,4 +1,4 @@
-set cmd "vsim -sdfmin /tb/top_i=/h/d9/n/fu6315ma-s/Documents/etin35-pulpino/synthesis/outputs/pulpino_top.sdf -quiet $TB \
+set cmd "vsim -sdfmin /tb_ps/top_i=/h/d9/n/fu6315ma-s/Documents/etin35-pulpino/synthesis/outputs/pulpino_top_rtl_w_pads.sdf -quiet $TB \
   -L pulpino_lib \
   -L CORE65LPLVT \
   -L CLOCK65LPLVT \
@@ -7,6 +7,7 @@ set cmd "vsim -sdfmin /tb/top_i=/h/d9/n/fu6315ma-s/Documents/etin35-pulpino/synt
   +nowarnTRAN \
   +nowarnTSCALE \
   +nowarnTFMPC \
+  +notimingchecks \
   +MEMLOAD=$MEMLOAD \
   -gUSE_ZERO_RISCY=$env(USE_ZERO_RISCY) \
   -gRISCY_RV32F=$env(RISCY_RV32F) \

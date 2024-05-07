@@ -1,5 +1,5 @@
 # Change this variable to top entity of your own design
-set DESIGN pulpino_top 
+set DESIGN pulpino_top_rtl_w_pads 
 
 # Change this variable to the RTL path of your own design
 set RTL ../pulpino/rtl
@@ -107,7 +107,7 @@ set DESIGN_FILES_VHDL { \
 	apb_uart.vhd slib_clock_div.vhd slib_counter.vhd slib_edge_detect.vhd \
 	slib_fifo.vhd slib_input_filter.vhd slib_input_sync.vhd \
 	slib_mv_filter.vhd uart_baudgen.vhd uart_interrupt.vhd \
-	uart_receiver.vhd uart_transmitter.vhd \
+	uart_receiver.vhd uart_transmitter.vhd pulpino_top_rtl_w_pads.vhd \
 }
 
 set SYN_EFF medium 
