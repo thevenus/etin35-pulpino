@@ -84,12 +84,6 @@ module tb;
 
 
   pulpino_top
-  #(
-    .USE_ZERO_RISCY    ( USE_ZERO_RISCY ),
-    .RISCY_RV32F       ( RISCY_RV32F    ),
-    .ZERO_RV32M        ( ZERO_RV32M     ),
-    .ZERO_RV32E        ( ZERO_RV32E     )
-   )
   top_i
   (
     .clk               ( s_clk        ),
@@ -183,7 +177,7 @@ module tb;
     if (memload == "PRELOAD")
     begin
       // preload memories
-      mem_preload();
+      // mem_preload();
     end
     else if (memload == "SPI")
     begin
@@ -216,7 +210,7 @@ module tb;
 
   // TODO: this is a hack, do it properly!
   `include "tb_spi_pkg.sv"
-  `include "tb_mem_pkg.sv"
+  //`include "tb_mem_pkg.sv"
   `include "spi_debug_test.svh"
   `include "mem_dpi.svh"
 
