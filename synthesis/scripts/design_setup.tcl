@@ -110,9 +110,9 @@ set DESIGN_FILES_VHDL { \
 	uart_receiver.vhd uart_transmitter.vhd pulpino_top_rtl_w_pads.vhd \
 }
 
-set SYN_EFF medium 
-set MAP_EFF medium 
-set OPT_EFF medium 
+set SYN_EFF high 
+set MAP_EFF high 
+set OPT_EFF high 
 
 set_attribute syn_generic_effort ${SYN_EFF}
 set_attribute syn_map_effort ${MAP_EFF}
