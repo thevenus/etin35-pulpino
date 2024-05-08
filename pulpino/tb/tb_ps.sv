@@ -18,7 +18,7 @@
 `define EXIT_FAIL     1
 `define EXIT_ERROR   -1
 
-module tb;
+module tb_ps;
   timeunit      1ns;
   timeprecision 1ps;
 
@@ -82,42 +82,14 @@ module tb;
   spi_slave
   spi_master();
 
-
-  pulpino_top
+  pulpino_top_rtl_w_pads
   top_i
   (
     .clk               ( s_clk        ),
-    .rst_n             ( s_rst_n      ),
-
-    .testmode_i        ( 1'b0         ),
-    .fetch_enable_i    ( fetch_enable ),
-
-    .spi_clk_i         ( spi_sck      ),
-    .spi_cs_i          ( spi_csn      ),
-    .spi_mode_o        ( spi_mode     ),
-    .spi_sdo0_o        ( spi_sdi0     ),
-    .spi_sdo1_o        ( spi_sdi1     ),
-    .spi_sdo2_o        ( spi_sdi2     ),
-    .spi_sdo3_o        ( spi_sdi3     ),
-    .spi_sdi0_i        ( spi_sdo0     ),
-    .spi_sdi1_i        ( spi_sdo1     ),
-    .spi_sdi2_i        ( spi_sdo2     ),
-    .spi_sdi3_i        ( spi_sdo3     ),
-
-    .uart_tx           ( uart_rx      ),
-    .uart_rx           ( uart_tx      ),
-    .uart_rts          ( s_uart_rts   ),
-    .uart_dtr          ( s_uart_dtr   ),
-    .uart_cts          ( 1'b0         ),
-    .uart_dsr          ( 1'b0         ),
-     
-    .gpio_out8         ( gpio_out8     ), //Readded gpio
-
-    .tck_i             ( jtag_if.tck     ),
-    .trstn_i           ( jtag_if.trstn   ),
-    .tms_i             ( jtag_if.tms     ),
-    .tdi_i             ( jtag_if.tdi     ),
-    .tdo_o             ( jtag_if.tdo     )
+    .spi_clk           ( spi_sck      ),
+    .jtag_clk          ( jtag_if.tck  ),
+    .INP               ({ jtag_if.tdi, jtag_if.tms, jtag_if.trstn, 1'b0, 1'b0, uart_tx, spi_sdo3, spi_sdo2, spi_sdo1, spi_sdo0, spi_csn, fetch_enable, 1'b0, s_rst_n }),
+    .UTP               ({ jtag_if.tdo, gpio_out8, s_uart_dtr, s_uart_rts, uart_rx, spi_sdi3, spi_sdi2, spi_sdi1, spi_sdi0, spi_mode })
   );
 
   generate
@@ -185,7 +157,7 @@ module tb;
       spi_check(use_qspi);
     end
 
-    #200ns;
+    #20000ns;
     fetch_enable = 1'b1;
 
     if(TEST == "DEBUG") begin
