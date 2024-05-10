@@ -24,7 +24,7 @@ module apb_mmu
     logic [31:0]    indata_reg [64], indata_next [64];
     logic [31:0]    outdata_reg [160], outdata_next [160];
     logic [3:0]     ctrl_reg, ctrl_next;
-    logic           done_reg, done_next;
+    logic           status_reg, status_next;
 
     // sequential part
     always_ff @(posedge HCLK, negedge HRESETn) 
@@ -39,7 +39,7 @@ module apb_mmu
             end
 
             ctrl_reg <= 4'b0;
-            done_reg <= 1'b0;
+            status_reg <= 1'b0;
         end else begin
             for (int i = 0; i<64; i++) begin
                 indata_reg[i] <= indata_next[i];
@@ -50,7 +50,7 @@ module apb_mmu
             end
 
             ctrl_reg <= ctrl_next;
-            done_reg <= done_next;
+            status_reg <= status_next;
         end    
     end
  
@@ -82,14 +82,14 @@ module apb_mmu
             end else if (PADDR == 32'h1A10_3000) begin 
                 PRDATA = ctrl_reg;
             end else if (PADDR == 32'h1A10_3480) begin
-                PRDATA = done_reg;
+                PRDATA = status_reg;
             end
         end
     end
 
     always_comb
     begin
-        done_next = done_reg;
+        status_next = status_reg;
         outdata_next = outdata_reg;    
     end
 
@@ -120,6 +120,11 @@ module apb_mmu
         .read_data_out      (mmu_read_data_out_o),
         .finish             (mmu_finish_o)
     );
+
+    always_comb 
+    begin
+        
+    end
 
     
 endmodule
