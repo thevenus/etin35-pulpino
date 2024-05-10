@@ -104,9 +104,9 @@ module apb_mmu
     // ██      ██ ██      ██  ██████                        
 
     logic       [7:0]   mmu_input_data_i;
-    logic       [8:0]   mmu_read_data_out_o;
+    logic       [17:0]  mmu_read_data_out_o;
     logic               mmu_valid_input_i;
-    logic               mmu_read_ram_o;
+    logic               mmu_read_ram_i;
     logic               mmu_finish_o;
 
     jollof_top
@@ -116,13 +116,14 @@ module apb_mmu
         .rst                (~HRESETn),
         .input_data         (mmu_input_data_i),
         .valid_input        (mmu_valid_input_i),
-        .read_ram           (mmu_read_ram_o),
+        .read_ram           (mmu_read_ram_i),
         .read_data_out      (mmu_read_data_out_o),
         .finish             (mmu_finish_o)
     );
 
     always_comb 
     begin
+        if (ctrl_reg[0])
         
     end
 

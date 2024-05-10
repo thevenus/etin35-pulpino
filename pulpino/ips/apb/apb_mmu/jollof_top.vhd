@@ -37,7 +37,7 @@ entity jollof_top is
            input_data : in STD_LOGIC_VECTOR (7 downto 0);
            valid_input : in STD_LOGIC;
            read_ram : in STD_LOGIC;
-           read_data_out : out STD_LOGIC_VECTOR (8 downto 0);
+           read_data_out : out STD_LOGIC_VECTOR (17 downto 0);
            finish : out STD_LOGIC);
 end jollof_top;
 
@@ -76,7 +76,7 @@ architecture Behavioral of jollof_top is
             product3: in std_logic_vector(17 downto 0);
             product4: in std_logic_vector(17 downto 0);
             dataRAM: out std_logic_vector(31 downto 0);
-            read_data_out: out std_logic_vector(8 downto 0);
+            read_data_out: out std_logic_vector(17 downto 0);
             addressRAM: out std_logic_vector(7 downto 0);
             web: out std_logic;
             load_done: out std_logic

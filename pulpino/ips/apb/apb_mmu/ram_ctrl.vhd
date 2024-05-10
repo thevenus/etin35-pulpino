@@ -44,7 +44,7 @@ Port (
     product3: in std_logic_vector(17 downto 0);
     product4: in std_logic_vector(17 downto 0);
     dataRAM: out std_logic_vector(31 downto 0);
-    read_data_out: out std_logic_vector(8 downto 0);
+    read_data_out: out std_logic_vector(17 downto 0);
     addressRAM: out std_logic_vector(7 downto 0);
     web: out std_logic;
     load_done: out std_logic
@@ -60,8 +60,8 @@ architecture Behavioral of ram_ctrl is
     signal shift_reg, shift_next: unsigned (71 downto 0);
     signal shift_cnt_reg, shift_cnt_next: unsigned (1 downto 0);
     signal load_del, load_rising: std_logic;
-    signal read_cnt_reg, read_cnt_next: unsigned (8 downto 0);
-    signal read_out_reg, read_out_next: std_logic_vector(8 downto 0);
+    signal read_cnt_reg, read_cnt_next: unsigned (7 downto 0);
+    signal read_out_reg, read_out_next: std_logic_vector(17 downto 0);
 
 begin
 
@@ -164,18 +164,14 @@ begin
                 
             when s_read => 
                 web <= '1';
-                addressRAM <= std_logic_vector(read_cnt_reg(8 downto 1));
+                addressRAM <= std_logic_vector(read_cnt_reg);
                 read_cnt_next <= read_cnt_reg + 1;
                 
                 if (ready_sram = '1') then
-                    if (read_cnt_reg(0) = '1') then
-                        read_out_next <= read_data_sram(17 downto 9);
-                    else
-                        read_out_next <= read_data_sram(8 downto 0);
-                    end if;
+                    read_out_next <= read_data_sram(17 downto 0);
                 end if;
                 
-                if read_cnt_reg = 319 then
+                if read_cnt_reg = 159 then
                     state_next <= s_idle;
                 else 
                     state_next <= s_read;
