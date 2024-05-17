@@ -31,7 +31,7 @@ external_delay -output $OutputDelay -clock [find / -clock $ClkName] -name out_co
 set PERIOD_SPI 100000
 set ClkName_SPI clk_spi
 
-define_clock -name $ClkName_SPI -period $PERIOD_SPI -design $ClkTop -domain $ClkDomain [find / -port spi_clk_i*]
+define_clock -name $ClkName_SPI -period $PERIOD_SPI -design $ClkTop -domain $ClkDomain [find / -port spi_clk*]
 
 set_attribute clock_network_late_latency $ClkLatency $ClkName_SPI
 set_attribute clock_source_late_latency  $ClkLatency $ClkName_SPI 
@@ -49,7 +49,7 @@ external_delay -output $OutputDelay -clock [find / -clock $ClkName_SPI] -name ou
 set PERIOD_JTAG 100000
 set ClkName_JTAG clk_jtag
 
-define_clock -name $ClkName_JTAG -period $PERIOD_JTAG -design $ClkTop -domain $ClkDomain [find / -port tck_i*]
+define_clock -name $ClkName_JTAG -period $PERIOD_JTAG -design $ClkTop -domain $ClkDomain [find / -port jtag_clk*]
 
 set_attribute clock_network_late_latency $ClkLatency $ClkName_JTAG
 set_attribute clock_source_late_latency  $ClkLatency $ClkName_JTAG 
