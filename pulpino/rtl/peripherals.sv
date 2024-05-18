@@ -72,7 +72,7 @@ module peripherals
   APB_BUS s_uart_bus();
   APB_BUS s_gpio_bus();  //Readded gpio
   APB_BUS s_spi_bus();
-  APB_BUS s_timer_bus();
+  APB_BUS s_mmu_bus();
   APB_BUS s_event_unit_bus();
   APB_BUS s_soc_ctrl_bus();
   APB_BUS s_debug_bus();
@@ -176,14 +176,14 @@ module peripherals
   )
   periph_bus_i
   (
-     .clk             ( clk            ), 
-     .rst_n            ( rst_n            ), 
+     .clk               ( clk              ), 
+     .rst_n             ( rst_n            ), 
 
      .apb_slave         ( s_apb_bus        ),
 
      .uart_master       ( s_uart_bus       ),
      .gpio_master       ( s_gpio_bus       ),  //Readded gpio
-     .timer_master      ( s_timer_bus      ),
+     .timer_master      ( s_mmu_bus        ),
      .event_unit_master ( s_event_unit_bus ),
      .soc_ctrl_master   ( s_soc_ctrl_bus   ),
      .debug_master      ( s_debug_bus      )
@@ -279,22 +279,42 @@ module peripherals
   ///                                                            ///
   //////////////////////////////////////////////////////////////////
 
-  apb_timer
-  apb_timer_i
+  // apb_timer
+  // apb_timer_i
+  // (
+  //   .HCLK       ( clk_int[3]   ),
+  //   .HRESETn    ( rst_n        ),
+
+  //   .PADDR      ( s_timer_bus.paddr[11:0]),
+  //   .PWDATA     ( s_timer_bus.pwdata     ),
+  //   .PWRITE     ( s_timer_bus.pwrite     ),
+  //   .PSEL       ( s_timer_bus.psel       ),
+  //   .PENABLE    ( s_timer_bus.penable    ),
+  //   .PRDATA     ( s_timer_bus.prdata     ),
+  //   .PREADY     ( s_timer_bus.pready     ),
+  //   .PSLVERR    ( s_timer_bus.pslverr    ),
+
+  //   .irq_o      ( timer_irq    )
+  // );
+
+  //////////////////////////////////////////////////////////////////
+  ///                                                            ///
+  /// APB Slave 3: APB MMU                                       ///
+  ///                                                            ///
+  //////////////////////////////////////////////////////////////////
+  apb_mmu
+  apb_mmu_i
   (
-    .HCLK       ( clk_int[3]   ),
-    .HRESETn    ( rst_n        ),
-
-    .PADDR      ( s_timer_bus.paddr[11:0]),
-    .PWDATA     ( s_timer_bus.pwdata     ),
-    .PWRITE     ( s_timer_bus.pwrite     ),
-    .PSEL       ( s_timer_bus.psel       ),
-    .PENABLE    ( s_timer_bus.penable    ),
-    .PRDATA     ( s_timer_bus.prdata     ),
-    .PREADY     ( s_timer_bus.pready     ),
-    .PSLVERR    ( s_timer_bus.pslverr    ),
-
-    .irq_o      ( timer_irq    )
+    .HCLK           ( clk_int[3]        ),
+    .HRESETn        ( rst_n             ),  
+    .PADDR          ( s_mmu_bus.paddr   ),
+    .PWDATA         ( s_mmu_bus.pwdata  ),
+    .PWRITE         ( s_mmu_bus.pwrite  ),
+    .PSEL           ( s_mmu_bus.psel    ),
+    .PENABLE        ( s_mmu_bus.penable ),  
+    .PRDATA         ( s_mmu_bus.prdata  ),
+    .PREADY         ( s_mmu_bus.pready  ),
+    .PSLVERR        ( s_mmu_bus.pslverr )
   );
 
   //////////////////////////////////////////////////////////////////

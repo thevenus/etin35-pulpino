@@ -90,7 +90,7 @@ module apb_mmu
 
         if (PSEL && PENABLE && !PWRITE) begin
             if (apb_addr_trimmed >= `REG_MMU_OUTDATA_START && apb_addr_trimmed <= `REG_MMU_OUTDATA_STOP) begin
-                PRDATA = {14'b0, outdata_reg[apb_addr_trimmed[5:0]]};
+                PRDATA = {14'b0, outdata_reg[apb_addr_trimmed-`REG_MMU_OUTDATA_START]};
             end else if (apb_addr_trimmed >= `REG_MMU_INDATA_START && apb_addr_trimmed <= `REG_MMU_INDATA_STOP) begin
                 PRDATA = indata_reg[apb_addr_trimmed[5:0]];
             end else if (apb_addr_trimmed == `REG_MMU_CTRL) begin 
