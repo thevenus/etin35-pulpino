@@ -22,6 +22,7 @@ set_attr init_hdl_search_path { \
 	../pulpino/ips/apb/apb_timer \
 	../pulpino/ips/apb/apb_uart \
 	../pulpino/ips/apb/apb_uart_sv \
+	../pulpino/ips/apb/apb_mmu \
 	../pulpino/ips/axi/axi2apb \
 	../pulpino/ips/axi/axi_mem_if_DP \
 	../pulpino/ips/axi/axi_node \
@@ -36,6 +37,7 @@ set_attribute init_lib_search_path { \
 	/usr/local-eit/cad2/cmpstm/stm065v536/CORE65LPLVT_5.1/libs \
 	/usr/local-eit/cad2/cmpstm/stm065v536/CLOCK65LPLVT_3.1/libs \
 	/usr/local-eit/cad2/cmpstm/oldmems/mem2010/SPHDL100909-40446@1.0/libs  \
+	/usr/local-eit/cad2/cmpstm/oldmems/mem2011/SPHD110420-48158@1.0/libs \
 	/usr/local-eit/cad2/cmpstm/dicp18/lu_pads_65nm \
 } /
 
@@ -43,6 +45,7 @@ set_attribute library { \
 	CLOCK65LPLVT_nom_1.20V_25C.lib \
 	CORE65LPLVT_nom_1.20V_25C.lib \
 	SPHDL100909_nom_1.20V_25C.lib  \
+	SPHD110420_nom_1.20V_25C.lib \
 	Pads_Oct2012.lib \
 } /
 
@@ -75,7 +78,7 @@ set DESIGN_FILES_SV { \
 	apb_gpio.sv apb_node.sv apb_node_wrap.sv apb_pulpino.sv apb_timer.sv timer.sv \
 	apb_uart.sv apb_uart_sv.sv io_generic_fifo.sv uart_interrupt.sv uart_rx.sv uart_tx.sv \
 	adbg_axi_biu.sv adbg_axi_module.sv adbg_axionly_top.sv adbg_lint_biu.sv \
-	adbg_lint_module.sv adbg_lintonly_top.sv adbg_or1k_biu.sv \
+	adbg_lint_module.sv adbg_lintonly_top.sv adbg_or1k_biu.sv apb_mmu.sv \
 	adbg_or1k_module.sv adbg_or1k_status_reg.sv adbg_top.sv adv_dbg_if.sv \
 	riscv_defines.sv apu_core_package.sv \
 	riscv_alu_basic.sv riscv_alu_div.sv riscv_alu.sv \
@@ -104,6 +107,7 @@ set DESIGN_FILES_V { \
 }
 
 set DESIGN_FILES_VHDL { \
+	sram_wrapper.vhd ram_ctrl.vhd rom.vhd controller.vhd jollof_top.vhd \
 	apb_uart.vhd slib_clock_div.vhd slib_counter.vhd slib_edge_detect.vhd \
 	slib_fifo.vhd slib_input_filter.vhd slib_input_sync.vhd \
 	slib_mv_filter.vhd uart_baudgen.vhd uart_interrupt.vhd \
