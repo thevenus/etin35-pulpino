@@ -3,6 +3,7 @@
 vlib ${MSIM_LIBS_PATH}/MEMORY
 vmap MEMORY ${MSIM_LIBS_PATH}/MEMORY
 vlog -work MEMORY /usr/local-eit/cad2/cmpstm/oldmems/mem2010/SPHDL100909-40446@1.0/behaviour/verilog/SPHDL100909.v
+vlog -work MEMORY /usr/local-eit/cad2/cmpstm/oldmems/mem2011/SPHD110420-48158@1.0/behaviour/verilog/SPHD110420.v
 
 vlib ${MSIM_LIBS_PATH}/PADS
 vmap PADS ${MSIM_LIBS_PATH}/PADS
