@@ -7,6 +7,7 @@ set(SOURCES
     src/uart.c
     src/utils.c
     src/i2c.c
+    src/mmu.c
     )
 
 set(HEADERS
@@ -20,6 +21,7 @@ set(HEADERS
     inc/uart.h
     inc/utils.h
     inc/i2c.h
+    inc/mmu.h
     )
 
 include_directories(inc/)
