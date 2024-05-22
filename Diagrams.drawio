@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-05-22T14:33:21.358Z" agent="Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0" etag="89eph6cOw7yaUmxCskpj" version="24.4.4" type="github" pages="4">
+<mxfile host="app.diagrams.net" modified="2024-05-22T14:35:21.531Z" agent="Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0" etag="v_6wXnpuGO8x08ZeVool" version="24.4.4" type="github" pages="4">
   <diagram name="APB MMU RegMap" id="DrLnBsjFnaRuIujhH_x-">
     <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -827,7 +827,7 @@
             <mxPoint x="379.94" y="160" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="EjwCr-6cDDJyC3er1pOo-1" value="APB Conv Intf" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="EjwCr-6cDDJyC3er1pOo-1" value="Convolution Controller" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="279.94" y="260" width="200" height="200" as="geometry" />
         </mxCell>
         <mxCell id="EjwCr-6cDDJyC3er1pOo-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="EjwCr-6cDDJyC3er1pOo-2" target="EjwCr-6cDDJyC3er1pOo-1">
