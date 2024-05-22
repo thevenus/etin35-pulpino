@@ -96,17 +96,17 @@ optDesign -postRoute -incr -hold
 # Hold is  : 		TNS	0		WNS	0.027
 
 # At this point no timing issues. I did have max_length issue, but this is outside of the scope of this course.
-timeDesign -postRoute -pathReports -drvReports -slackReports -numPaths 50 -prefix pulpino_top_rtl_w_pads_postRoute -outDir
-timeDesign -postRoute -hold -pathReports -slackReports -numPaths 50 -prefix pulpino_top_rtl_w_pads_postRoute -outDir
+timeDesign -postRoute -pathReports -drvReports -slackReports -numPaths 50 -prefix pulpino_top_rtl_w_pads_postRoute -outDir timingReports
+timeDesign -postRoute -hold -pathReports -slackReports -numPaths 50 -prefix pulpino_top_rtl_w_pads_postRoute -outDir timingReports
 timeDesign -postRoute
 timeDesign -postRoute -hold
 addFiller -cell HS65_LH_FILLERPFOP64 HS65_LH_FILLERPFOP32 HS65_LH_FILLERPFOP16 HS65_LH_FILLERPFOP12 HS65_LH_FILLERPFOP9 HS65_LH_FILLERPFOP8 HS65_LH_FILLERPFP4 HS65_LH_FILLERPFP3 HS65_LH_FILLERPFP2 HS65_LH_FILLERPFP1 -prefix FILLER -markFixed
 
 # writing to output files
-write_sdf pulpino_top_rtl_w_pads_sdf.sdf
-saveNetlist pulpino_top_rtl_w_pads_v.v
-rcOut -spf pulpino_top_rtl_w_pads_spf.spf -rc_corner SS
-rcOut -spef pulpino_top_rtl_w_pads_spef.spef -rc_corner SS
+write_sdf outputs/pulpino_top_pnr.sdf
+saveNetlist outputs/pulpino_top_pnr.v
+rcOut -spf outputs/pulpino_top_pnr.spf -rc_corner SS
+rcOut -spef outputs/pulpino_top_pnr.spef -rc_corner SS
 saveDesign pulpino_top_rtl_w_pads_1
 
 
