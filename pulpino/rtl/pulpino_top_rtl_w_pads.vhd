@@ -103,7 +103,7 @@ begin
       	      PADIO  => clk
 	      );
 
-  OutPads : for i in 0 to 9 generate
+  OutPads : for i in 0 to 10 generate
     OutPad : CPAD_S_74x50u_OUT
       port map (COREIO => UTPi(i),
         	PADIO  => UTP(i)
