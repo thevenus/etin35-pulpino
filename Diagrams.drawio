@@ -1,128 +1,236 @@
-<mxfile host="app.diagrams.net" modified="2024-05-23T15:19:23.892Z" agent="Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0" etag="NtUHUKVZ-GyPUVlMwt2r" version="24.4.6" type="github" pages="6">
-  <diagram name="APB MMU RegMap" id="DrLnBsjFnaRuIujhH_x-">
-    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+<mxfile host="app.diagrams.net" modified="2024-05-24T11:56:19.666Z" agent="Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0" etag="pon4D1ICIaCErFxVqk2V" version="24.4.7" type="github" pages="6">
+  <diagram name="APB MMU and Conv RegMap" id="DrLnBsjFnaRuIujhH_x-">
+    <mxGraphModel dx="1062" dy="625" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="1700" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="X3KNa_CepXRgLISpwKy6-1" value="8 bits - x11" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="160" y="440" width="120" height="40" as="geometry" />
+        <mxCell id="X3KNa_CepXRgLISpwKy6-1" value="8 bits - x11" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="270" y="230" width="120" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="X3KNa_CepXRgLISpwKy6-2" value="8 bits - x21" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="280" y="440" width="120" height="40" as="geometry" />
+        <mxCell id="X3KNa_CepXRgLISpwKy6-2" value="8 bits - x21" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="390" y="230" width="120" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="X3KNa_CepXRgLISpwKy6-3" value="8 bits - x31" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="400" y="440" width="120" height="40" as="geometry" />
+        <mxCell id="X3KNa_CepXRgLISpwKy6-3" value="8 bits - x31" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="510" y="230" width="120" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="X3KNa_CepXRgLISpwKy6-4" value="8 bits - x41" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="520" y="440" width="120" height="40" as="geometry" />
+        <mxCell id="X3KNa_CepXRgLISpwKy6-4" value="8 bits - x41" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="630" y="230" width="120" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="X3KNa_CepXRgLISpwKy6-5" value="Input data registers - indata_reg - 64x32 bits" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="160" y="410" width="260" height="30" as="geometry" />
+        <mxCell id="X3KNa_CepXRgLISpwKy6-5" value="MMU Input data registers - indata_reg - 64x32 bits" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="270" y="200" width="290" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="X3KNa_CepXRgLISpwKy6-6" value="&lt;div&gt;x1A10_3100&lt;/div&gt;&lt;div&gt;x1A10_31FF&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="640" y="440" width="90" height="40" as="geometry" />
+        <mxCell id="X3KNa_CepXRgLISpwKy6-6" value="&lt;div&gt;x1A10_3100&lt;/div&gt;&lt;div&gt;x1A10_31FF&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="750" y="230" width="90" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="X3KNa_CepXRgLISpwKy6-7" value="28 bits - xxxxx" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="160" y="200" width="340" height="40" as="geometry" />
+        <mxCell id="X3KNa_CepXRgLISpwKy6-7" value="28 bits - xxxxx" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="270" y="50" width="340" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="X3KNa_CepXRgLISpwKy6-8" value="&lt;font style=&quot;font-size: 11px;&quot;&gt;3 bit - number of input matrices&lt;br&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="500" y="200" width="100" height="40" as="geometry" />
+        <mxCell id="X3KNa_CepXRgLISpwKy6-8" value="&lt;font style=&quot;font-size: 11px;&quot;&gt;3 bit - number of input matrices&lt;br&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="610" y="50" width="100" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="X3KNa_CepXRgLISpwKy6-9" value="1 bit - start" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="600" y="200" width="40" height="40" as="geometry" />
+        <mxCell id="X3KNa_CepXRgLISpwKy6-9" value="1 bit - start" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="710" y="50" width="40" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="X3KNa_CepXRgLISpwKy6-10" value="Control register - ctrl_reg - 1x32 bits" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="160" y="170" width="210" height="30" as="geometry" />
+        <mxCell id="X3KNa_CepXRgLISpwKy6-10" value="MMU Control register - ctrl_reg - 1x32 bits" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="270" y="20" width="250" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="X3KNa_CepXRgLISpwKy6-11" value="&lt;div&gt;x1A10_3000&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="640" y="205" width="90" height="30" as="geometry" />
+        <mxCell id="X3KNa_CepXRgLISpwKy6-11" value="&lt;div&gt;x1A10_3000&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="750" y="55" width="90" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="X3KNa_CepXRgLISpwKy6-12" value="30 bits - not used" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="160" y="320" width="400" height="40" as="geometry" />
+        <mxCell id="X3KNa_CepXRgLISpwKy6-12" value="30 bits - not used" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="270" y="140" width="400" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="X3KNa_CepXRgLISpwKy6-13" value="&lt;div&gt;1 bit -&amp;nbsp;&lt;/div&gt;&lt;div&gt;error&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="560" y="320" width="40" height="40" as="geometry" />
+        <mxCell id="X3KNa_CepXRgLISpwKy6-13" value="&lt;div&gt;1 bit -&amp;nbsp;&lt;/div&gt;&lt;div&gt;error&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="670" y="140" width="40" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="X3KNa_CepXRgLISpwKy6-14" value="1 bit - done" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="600" y="320" width="40" height="40" as="geometry" />
+        <mxCell id="X3KNa_CepXRgLISpwKy6-14" value="1 bit - done" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="710" y="140" width="40" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="X3KNa_CepXRgLISpwKy6-15" value="Status register - status_reg - 1x32 bits" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="160" y="290" width="230" height="30" as="geometry" />
+        <mxCell id="X3KNa_CepXRgLISpwKy6-15" value="MMU Status register - status_reg - 1x32 bits" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="270" y="110" width="260" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="X3KNa_CepXRgLISpwKy6-16" value="&lt;div&gt;x1A10_3004&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="640" y="325" width="90" height="30" as="geometry" />
+        <mxCell id="X3KNa_CepXRgLISpwKy6-16" value="&lt;div&gt;x1A10_3004&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="750" y="145" width="90" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="X3KNa_CepXRgLISpwKy6-17" value="0" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="610" y="480" width="30" height="30" as="geometry" />
+        <mxCell id="X3KNa_CepXRgLISpwKy6-17" value="0" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="720" y="270" width="30" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="X3KNa_CepXRgLISpwKy6-18" value="7" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="520" y="480" width="30" height="30" as="geometry" />
+        <mxCell id="X3KNa_CepXRgLISpwKy6-18" value="7" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="630" y="270" width="30" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="X3KNa_CepXRgLISpwKy6-19" value="15" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="395" y="480" width="40" height="30" as="geometry" />
+        <mxCell id="X3KNa_CepXRgLISpwKy6-19" value="15" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="505" y="270" width="40" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="X3KNa_CepXRgLISpwKy6-20" value="8" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="490" y="480" width="30" height="30" as="geometry" />
+        <mxCell id="X3KNa_CepXRgLISpwKy6-20" value="8" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="600" y="270" width="30" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="X3KNa_CepXRgLISpwKy6-21" value="23" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="275" y="480" width="40" height="30" as="geometry" />
+        <mxCell id="X3KNa_CepXRgLISpwKy6-21" value="23" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="385" y="270" width="40" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="X3KNa_CepXRgLISpwKy6-22" value="16" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="365" y="480" width="40" height="30" as="geometry" />
+        <mxCell id="X3KNa_CepXRgLISpwKy6-22" value="16" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="475" y="270" width="40" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="X3KNa_CepXRgLISpwKy6-23" value="31" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="155" y="480" width="40" height="30" as="geometry" />
+        <mxCell id="X3KNa_CepXRgLISpwKy6-23" value="31" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="265" y="270" width="40" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="X3KNa_CepXRgLISpwKy6-24" value="24" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="245" y="480" width="40" height="30" as="geometry" />
+        <mxCell id="X3KNa_CepXRgLISpwKy6-24" value="24" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="355" y="270" width="40" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="X3KNa_CepXRgLISpwKy6-25" value="0" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="610" y="170" width="30" height="30" as="geometry" />
+        <mxCell id="X3KNa_CepXRgLISpwKy6-25" value="0" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="720" y="20" width="30" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="X3KNa_CepXRgLISpwKy6-26" value="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="570" y="170" width="30" height="30" as="geometry" />
+        <mxCell id="X3KNa_CepXRgLISpwKy6-26" value="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="680" y="20" width="30" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="X3KNa_CepXRgLISpwKy6-27" value="3" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="500" y="170" width="30" height="30" as="geometry" />
+        <mxCell id="X3KNa_CepXRgLISpwKy6-27" value="3" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="610" y="20" width="30" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="X3KNa_CepXRgLISpwKy6-28" value="0" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="610" y="290" width="30" height="30" as="geometry" />
+        <mxCell id="X3KNa_CepXRgLISpwKy6-28" value="0" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="720" y="110" width="30" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="X3KNa_CepXRgLISpwKy6-29" value="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="570" y="290" width="30" height="30" as="geometry" />
+        <mxCell id="X3KNa_CepXRgLISpwKy6-29" value="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="680" y="110" width="30" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="X3KNa_CepXRgLISpwKy6-30" value="14 bits - not used" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="160" y="560" width="150" height="40" as="geometry" />
+        <mxCell id="X3KNa_CepXRgLISpwKy6-30" value="14 bits - not used" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="270" y="330" width="150" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="X3KNa_CepXRgLISpwKy6-31" value="18 bits - p11" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="310" y="560" width="330" height="40" as="geometry" />
+        <mxCell id="X3KNa_CepXRgLISpwKy6-31" value="18 bits - p11" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="420" y="330" width="330" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="X3KNa_CepXRgLISpwKy6-32" value="Output data registers - outdata_reg - 160x32 bits" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="160" y="530" width="280" height="30" as="geometry" />
+        <mxCell id="X3KNa_CepXRgLISpwKy6-32" value="MMU Output data registers - outdata_reg - 160x32 bits" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="270" y="300" width="310" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="X3KNa_CepXRgLISpwKy6-33" value="&lt;div&gt;x1A10_3200&lt;/div&gt;&lt;div&gt;x1A10_3480&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="640" y="560" width="90" height="40" as="geometry" />
+        <mxCell id="X3KNa_CepXRgLISpwKy6-33" value="&lt;div&gt;x1A10_3200&lt;/div&gt;&lt;div&gt;x1A10_3480&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="750" y="330" width="90" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="X3KNa_CepXRgLISpwKy6-34" value="0" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="610" y="600" width="30" height="30" as="geometry" />
+        <mxCell id="X3KNa_CepXRgLISpwKy6-34" value="0" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="720" y="370" width="30" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="X3KNa_CepXRgLISpwKy6-35" value="18" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="275" y="600" width="40" height="30" as="geometry" />
+        <mxCell id="X3KNa_CepXRgLISpwKy6-35" value="18" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="385" y="370" width="40" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="X3KNa_CepXRgLISpwKy6-36" value="17" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="310" y="600" width="40" height="30" as="geometry" />
+        <mxCell id="X3KNa_CepXRgLISpwKy6-36" value="17" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="420" y="370" width="40" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="X3KNa_CepXRgLISpwKy6-37" value="31" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="155" y="600" width="40" height="30" as="geometry" />
+        <mxCell id="X3KNa_CepXRgLISpwKy6-37" value="31" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="265" y="370" width="40" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="X3KNa_CepXRgLISpwKy6-38" value="&lt;div&gt;Software operation:&lt;/div&gt;&lt;div&gt;&lt;ul&gt;&lt;li&gt;set the input data registers by sending input matrix elements. Each element is assumed to be&lt;br&gt;8 bits, unsigned. 4 elements are stored per register. The sequence of the elements should be&lt;br&gt;column-wise - x11, x21, x31... At least 8 registers should be loaded - corresponding to 32 &lt;br&gt;elements, one 4x8 matrix size&lt;br&gt;&lt;/li&gt;&lt;li&gt;set the number of input matrices in ctrl_reg[3:1]. The max number of matrices that can be loaded&lt;br&gt;and calculated at one time is 7.&lt;/li&gt;&lt;li&gt;set the start flag in ctrl_reg[0] to initiate MMU&lt;br&gt;&lt;/li&gt;&lt;li&gt;wait until done bit in status_reg[0] or error bit in status_reg[1] are set&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="160" y="660" width="580" height="180" as="geometry" />
+        <mxCell id="X3KNa_CepXRgLISpwKy6-38" value="&lt;div&gt;Software operation:&lt;/div&gt;&lt;div&gt;&lt;ul&gt;&lt;li&gt;set the input data registers by sending input matrix elements. Each element is assumed to be&lt;br&gt;8 bits, unsigned. 4 elements are stored per register. The sequence of the elements should be&lt;br&gt;column-wise - x11, x21, x31... At least 8 registers should be loaded - corresponding to 32 &lt;br&gt;elements, one 4x8 matrix size&lt;br&gt;&lt;/li&gt;&lt;li&gt;set the number of input matrices in ctrl_reg[3:1]. The max number of matrices that can be loaded&lt;br&gt;and calculated at one time is 7.&lt;/li&gt;&lt;li&gt;set the start flag in ctrl_reg[0] to initiate MMU&lt;br&gt;&lt;/li&gt;&lt;li&gt;wait until done bit in status_reg[0] or error bit in status_reg[1] are set&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="260" y="410" width="580" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="0osnXs_Zn_U0B0LhuxgP-1" value="28 bits - row data" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="380" y="860" width="368" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="0osnXs_Zn_U0B0LhuxgP-3" value="1 bit - filter/in" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="860" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="0osnXs_Zn_U0B0LhuxgP-4" value="1 bit - update bit" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="310" y="860" width="38" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="0osnXs_Zn_U0B0LhuxgP-5" value="Conv Input data register - indata_reg - 1x32 bits" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="268" y="830" width="280" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="0osnXs_Zn_U0B0LhuxgP-6" value="&lt;div&gt;x1A10_3508&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="748" y="865" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="0osnXs_Zn_U0B0LhuxgP-7" value="31 bits - xxxxx" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="268" y="680" width="442" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="0osnXs_Zn_U0B0LhuxgP-9" value="1 bit - start" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="708" y="680" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="0osnXs_Zn_U0B0LhuxgP-10" value="Conv Control register - ctrl_reg - 1x32 bits" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="268" y="650" width="250" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="0osnXs_Zn_U0B0LhuxgP-11" value="&lt;div&gt;x1A10_3500&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="748" y="685" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="0osnXs_Zn_U0B0LhuxgP-12" value="29 bits - not used" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="268" y="770" width="362" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="0osnXs_Zn_U0B0LhuxgP-13" value="&lt;div&gt;1 bit -&amp;nbsp;&lt;/div&gt;&lt;div&gt;dreq&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="668" y="770" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="0osnXs_Zn_U0B0LhuxgP-14" value="1 bit - done" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="708" y="770" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="0osnXs_Zn_U0B0LhuxgP-15" value="Conv Status register - status_reg - 1x32 bits" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="268" y="740" width="260" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="0osnXs_Zn_U0B0LhuxgP-16" value="&lt;div&gt;x1A10_3504&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="748" y="775" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="0osnXs_Zn_U0B0LhuxgP-17" value="0" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="718" y="900" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="0osnXs_Zn_U0B0LhuxgP-18" value="7" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="628" y="900" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="0osnXs_Zn_U0B0LhuxgP-19" value="15" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="503" y="900" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="0osnXs_Zn_U0B0LhuxgP-20" value="8" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="598" y="900" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="0osnXs_Zn_U0B0LhuxgP-21" value="23" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="383" y="900" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="0osnXs_Zn_U0B0LhuxgP-22" value="16" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="473" y="900" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="0osnXs_Zn_U0B0LhuxgP-23" value="31" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="263" y="900" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="0osnXs_Zn_U0B0LhuxgP-24" value="24" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="353" y="900" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="0osnXs_Zn_U0B0LhuxgP-25" value="0" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="718" y="650" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="0osnXs_Zn_U0B0LhuxgP-26" value="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="680" y="650" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="0osnXs_Zn_U0B0LhuxgP-28" value="0" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="718" y="740" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="0osnXs_Zn_U0B0LhuxgP-29" value="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="678" y="740" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="0osnXs_Zn_U0B0LhuxgP-32" value="Conv Output data registers - outdata_reg - 196x32 bits" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="268" y="940" width="310" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="vCotL9Kl9GbVIRL2TXpC-1" value="&lt;div style=&quot;font-size: 11px;&quot;&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;1 bit -&amp;nbsp;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 11px;&quot;&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;channel done&lt;font style=&quot;font-size: 11px;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="628" y="770" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="vCotL9Kl9GbVIRL2TXpC-2" value="2" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="638" y="740" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="vCotL9Kl9GbVIRL2TXpC-3" value="3" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="600" y="740" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ifDxqeAG2rDj-_PrVtmx-1" value="2 bit -xx" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="348" y="860" width="38" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ifDxqeAG2rDj-_PrVtmx-3" value="8 bits - x11" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="268" y="970" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ifDxqeAG2rDj-_PrVtmx-4" value="8 bits - x21" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="388" y="970" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ifDxqeAG2rDj-_PrVtmx-5" value="8 bits - x31" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="508" y="970" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ifDxqeAG2rDj-_PrVtmx-6" value="8 bits - x41" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="628" y="970" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ifDxqeAG2rDj-_PrVtmx-7" value="&lt;div&gt;x1A10_350C&lt;/div&gt;&lt;div&gt;x1A10_3818&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="748" y="970" width="90" height="40" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
   <diagram id="yuAJjKsihgLR2WHk-iYW" name="APB MMU ASMD">
-    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1434" dy="844" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="1700" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -988,7 +1096,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="GLAqofC2DSWdc_ZQmK2Z" name="APB Convolution Sytem Arch">
-    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1434" dy="844" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="1700" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
