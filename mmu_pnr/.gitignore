@@ -1,0 +1,15 @@
+.synopsys_dc.setup
+fv/
+comp.dv
+medfilt.cmd
+modelsim.ini
+netlists/
+soc/
+testvectors.txt
+vhdl/
+WORK/
+timingReports/
+outputs/
+.cadence/
+*log*
+*cmd*

@@ -1,0 +1,7 @@
+catch { setAnalysisMode -analysisType bcwc }
+setExtractRCMode  -engine preRoute
+catch { setIlmMode -keepHighFanoutPorts true -keepLoopBack false -keepFlatten true }
+catch { setViaGenMode -ignore_DRC false }
+catch { setViaGenMode -use_cce false }
+catch { setViaGenMode -use_fgc 0 }
+catch { setDelayCalMode -engine aae }
