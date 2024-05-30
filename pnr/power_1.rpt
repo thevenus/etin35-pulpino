@@ -1,0 +1,1737 @@
+****************************************
+Report : Time Based Power
+	-hierarchy
+	-verbose
+Design : pulpino_top_rtl_w_pads
+Version: O-2018.06-SP5
+Date   : Thu May 30 16:45:00 2024
+****************************************
+
+Sampling Interval: 0.001 ns
+
+Library(s) Used:
+
+    CLOCK65LPLVT (File: /usr/local-eit/cad2/cmpstm/stm065v536/CLOCK65LPLVT_3.1/libs/CLOCK65LPLVT_nom_1.20V_25C.db)
+    CORE65LPLVT (File: /usr/local-eit/cad2/cmpstm/stm065v536/CORE65LPLVT_5.1/libs/CORE65LPLVT_nom_1.20V_25C.db)
+    SPHDL100909 (File: /usr/local-eit/cad2/cmpstm/oldmems/mem2010/SPHDL100909-40446@1.0/libs/SPHDL100909_nom_1.20V_25C.db)
+    PAD (File: /usr/local-eit/cad2/cmpstm/dicp18/lu_pads_65nm/Pads_Oct2012.db)
+
+
+Operating Conditions: nom_1.20V_25C   Library: CLOCK65LPLVT
+Wire Load Model Mode: enclosed
+
+Cell               Design       Wire_model  Library       Selection_type
+--------------------------------------------------------------------------------
+                   pulpino_top_rtl_w_pads
+                                area_780Kto1170K
+                                            CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i
+                   core_region_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_ID_MASTER_WIDTH2_AXI_ID_SLAVE_WIDTH4_AXI_USER_WIDTH1_USE_ZERO_RISCY0_RISCY_RV32F0_ZERO_RV32M1_ZERO_RV32E0_core_master_AXI_BUS_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_ID_WIDTH2_AXI_USER_WIDTH1_Master_dbg_master_AXI_BUS_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_ID_WIDTH2_AXI_USER_WIDTH1_Master_data_slave_AXI_BUS_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_ID_WIDTH4_AXI_USER_WIDTH1_Slave_instr_slave_AXI_BUS_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_ID_WIDTH4_AXI_USER_WIDTH1_Slave_debug_DEBUG_BUS_Slave
+                                area_780Kto1170K
+                                            CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/data_mem_axi_if
+                   axi_mem_if_SP_wrap_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_ID_WIDTH4_AXI_USER_WIDTH1_MEM_ADDR_WIDTH15_slave_AXI_BUS_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_ID_WIDTH4_AXI_USER_WIDTH1_Slave
+                                area_30Kto36K
+                                            CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/data_mem_axi_if/axi_mem_if_SP_i_Slave_aw_buffer_LP
+                   axi_aw_buffer_ID_WIDTH4_ADDR_WIDTH32_USER_WIDTH1_BUFFER_DEPTH4_13858
+                                area_3Kto4K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/data_mem_axi_if/axi_mem_if_SP_i_Slave_aw_buffer_LP/buffer_i_cg_cell
+                   cluster_clock_gating_13887
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/data_mem_axi_if/axi_mem_if_SP_i_Slave_r_buffer_LP
+                   axi_r_buffer_ID_WIDTH4_DATA_WIDTH32_USER_WIDTH1_BUFFER_DEPTH4_13862
+                                area_7Kto8K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/data_mem_axi_if/axi_mem_if_SP_i_Slave_r_buffer_LP/buffer_i_cg_cell
+                   cluster_clock_gating_13884
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/data_mem_axi_if/axi_mem_if_SP_i_Slave_ar_buffer_LP
+                   axi_ar_buffer_ID_WIDTH4_ADDR_WIDTH32_USER_WIDTH1_BUFFER_DEPTH4_13857
+                                area_3Kto4K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/data_mem_axi_if/axi_mem_if_SP_i_Slave_ar_buffer_LP/buffer_i_cg_cell
+                   cluster_clock_gating_13886
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/data_mem_axi_if/axi_mem_if_SP_i_Slave_b_buffer_LP
+                   axi_b_buffer_ID_WIDTH4_USER_WIDTH1_BUFFER_DEPTH4_13859
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/data_mem_axi_if/axi_mem_if_SP_i_WRITE_CTRL
+                   axi_write_only_ctrl_AXI4_ADDRESS_WIDTH32_AXI4_RDATA_WIDTH32_AXI4_WDATA_WIDTH32_AXI4_ID_WIDTH4_AXI4_USER_WIDTH1_AXI_NUMBYTES4_MEM_ADDR_WIDTH15
+                                area_1Kto2K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/data_mem_axi_if/axi_mem_if_SP_i_READ_CTRL
+                   axi_read_only_ctrl_AXI4_ADDRESS_WIDTH32_AXI4_RDATA_WIDTH32_AXI4_WDATA_WIDTH32_AXI4_ID_WIDTH4_AXI4_USER_WIDTH1_AXI_NUMBYTES4_MEM_ADDR_WIDTH15
+                                area_3Kto4K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/data_mem_axi_if/axi_mem_if_SP_i_Slave_w_buffer_LP
+                   axi_w_buffer_DATA_WIDTH32_USER_WIDTH1_BUFFER_DEPTH4_13865
+                                area_8Kto9K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/data_mem_axi_if/axi_mem_if_SP_i_Slave_w_buffer_LP/buffer_i_cg_cell
+                   cluster_clock_gating_13885
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/instr_ram_mux_i
+                   ram_mux_ADDR_WIDTH16_OUT_WIDTH32_IN0_WIDTH32_IN1_WIDTH32
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/axi_slice_core2axi
+                   axi_slice_wrap_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_USER_WIDTH1_AXI_ID_WIDTH2_SLICE_DEPTH2_axi_slave_AXI_BUS_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_ID_WIDTH2_AXI_USER_WIDTH1_Slave_axi_master_AXI_BUS_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_ID_WIDTH2_AXI_USER_WIDTH1_Master
+                                area_12Kto18K
+                                            CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/axi_slice_core2axi/WITH_SLICE.axi_slice_i_w_buffer_i
+                   axi_w_buffer_DATA_WIDTH32_USER_WIDTH1_BUFFER_DEPTH2
+                                area_4Kto5K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/axi_slice_core2axi/WITH_SLICE.axi_slice_i_w_buffer_i/buffer_i_cg_cell
+                   cluster_clock_gating_13894
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/axi_slice_core2axi/WITH_SLICE.axi_slice_i_r_buffer_i
+                   axi_r_buffer_ID_WIDTH2_DATA_WIDTH32_USER_WIDTH1_BUFFER_DEPTH2
+                                area_3Kto4K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/axi_slice_core2axi/WITH_SLICE.axi_slice_i_r_buffer_i/buffer_i_cg_cell
+                   cluster_clock_gating_13893
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/axi_slice_core2axi/WITH_SLICE.axi_slice_i_b_buffer_i
+                   axi_b_buffer_ID_WIDTH2_USER_WIDTH1_BUFFER_DEPTH2
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/axi_slice_core2axi/WITH_SLICE.axi_slice_i_aw_buffer_i
+                   axi_aw_buffer_ID_WIDTH2_ADDR_WIDTH32_USER_WIDTH1_BUFFER_DEPTH2
+                                area_3Kto4K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/axi_slice_core2axi/WITH_SLICE.axi_slice_i_aw_buffer_i/buffer_i_cg_cell
+                   cluster_clock_gating_13896
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/axi_slice_core2axi/WITH_SLICE.axi_slice_i_ar_buffer_i
+                   axi_ar_buffer_ID_WIDTH2_ADDR_WIDTH32_USER_WIDTH1_BUFFER_DEPTH2
+                                area_3Kto4K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/axi_slice_core2axi/WITH_SLICE.axi_slice_i_ar_buffer_i/buffer_i_cg_cell
+                   cluster_clock_gating_13895
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/core2axi_i
+                   core2axi_wrap_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_USER_WIDTH1_AXI_ID_WIDTH2_REGISTERED_GRANT40h46414c5345_master_AXI_BUS_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_ID_WIDTH2_AXI_USER_WIDTH1_Master
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/adv_dbg_if_i
+                   adv_dbg_if_NB_CORES1_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_USER_WIDTH1_AXI_ID_WIDTH2
+                                area_24Kto30K
+                                            CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/adv_dbg_if_i/dbg_module_i_i_dbg_cpu_or1k
+                   adbg_or1k_module_NB_CORES1
+                                area_4Kto5K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/adv_dbg_if_i/dbg_module_i_i_dbg_cpu_or1k/or1k_crc_i
+                   adbg_crc32_13792
+                                area_1Kto2K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/adv_dbg_if_i/dbg_module_i_i_dbg_cpu_or1k/or1k_statusreg_i
+                   adbg_or1k_status_reg_NB_CORES1
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/adv_dbg_if_i/dbg_module_i_i_dbg_cpu_or1k/or1k_biu_i
+                   adbg_or1k_biu_NB_CORES1
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/adv_dbg_if_i/cluster_tap_i
+                   adbg_tap_top area_2Kto3K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/adv_dbg_if_i/dbg_module_i_i_dbg_axi
+                   adbg_axi_module_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_USER_WIDTH1_AXI_ID_WIDTH2
+                                area_12Kto18K
+                                            CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/adv_dbg_if_i/dbg_module_i_i_dbg_axi/axi_crc_i
+                   adbg_crc32   area_1Kto2K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/adv_dbg_if_i/dbg_module_i_i_dbg_axi/axi_biu_i
+                   adbg_axi_biu_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_USER_WIDTH1_AXI_ID_WIDTH2
+                                area_5Kto6K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/adv_dbg_if_i/dbg_module_i_i_dbg_axi/add_383_50
+                   add_unsigned_2766
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/instr_mem
+                   instr_ram_wrap_RAM_SIZE32768_DATA_WIDTH32
+                                area_234Kto312K
+                                            CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/instr_mem/boot_rom_wrap_i
+                   boot_rom_wrap_DATA_WIDTH32
+                                area_5Kto6K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/instr_mem_axi_if
+                   axi_mem_if_SP_wrap_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_ID_WIDTH4_AXI_USER_WIDTH1_MEM_ADDR_WIDTH16_slave_AXI_BUS_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_ID_WIDTH4_AXI_USER_WIDTH1_Slave
+                                area_30Kto36K
+                                            CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/instr_mem_axi_if/axi_mem_if_SP_i_Slave_r_buffer_LP
+                   axi_r_buffer_ID_WIDTH4_DATA_WIDTH32_USER_WIDTH1_BUFFER_DEPTH4
+                                area_7Kto8K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/instr_mem_axi_if/axi_mem_if_SP_i_Slave_r_buffer_LP/buffer_i_cg_cell
+                   cluster_clock_gating_13889
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/instr_mem_axi_if/axi_mem_if_SP_i_Slave_aw_buffer_LP
+                   axi_aw_buffer_ID_WIDTH4_ADDR_WIDTH32_USER_WIDTH1_BUFFER_DEPTH4
+                                area_3Kto4K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/instr_mem_axi_if/axi_mem_if_SP_i_Slave_aw_buffer_LP/buffer_i_cg_cell
+                   cluster_clock_gating_13892
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/instr_mem_axi_if/axi_mem_if_SP_i_READ_CTRL
+                   axi_read_only_ctrl_AXI4_ADDRESS_WIDTH32_AXI4_RDATA_WIDTH32_AXI4_WDATA_WIDTH32_AXI4_ID_WIDTH4_AXI4_USER_WIDTH1_AXI_NUMBYTES4_MEM_ADDR_WIDTH16
+                                area_3Kto4K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/instr_mem_axi_if/axi_mem_if_SP_i_Slave_b_buffer_LP
+                   axi_b_buffer_ID_WIDTH4_USER_WIDTH1_BUFFER_DEPTH4
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/instr_mem_axi_if/axi_mem_if_SP_i_Slave_w_buffer_LP
+                   axi_w_buffer_DATA_WIDTH32_USER_WIDTH1_BUFFER_DEPTH4
+                                area_8Kto9K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/instr_mem_axi_if/axi_mem_if_SP_i_Slave_w_buffer_LP/buffer_i_cg_cell
+                   cluster_clock_gating_13890
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/instr_mem_axi_if/axi_mem_if_SP_i_Slave_ar_buffer_LP
+                   axi_ar_buffer_ID_WIDTH4_ADDR_WIDTH32_USER_WIDTH1_BUFFER_DEPTH4
+                                area_3Kto4K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/instr_mem_axi_if/axi_mem_if_SP_i_Slave_ar_buffer_LP/buffer_i_cg_cell
+                   cluster_clock_gating_13891
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/instr_mem_axi_if/axi_mem_if_SP_i_WRITE_CTRL
+                   axi_write_only_ctrl_AXI4_ADDRESS_WIDTH32_AXI4_RDATA_WIDTH32_AXI4_WDATA_WIDTH32_AXI4_ID_WIDTH4_AXI4_USER_WIDTH1_AXI_NUMBYTES4_MEM_ADDR_WIDTH16
+                                area_1Kto2K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/data_mem
+                   sp_ram_wrap_RAM_SIZE32768_DATA_WIDTH32
+                                area_234Kto312K
+                                            CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/data_ram_mux_i
+                   ram_mux_ADDR_WIDTH15_OUT_WIDTH32_IN0_WIDTH32_IN1_WIDTH32
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/CORE.RISCV_CORE
+                   riscv_core_N_EXT_PERF_COUNTERS0_FPU0_SHARED_FP0_SHARED_FP_DIVSQRT2
+                                area_156Kto234K
+                                            CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/CORE.RISCV_CORE/load_store_unit_i
+                   riscv_load_store_unit
+                                area_3Kto4K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/CORE.RISCV_CORE/load_store_unit_i/ADD_UNS_OP
+                   add_unsigned_1331_17116
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/CORE.RISCV_CORE/cs_registers_i
+                   riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE0
+                                area_6Kto7K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/CORE.RISCV_CORE/cs_registers_i/inc_ADD_UNS_OP_75
+                   increment_unsigned_988_989
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/CORE.RISCV_CORE/debug_unit_i
+                   riscv_debug_unit
+                                area_4Kto5K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/CORE.RISCV_CORE/id_stage_i
+                   riscv_id_stage_N_HWLP2_PULP_SECURE0_FPU0_APU0_SHARED_FP0_SHARED_DSP_MULT0_SHARED_INT_DIV0_SHARED_FP_DIVSQRT2_WAPUTYPE0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5
+                                area_78Kto156K
+                                            CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/CORE.RISCV_CORE/id_stage_i/controller_i
+                   riscv_controller_FPU0
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/CORE.RISCV_CORE/id_stage_i/hwloop_regs_i
+                   riscv_hwloop_regs_N_REGS2
+                                area_9Kto12K
+                                            CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/CORE.RISCV_CORE/id_stage_i/hwloop_regs_i/dec_sub_103_50_I2_7
+                   decrement_unsigned_990_991_24833
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/CORE.RISCV_CORE/id_stage_i/hwloop_regs_i/dec_sub_103_50_I1_12
+                   decrement_unsigned_990_991
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/CORE.RISCV_CORE/id_stage_i/int_controller_i
+                   riscv_int_controller_PULP_SECURE0
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/CORE.RISCV_CORE/id_stage_i/add_537_37_Y_add_536_37
+                   add_unsigned_1331_17118
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/CORE.RISCV_CORE/id_stage_i/dec_sub_468_53_74
+                   decrement_unsigned_990_991_17152
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/CORE.RISCV_CORE/id_stage_i/registers_i
+                   riscv_register_file_ADDR_WIDTH6_FPU0
+                                area_60Kto66K
+                                            CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/CORE.RISCV_CORE/id_stage_i/add_584_49_Y_add_581_38_Y_add_580_38
+                   add_unsigned_1331_17117
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/CORE.RISCV_CORE/id_stage_i/decoder_i
+                   riscv_decoder_FPU0_PULP_SECURE0_SHARED_FP0_SHARED_DSP_MULT0_SHARED_INT_DIV0_SHARED_FP_DIVSQRT2_WAPUTYPE0_APU_WOP_CPU6
+                                area_1Kto2K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/CORE.RISCV_CORE/core_clock_gate_i
+                   cluster_clock_gating
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/CORE.RISCV_CORE/ex_stage_i
+                   riscv_ex_stage_FPU0_SHARED_FP0_SHARED_DSP_MULT0_SHARED_INT_DIV0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5
+                                area_30Kto36K
+                                            CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/CORE.RISCV_CORE/ex_stage_i/alu_i
+                   riscv_alu_SHARED_INT_DIV0_FPU0
+                                area_12Kto18K
+                                            CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/CORE.RISCV_CORE/ex_stage_i/alu_i/sra_269_105
+                   arith_shift_right_vlog_unsigned
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/CORE.RISCV_CORE/ex_stage_i/alu_i/add_182_44
+                   add_unsigned_1331
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/CORE.RISCV_CORE/ex_stage_i/alu_i/csa_tree_alu_popcnt_i_add_1154_39_groupi
+                   csa_tree_alu_popcnt_i_add_1154_39_group_17940
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/CORE.RISCV_CORE/ex_stage_i/alu_i/sll_882_39
+                   shift_left_vlog_unsigned_2311_17111
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/CORE.RISCV_CORE/ex_stage_i/alu_i/sra_270_105
+                   arith_shift_right_vlog_unsigned_17112
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/CORE.RISCV_CORE/ex_stage_i/alu_i/int_div.div_i
+                   riscv_alu_div
+                                area_8Kto9K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/CORE.RISCV_CORE/ex_stage_i/alu_i/int_div.div_i/gt_103_58
+                   gt_unsigned_1521
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/CORE.RISCV_CORE/ex_stage_i/alu_i/int_div.div_i/minus_100_38
+                   sub_unsigned_1529
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/CORE.RISCV_CORE/ex_stage_i/alu_i/int_div.div_i/sub_107_68_Y_add_107_46
+                   addsub_unsigned_45908
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/CORE.RISCV_CORE/ex_stage_i/alu_i/srl_283_46
+                   shift_right_vlog_unsigned
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/CORE.RISCV_CORE/ex_stage_i/alu_i/alu_ff_i
+                   alu_ff       area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/CORE.RISCV_CORE/ex_stage_i/alu_i/add_168_54
+                   add_signed_17119
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/CORE.RISCV_CORE/ex_stage_i/mult_i
+                   riscv_mult_SHARED_DSP_MULT0
+                                area_12Kto18K
+                                            CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/CORE.RISCV_CORE/ex_stage_i/mult_i/csa_tree_add_114_70_groupi
+                   csa_tree_add_114_70_group_17936
+                                area_3Kto4K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/CORE.RISCV_CORE/ex_stage_i/mult_i/add_230_39_Y_add_283_68_Y_add_270_60
+                   add_signed_2860
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/CORE.RISCV_CORE/ex_stage_i/mult_i/add_230_63_Y_add_283_102_Y_add_270_87
+                   add_signed_2860_17164
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/CORE.RISCV_CORE/ex_stage_i/mult_i/mul_266_61_Y_mul_280_63
+                   mult_signed_4529
+                                area_2Kto3K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/CORE.RISCV_CORE/ex_stage_i/mult_i/mul_267_61
+                   mult_signed_3315
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/CORE.RISCV_CORE/ex_stage_i/mult_i/csa_tree_add_269_87_groupi
+                   csa_tree_add_269_87_group_17938
+                                area_1Kto2K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/CORE.RISCV_CORE/ex_stage_i/mult_i/mul_281_63_Y_mul_230_87_Y_mul_265_61
+                   mult_signed_4383
+                                area_5Kto6K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/CORE.RISCV_CORE/ex_stage_i/mult_i/sra_117_128
+                   arith_shift_right_vlog_unsigned_3259
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/CORE.RISCV_CORE/if_stage_i
+                   riscv_if_stage_N_HWLP2_RDATA_WIDTH32_FPU0
+                                area_18Kto24K
+                                            CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/CORE.RISCV_CORE/if_stage_i/prefetch_32.prefetch_buffer_i
+                   riscv_prefetch_buffer
+                                area_12Kto18K
+                                            CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/CORE.RISCV_CORE/if_stage_i/prefetch_32.prefetch_buffer_i/add_115_54
+                   add_unsigned_17150
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/CORE.RISCV_CORE/if_stage_i/prefetch_32.prefetch_buffer_i/fifo_i
+                   riscv_fetch_fifo
+                                area_9Kto12K
+                                            CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/CORE.RISCV_CORE/if_stage_i/prefetch_32.prefetch_buffer_i/fifo_i/add_182_49
+                   add_unsigned area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/CORE.RISCV_CORE/if_stage_i/compressed_decoder_i
+                   riscv_compressed_decoder_FPU0
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_core_region_i/CORE.RISCV_CORE/if_stage_i/hwloop_controller_i
+                   riscv_hwloop_controller_N_REGS2
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_axi_interconnect_i
+                   axi_node_intf_wrap_NB_MASTER3_NB_SLAVE3_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_ID_WIDTH2_AXI_USER_WIDTH1_slave_AXI_BUS_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_ID_WIDTH2_AXI_USER_WIDTH1_Slave_master_AXI_BUS_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_ID_WIDTH4_AXI_USER_WIDTH1_Master
+                                area_24Kto30K
+                                            CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_axi_interconnect_i/axi_node_i__RESP_BLOCK_GEN[1].RESP_BLOCK
+                   axi_response_block_AXI_ADDRESS_W32_AXI_DATA_W32_AXI_USER_W1_N_INIT_PORT3_N_TARG_PORT3_FIFO_DEPTH_DW8_AXI_ID_IN2_N_REGION1_1
+                                area_5Kto6K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_axi_interconnect_i/axi_node_i__RESP_BLOCK_GEN[1].RESP_BLOCK/BW_ALLOC
+                   axi_BW_allocator_AXI_USER_W1_N_INIT_PORT3_N_TARG_PORT3_AXI_DATA_W32_AXI_ID_IN2_1
+                                area_1Kto2K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_axi_interconnect_i/axi_node_i__RESP_BLOCK_GEN[1].RESP_BLOCK/BR_ALLOC
+                   axi_BR_allocator_AXI_USER_W1_N_INIT_PORT3_N_TARG_PORT3_AXI_DATA_W32_AXI_ID_IN2_1
+                                area_1Kto2K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_axi_interconnect_i/axi_node_i__RESP_BLOCK_GEN[1].RESP_BLOCK/DW_ADDR_DEC
+                   axi_address_decoder_DW_N_INIT_PORT3_FIFO_DEPTH8_2_13856
+                                area_2Kto3K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_axi_interconnect_i/axi_node_i__RESP_BLOCK_GEN[1].RESP_BLOCK/AW_ADDR_DEC
+                   axi_address_decoder_AW_ADDR_WIDTH32_N_INIT_PORT3_N_REGION1_13851
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_axi_interconnect_i/axi_node_i__RESP_BLOCK_GEN[1].RESP_BLOCK/AR_ADDR_DEC
+                   axi_address_decoder_AR_ADDR_WIDTH32_N_INIT_PORT3_N_REGION1_13849
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_axi_interconnect_i/axi_node_i__REQ_BLOCK_GEN[0].REQ_BLOCK
+                   axi_request_block_AXI_ADDRESS_W32_AXI_DATA_W32_AXI_USER_W1_N_INIT_PORT3_N_TARG_PORT3_FIFO_DW_DEPTH8_AXI_ID_IN2
+                                area_3Kto4K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_axi_interconnect_i/axi_node_i__REQ_BLOCK_GEN[0].REQ_BLOCK/AR_ALLOCATOR
+                   axi_AR_allocator_AXI_ADDRESS_W32_AXI_USER_W1_N_TARG_PORT3_AXI_ID_IN2
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_axi_interconnect_i/axi_node_i__REQ_BLOCK_GEN[0].REQ_BLOCK/BR_DECODER
+                   axi_address_decoder_BR_N_TARG_PORT3_AXI_ID_IN2
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_axi_interconnect_i/axi_node_i__REQ_BLOCK_GEN[0].REQ_BLOCK/BW_DECODER
+                   axi_address_decoder_BW_N_TARG_PORT3_AXI_ID_IN2
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_axi_interconnect_i/axi_node_i__REQ_BLOCK_GEN[0].REQ_BLOCK/DW_ALLOC
+                   axi_DW_allocator_AXI_USER_W1_N_TARG_PORT3_FIFO_DEPTH8_AXI_DATA_W32
+                                area_2Kto3K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_axi_interconnect_i/axi_node_i__REQ_BLOCK_GEN[0].REQ_BLOCK/AW_ALLOCATOR
+                   axi_AW_allocator_AXI_ADDRESS_W32_AXI_USER_W1_N_TARG_PORT3_AXI_ID_IN2
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_axi_interconnect_i/axi_node_i__REQ_BLOCK_GEN[1].REQ_BLOCK
+                   axi_request_block_AXI_ADDRESS_W32_AXI_DATA_W32_AXI_USER_W1_N_INIT_PORT3_N_TARG_PORT3_FIFO_DW_DEPTH8_AXI_ID_IN2_13864
+                                area_3Kto4K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_axi_interconnect_i/axi_node_i__REQ_BLOCK_GEN[1].REQ_BLOCK/AR_ALLOCATOR
+                   axi_AR_allocator_AXI_ADDRESS_W32_AXI_USER_W1_N_TARG_PORT3_AXI_ID_IN2_13794
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_axi_interconnect_i/axi_node_i__REQ_BLOCK_GEN[1].REQ_BLOCK/BR_DECODER
+                   axi_address_decoder_BR_N_TARG_PORT3_AXI_ID_IN2_13853
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_axi_interconnect_i/axi_node_i__REQ_BLOCK_GEN[1].REQ_BLOCK/BW_DECODER
+                   axi_address_decoder_BW_N_TARG_PORT3_AXI_ID_IN2_13855
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_axi_interconnect_i/axi_node_i__REQ_BLOCK_GEN[1].REQ_BLOCK/DW_ALLOC
+                   axi_DW_allocator_AXI_USER_W1_N_TARG_PORT3_FIFO_DEPTH8_AXI_DATA_W32_13807
+                                area_2Kto3K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_axi_interconnect_i/axi_node_i__REQ_BLOCK_GEN[1].REQ_BLOCK/AW_ALLOCATOR
+                   axi_AW_allocator_AXI_ADDRESS_W32_AXI_USER_W1_N_TARG_PORT3_AXI_ID_IN2_13796
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_axi_interconnect_i/axi_node_i__REQ_BLOCK_GEN[2].REQ_BLOCK
+                   axi_request_block_AXI_ADDRESS_W32_AXI_DATA_W32_AXI_USER_W1_N_INIT_PORT3_N_TARG_PORT3_FIFO_DW_DEPTH8_AXI_ID_IN2_13863
+                                area_3Kto4K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_axi_interconnect_i/axi_node_i__REQ_BLOCK_GEN[2].REQ_BLOCK/BR_DECODER
+                   axi_address_decoder_BR_N_TARG_PORT3_AXI_ID_IN2_13852
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_axi_interconnect_i/axi_node_i__REQ_BLOCK_GEN[2].REQ_BLOCK/AR_ALLOCATOR
+                   axi_AR_allocator_AXI_ADDRESS_W32_AXI_USER_W1_N_TARG_PORT3_AXI_ID_IN2_13793
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_axi_interconnect_i/axi_node_i__REQ_BLOCK_GEN[2].REQ_BLOCK/BW_DECODER
+                   axi_address_decoder_BW_N_TARG_PORT3_AXI_ID_IN2_13854
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_axi_interconnect_i/axi_node_i__REQ_BLOCK_GEN[2].REQ_BLOCK/DW_ALLOC
+                   axi_DW_allocator_AXI_USER_W1_N_TARG_PORT3_FIFO_DEPTH8_AXI_DATA_W32_13806
+                                area_2Kto3K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_axi_interconnect_i/axi_node_i__REQ_BLOCK_GEN[2].REQ_BLOCK/AW_ALLOCATOR
+                   axi_AW_allocator_AXI_ADDRESS_W32_AXI_USER_W1_N_TARG_PORT3_AXI_ID_IN2_13795
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_axi_interconnect_i/axi_node_i__RESP_BLOCK_GEN[0].RESP_BLOCK
+                   axi_response_block_AXI_ADDRESS_W32_AXI_DATA_W32_AXI_USER_W1_N_INIT_PORT3_N_TARG_PORT3_FIFO_DEPTH_DW8_AXI_ID_IN2_N_REGION1
+                                area_5Kto6K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_axi_interconnect_i/axi_node_i__RESP_BLOCK_GEN[0].RESP_BLOCK/BW_ALLOC
+                   axi_BW_allocator_AXI_USER_W1_N_INIT_PORT3_N_TARG_PORT3_AXI_DATA_W32_AXI_ID_IN2
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_axi_interconnect_i/axi_node_i__RESP_BLOCK_GEN[0].RESP_BLOCK/BR_ALLOC
+                   axi_BR_allocator_AXI_USER_W1_N_INIT_PORT3_N_TARG_PORT3_AXI_DATA_W32_AXI_ID_IN2
+                                area_1Kto2K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_axi_interconnect_i/axi_node_i__RESP_BLOCK_GEN[0].RESP_BLOCK/DW_ADDR_DEC
+                   axi_address_decoder_DW_N_INIT_PORT3_FIFO_DEPTH8
+                                area_2Kto3K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_axi_interconnect_i/axi_node_i__RESP_BLOCK_GEN[0].RESP_BLOCK/AW_ADDR_DEC
+                   axi_address_decoder_AW_ADDR_WIDTH32_N_INIT_PORT3_N_REGION1
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_axi_interconnect_i/axi_node_i__RESP_BLOCK_GEN[0].RESP_BLOCK/AR_ADDR_DEC
+                   axi_address_decoder_AR_ADDR_WIDTH32_N_INIT_PORT3_N_REGION1
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_axi_interconnect_i/axi_node_i__RESP_BLOCK_GEN[2].RESP_BLOCK
+                   axi_response_block_AXI_ADDRESS_W32_AXI_DATA_W32_AXI_USER_W1_N_INIT_PORT3_N_TARG_PORT3_FIFO_DEPTH_DW8_AXI_ID_IN2_N_REGION1_2
+                                area_5Kto6K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_axi_interconnect_i/axi_node_i__RESP_BLOCK_GEN[2].RESP_BLOCK/BW_ALLOC
+                   axi_BW_allocator_AXI_USER_W1_N_INIT_PORT3_N_TARG_PORT3_AXI_DATA_W32_AXI_ID_IN2_2
+                                area_1Kto2K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_axi_interconnect_i/axi_node_i__RESP_BLOCK_GEN[2].RESP_BLOCK/DW_ADDR_DEC
+                   axi_address_decoder_DW_N_INIT_PORT3_FIFO_DEPTH8_2
+                                area_2Kto3K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_axi_interconnect_i/axi_node_i__RESP_BLOCK_GEN[2].RESP_BLOCK/AW_ADDR_DEC
+                   axi_address_decoder_AW_ADDR_WIDTH32_N_INIT_PORT3_N_REGION1_13850
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_axi_interconnect_i/axi_node_i__RESP_BLOCK_GEN[2].RESP_BLOCK/BR_ALLOC
+                   axi_BR_allocator_AXI_USER_W1_N_INIT_PORT3_N_TARG_PORT3_AXI_DATA_W32_AXI_ID_IN2_2
+                                area_1Kto2K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_axi_interconnect_i/axi_node_i__RESP_BLOCK_GEN[2].RESP_BLOCK/AR_ADDR_DEC
+                   axi_address_decoder_AR_ADDR_WIDTH32_N_INIT_PORT3_N_REGION1_13848
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i
+                   peripherals_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_USER_WIDTH1_AXI_SLAVE_ID_WIDTH4_AXI_MASTER_ID_WIDTH2_axi_spi_master_AXI_BUS_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_ID_WIDTH2_AXI_USER_WIDTH1_Master_debug_DEBUG_BUS_Master_slave_AXI_BUS_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_ID_WIDTH4_AXI_USER_WIDTH1_Slave
+                                area_156Kto234K
+                                            CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/apb_pulpino_i
+                   apb_pulpino_BOOT_ADDR32h00008000
+                                area_12Kto18K
+                                            CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/apb_gpio_i
+                   apb_gpio     area_24Kto30K
+                                            CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/genblk1[3].core_clock_gate
+                   cluster_clock_gating_13874
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/apb_event_unit_i
+                   apb_event_unit
+                                area_12Kto18K
+                                            CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/apb_event_unit_i/i_interrupt_unit
+                   generic_service_unit_APB_ADDR_WIDTH12
+                                area_6Kto7K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/apb_event_unit_i/i_sleep_unit
+                   sleep_unit_APB_ADDR_WIDTH12
+                                area_1Kto2K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/apb_event_unit_i/i_event_unit
+                   generic_service_unit_APB_ADDR_WIDTH12_13919
+                                area_6Kto7K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/apb2per_debug_i
+                   apb2per_PER_ADDR_WIDTH15_APB_ADDR_WIDTH32
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/apb_uart_i
+                   apb_uart     area_78Kto156K
+                                            CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/apb_uart_i/UART_ED_DCD
+                   slib_edge_detect_13921
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/apb_uart_i/UART_ED_RI
+                   slib_edge_detect_13922
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/apb_uart_i/UART_IS_DCD
+                   slib_input_sync_4_13933
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/apb_uart_i/UART_FEDET
+                   slib_edge_detect_13926
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/apb_uart_i/UART_BG16
+                   uart_baudgen area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/apb_uart_i/UART_IS_SIN
+                   slib_input_sync
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/apb_uart_i/UART_IF_DSR
+                   slib_input_filter_SIZE2_13930
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/apb_uart_i/UART_ED_CTS
+                   slib_edge_detect_13924
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/apb_uart_i/UART_IS_CTS
+                   slib_input_sync_13932
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/apb_uart_i/UART_RXFF
+                   slib_fifo_WIDTH11_SIZE_E6
+                                area_36Kto42K
+                                            CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/apb_uart_i/UART_IF_DCD
+                   slib_input_filter_SIZE2_13929
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/apb_uart_i/UART_RX
+                   uart_receiver
+                                area_2Kto3K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/apb_uart_i/UART_IS_RI
+                   slib_input_sync_4
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/apb_uart_i/UART_BIDET
+                   slib_edge_detect_13925
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/apb_uart_i/UART_TX
+                   uart_transmitter
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/apb_uart_i/UART_IIC
+                   uart_interrupt
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/apb_uart_i/UART_RCLK
+                   slib_edge_detect_13920
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/apb_uart_i/UART_IF_RI
+                   slib_input_filter_SIZE2_13928
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/apb_uart_i/UART_ED_DSR
+                   slib_edge_detect_13923
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/apb_uart_i/UART_IF_CTS
+                   slib_input_filter_SIZE2
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/apb_uart_i/UART_TXFF
+                   slib_fifo_WIDTH8_SIZE_E6
+                                area_24Kto30K
+                                            CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/apb_uart_i/UART_IS_DSR
+                   slib_input_sync_13931
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/apb_uart_i/UART_PEDET
+                   slib_edge_detect_13927
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/apb_uart_i/UART_IIC_THRE_ED
+                   slib_edge_detect
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/apb_uart_i/UART_BG2
+                   slib_clock_div_RATIO8
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/axi_spi_slave_i
+                   axi_spi_slave_wrap_AXI_ADDRESS_WIDTH32_AXI_DATA_WIDTH32_AXI_ID_WIDTH2_AXI_USER_WIDTH1_axi_master_AXI_BUS_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_ID_WIDTH2_AXI_USER_WIDTH1_Master
+                                area_42Kto48K
+                                            CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/axi_spi_slave_i/axi_spi_slave_i_u_dcfifo_tx
+                   spi_slave_dc_fifo_DATA_WIDTH32_BUFFER_DEPTH8_13937
+                                area_12Kto18K
+                                            CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/axi_spi_slave_i/axi_spi_slave_i_u_dcfifo_tx/u_din_full
+                   dc_full_detector_BUFFER_DEPTH8_13898
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/axi_spi_slave_i/axi_spi_slave_i_u_dcfifo_tx/u_din_buffer
+                   dc_data_buffer_DATA_WIDTH32_BUFFER_DEPTH8_13897
+                                area_12Kto18K
+                                            CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/axi_spi_slave_i/axi_spi_slave_i_u_dcfifo_tx/u_dout
+                   dc_token_ring_fifo_dout_DATA_WIDTH32_BUFFER_DEPTH8_13904
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/axi_spi_slave_i/axi_spi_slave_i_u_dcfifo_tx/u_din_write_tr
+                   dc_token_ring_BUFFER_DEPTH8_RESET_VALUE32h0000000c_13902
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/axi_spi_slave_i/axi_spi_slave_i_u_axiplug
+                   spi_slave_axi_plug_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_USER_WIDTH1_AXI_ID_WIDTH2
+                                area_6Kto7K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/axi_spi_slave_i/axi_spi_slave_i_u_axiplug/add_154_29
+                   add_unsigned_17149
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/axi_spi_slave_i/axi_spi_slave_i_u_syncro
+                   spi_slave_syncro_AXI_ADDR_WIDTH32
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/axi_spi_slave_i/axi_spi_slave_i_u_txreg
+                   spi_slave_tx area_2Kto3K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/axi_spi_slave_i/axi_spi_slave_i_u_slave_sm
+                   spi_slave_controller_DUMMY_CYCLES32
+                                area_4Kto5K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/axi_spi_slave_i/axi_spi_slave_i_u_slave_sm/u_spiregs
+                   spi_slave_regs_REG_SIZE8
+                                area_1Kto2K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/axi_spi_slave_i/axi_spi_slave_i_u_slave_sm/u_cmd_parser
+                   spi_slave_cmd_parser
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/axi_spi_slave_i/axi_spi_slave_i_u_rxreg
+                   spi_slave_rx area_2Kto3K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/axi_spi_slave_i/axi_spi_slave_i_u_dcfifo_rx
+                   spi_slave_dc_fifo_DATA_WIDTH32_BUFFER_DEPTH8
+                                area_12Kto18K
+                                            CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/axi_spi_slave_i/axi_spi_slave_i_u_dcfifo_rx/u_dout
+                   dc_token_ring_fifo_dout_DATA_WIDTH32_BUFFER_DEPTH8
+                                area_1Kto2K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/axi_spi_slave_i/axi_spi_slave_i_u_dcfifo_rx/u_din_full
+                   dc_full_detector_BUFFER_DEPTH8
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/axi_spi_slave_i/axi_spi_slave_i_u_dcfifo_rx/u_din_write_tr
+                   dc_token_ring_BUFFER_DEPTH8_RESET_VALUE32h0000000c
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/genblk1[0].core_clock_gate
+                   cluster_clock_gating_13877
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/genblk1[2].core_clock_gate
+                   cluster_clock_gating_13875
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/axi2apb_i
+                   axi2apb_wrap_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_USER_WIDTH1_AXI_ID_WIDTH4_APB_ADDR_WIDTH32_axi_slave_AXI_BUS_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_ID_WIDTH4_AXI_USER_WIDTH1_Slave_apb_master_APB_BUS_Master
+                                area_12Kto18K
+                                            CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/axi2apb_i/genblk1.axi2apb_i_Slave_b_buffer
+                   axi_b_buffer_ID_WIDTH4_USER_WIDTH1_BUFFER_DEPTH2
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/axi2apb_i/genblk1.axi2apb_i_Slave_aw_buffer
+                   axi_aw_buffer_ID_WIDTH4_ADDR_WIDTH32_USER_WIDTH1_BUFFER_DEPTH2
+                                area_3Kto4K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/axi2apb_i/genblk1.axi2apb_i_Slave_aw_buffer/buffer_i_cg_cell
+                   cluster_clock_gating_13882
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/axi2apb_i/genblk1.axi2apb_i_Slave_r_buffer
+                   axi_r_buffer_ID_WIDTH4_DATA_WIDTH32_USER_WIDTH1_BUFFER_DEPTH2
+                                area_3Kto4K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/axi2apb_i/genblk1.axi2apb_i_Slave_r_buffer/buffer_i_cg_cell
+                   cluster_clock_gating_13880
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/axi2apb_i/genblk1.axi2apb_i_Slave_ar_buffer
+                   axi_ar_buffer_ID_WIDTH4_ADDR_WIDTH32_USER_WIDTH1_BUFFER_DEPTH2
+                                area_3Kto4K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/axi2apb_i/genblk1.axi2apb_i_Slave_ar_buffer/buffer_i_cg_cell
+                   cluster_clock_gating_13881
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/axi2apb_i/genblk1.axi2apb_i_Slave_w_buffer
+                   axi_w_buffer_DATA_WIDTH32_USER_WIDTH1_BUFFER_DEPTH2_1
+                                area_3Kto4K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/axi2apb_i/genblk1.axi2apb_i_Slave_w_buffer/buffer_i_cg_cell
+                   cluster_clock_gating_13878
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/apb_timer_i
+                   apb_timer    area_12Kto18K
+                                            CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/apb_timer_i/TIMER_GEN[1].timer_i
+                   timer_13938  area_7Kto8K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/apb_timer_i/TIMER_GEN[1].timer_i/inc_add_73_43_17
+                   increment_unsigned_988_989_17144
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/apb_timer_i/TIMER_GEN[1].timer_i/inc_add_80_53_38
+                   increment_unsigned_988_989_17142
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/apb_timer_i/TIMER_GEN[1].timer_i/gte_86_29
+                   geq_unsigned_16101
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/apb_timer_i/TIMER_GEN[0].timer_i
+                   timer        area_7Kto8K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/apb_timer_i/TIMER_GEN[0].timer_i/inc_add_73_43_17
+                   increment_unsigned_988_989_17143
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/apb_timer_i/TIMER_GEN[0].timer_i/inc_add_80_53_38
+                   increment_unsigned_988_989_17141
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/apb_timer_i/TIMER_GEN[0].timer_i/gte_86_29
+                   geq_unsigned_16100
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/periph_bus_i
+                   periph_bus_wrap_APB_ADDR_WIDTH32_APB_DATA_WIDTH32_apb_slave_APB_BUS_Slave_uart_master_APB_BUS_Master_gpio_master_APB_BUS_Master_timer_master_APB_BUS_Master_event_unit_master_APB_BUS_Master_soc_ctrl_master_APB_BUS_Master_debug_master_APB_BUS_Master
+                                area_1Kto2K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/genblk1[1].core_clock_gate
+                   cluster_clock_gating_13876
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+pulpino_top_rtl_inst_peripherals_i/genblk1[4].core_clock_gate
+                   cluster_clock_gating_13873
+                                area_0Kto1K CLOCK65LPLVT  automatic-by-area
+
+Power-specific unit information :
+    Voltage Units = 1 V
+    Capacitance Units = 1 pf
+    Time Units = 1 ns
+    Dynamic Power Units = 1 W
+    Leakage Power Units = 1 W
+
+
+
+                                      Int      Switch   Leak      Total
+Hierarchy                             Power    Power    Power     Power    %
+--------------------------------------------------------------------------------
+pulpino_top_rtl_w_pads                2.20e-03 9.88e-04 2.34e-04  3.42e-03 100.0
+  pulpino_top_rtl_inst_core_region_i (core_region_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_ID_MASTER_WIDTH2_AXI_ID_SLAVE_WIDTH4_AXI_USER_WIDTH1_USE_ZERO_RISCY0_RISCY_RV32F0_ZERO_RV32M1_ZERO_RV32E0_core_master_AXI_BUS_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_ID_WIDTH2_AXI_USER_WIDTH1_Master_dbg_master_AXI_BUS_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_ID_WIDTH2_AXI_USER_WIDTH1_Master_data_slave_AXI_BUS_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_ID_WIDTH4_AXI_USER_WIDTH1_Slave_instr_slave_AXI_BUS_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_ID_WIDTH4_AXI_USER_WIDTH1_Slave_debug_DEBUG_BUS_Slave)
+                                      1.32e-03 5.67e-04 1.32e-04  2.02e-03  59.0
+    data_mem_axi_if (axi_mem_if_SP_wrap_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_ID_WIDTH4_AXI_USER_WIDTH1_MEM_ADDR_WIDTH15_slave_AXI_BUS_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_ID_WIDTH4_AXI_USER_WIDTH1_Slave)
+                                      2.44e-05 1.20e-07 1.25e-05  3.70e-05   1.1
+      axi_mem_if_SP_i_Slave_aw_buffer_LP (axi_aw_buffer_ID_WIDTH4_ADDR_WIDTH32_USER_WIDTH1_BUFFER_DEPTH4_13858)
+                                      1.50e-06    0.000 1.55e-06  3.04e-06   0.1
+        buffer_i_cg_cell (cluster_clock_gating_13887)
+                                      1.70e-07    0.000 2.05e-08  1.90e-07   0.0
+      axi_mem_if_SP_i_Slave_r_buffer_LP (axi_r_buffer_ID_WIDTH4_DATA_WIDTH32_USER_WIDTH1_BUFFER_DEPTH4_13862)
+                                      1.49e-06    0.000 3.26e-06  4.75e-06   0.1
+        buffer_i_cg_cell (cluster_clock_gating_13884)
+                                      1.70e-07    0.000 1.87e-08  1.88e-07   0.0
+      axi_mem_if_SP_i_Slave_ar_buffer_LP (axi_ar_buffer_ID_WIDTH4_ADDR_WIDTH32_USER_WIDTH1_BUFFER_DEPTH4_13857)
+                                      1.50e-06    0.000 1.50e-06  3.00e-06   0.1
+        buffer_i_cg_cell (cluster_clock_gating_13886)
+                                      1.78e-07    0.000 2.22e-08  2.00e-07   0.0
+      axi_mem_if_SP_i_Slave_b_buffer_LP (axi_b_buffer_ID_WIDTH4_USER_WIDTH1_BUFFER_DEPTH4_13859)
+                                      1.50e-06    0.000 3.68e-07  1.87e-06   0.1
+      axi_mem_if_SP_i_WRITE_CTRL (axi_write_only_ctrl_AXI4_ADDRESS_WIDTH32_AXI4_RDATA_WIDTH32_AXI4_WDATA_WIDTH32_AXI4_ID_WIDTH4_AXI4_USER_WIDTH1_AXI_NUMBYTES4_MEM_ADDR_WIDTH15)
+                                      3.99e-06    0.000 4.21e-07  4.41e-06   0.1
+      axi_mem_if_SP_i_READ_CTRL (axi_read_only_ctrl_AXI4_ADDRESS_WIDTH32_AXI4_RDATA_WIDTH32_AXI4_WDATA_WIDTH32_AXI4_ID_WIDTH4_AXI4_USER_WIDTH1_AXI_NUMBYTES4_MEM_ADDR_WIDTH15)
+                                      1.26e-05 4.04e-08 1.51e-06  1.41e-05   0.4
+      axi_mem_if_SP_i_Slave_w_buffer_LP (axi_w_buffer_DATA_WIDTH32_USER_WIDTH1_BUFFER_DEPTH4_13865)
+                                      1.50e-06    0.000 3.54e-06  5.04e-06   0.1
+        buffer_i_cg_cell (cluster_clock_gating_13885)
+                                      1.70e-07    0.000 2.23e-08  1.92e-07   0.0
+    instr_ram_mux_i (ram_mux_ADDR_WIDTH16_OUT_WIDTH32_IN0_WIDTH32_IN1_WIDTH32)
+                                      8.36e-07 1.61e-06 1.47e-07  2.59e-06   0.1
+    axi_slice_core2axi (axi_slice_wrap_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_USER_WIDTH1_AXI_ID_WIDTH2_SLICE_DEPTH2_axi_slave_AXI_BUS_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_ID_WIDTH2_AXI_USER_WIDTH1_Slave_axi_master_AXI_BUS_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_ID_WIDTH2_AXI_USER_WIDTH1_Master)
+                                      1.16e-05 4.72e-06 6.01e-06  2.24e-05   0.7
+      WITH_SLICE.axi_slice_i_w_buffer_i (axi_w_buffer_DATA_WIDTH32_USER_WIDTH1_BUFFER_DEPTH2)
+                                      1.20e-06 1.32e-07 1.75e-06  3.08e-06   0.1
+        buffer_i_cg_cell (cluster_clock_gating_13894)
+                                      1.80e-07 1.16e-08 1.99e-08  2.11e-07   0.0
+      WITH_SLICE.axi_slice_i_r_buffer_i (axi_r_buffer_ID_WIDTH2_DATA_WIDTH32_USER_WIDTH1_BUFFER_DEPTH2)
+                                      4.50e-06 2.39e-06 1.45e-06  8.34e-06   0.2
+        buffer_i_cg_cell (cluster_clock_gating_13893)
+                                      4.19e-07 2.73e-07 2.04e-08  7.12e-07   0.0
+      WITH_SLICE.axi_slice_i_b_buffer_i (axi_b_buffer_ID_WIDTH2_USER_WIDTH1_BUFFER_DEPTH2)
+                                      9.23e-07 2.35e-08 1.22e-07  1.07e-06   0.0
+      WITH_SLICE.axi_slice_i_aw_buffer_i (axi_aw_buffer_ID_WIDTH2_ADDR_WIDTH32_USER_WIDTH1_BUFFER_DEPTH2)
+                                      1.18e-06 8.11e-08 1.35e-06  2.61e-06   0.1
+        buffer_i_cg_cell (cluster_clock_gating_13896)
+                                      1.78e-07 9.39e-09 1.65e-08  2.04e-07   0.0
+      WITH_SLICE.axi_slice_i_ar_buffer_i (axi_ar_buffer_ID_WIDTH2_ADDR_WIDTH32_USER_WIDTH1_BUFFER_DEPTH2)
+                                      3.85e-06 2.09e-06 1.33e-06  7.26e-06   0.2
+        buffer_i_cg_cell (cluster_clock_gating_13895)
+                                      4.24e-07 1.98e-07 1.87e-08  6.41e-07   0.0
+    core2axi_i (core2axi_wrap_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_USER_WIDTH1_AXI_ID_WIDTH2_REGISTERED_GRANT40h46414c5345_master_AXI_BUS_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_ID_WIDTH2_AXI_USER_WIDTH1_Master)
+                                      1.15e-06 5.26e-07 1.23e-07  1.80e-06   0.1
+    adv_dbg_if_i (adv_dbg_if_NB_CORES1_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_USER_WIDTH1_AXI_ID_WIDTH2)
+                                      9.72e-06 9.22e-10 1.14e-05  2.11e-05   0.6
+      dbg_module_i_i_dbg_cpu_or1k (adbg_or1k_module_NB_CORES1)
+                                      1.10e-06    0.000 2.21e-06  3.31e-06   0.1
+        or1k_crc_i (adbg_crc32_13792)    0.000    0.000 7.90e-07  7.90e-07   0.0
+        or1k_statusreg_i (adbg_or1k_status_reg_NB_CORES1)
+                                         0.000    0.000 2.29e-08  2.29e-08   0.0
+        or1k_biu_i (adbg_or1k_biu_NB_CORES1)
+                                      1.10e-06    0.000 2.15e-07  1.32e-06   0.0
+      cluster_tap_i (adbg_tap_top)       0.000    0.000 1.18e-06  1.18e-06   0.0
+      dbg_module_i_i_dbg_axi (adbg_axi_module_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_USER_WIDTH1_AXI_ID_WIDTH2)
+                                      8.62e-06 9.22e-10 6.54e-06  1.52e-05   0.4
+        axi_crc_i (adbg_crc32)           0.000    0.000 7.60e-07  7.60e-07   0.0
+        axi_biu_i (adbg_axi_biu_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_USER_WIDTH1_AXI_ID_WIDTH2)
+                                      8.62e-06 9.22e-10 2.34e-06  1.10e-05   0.3
+        add_383_50 (add_unsigned_2766)
+                                         0.000    0.000 1.05e-07  1.05e-07   0.0
+    instr_mem (instr_ram_wrap_RAM_SIZE32768_DATA_WIDTH32)
+                                      5.10e-04 7.03e-05 7.66e-06  5.88e-04  17.2
+      boot_rom_wrap_i (boot_rom_wrap_DATA_WIDTH32)
+                                      2.40e-06 2.42e-08 4.59e-06  7.02e-06   0.2
+    instr_mem_axi_if (axi_mem_if_SP_wrap_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_ID_WIDTH4_AXI_USER_WIDTH1_MEM_ADDR_WIDTH16_slave_AXI_BUS_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_ID_WIDTH4_AXI_USER_WIDTH1_Slave)
+                                      2.81e-05 7.18e-06 1.29e-05  4.82e-05   1.4
+      axi_mem_if_SP_i_Slave_r_buffer_LP (axi_r_buffer_ID_WIDTH4_DATA_WIDTH32_USER_WIDTH1_BUFFER_DEPTH4)
+                                      1.55e-06    0.000 3.29e-06  4.84e-06   0.1
+        buffer_i_cg_cell (cluster_clock_gating_13889)
+                                      1.70e-07    0.000 2.23e-08  1.92e-07   0.0
+      axi_mem_if_SP_i_Slave_aw_buffer_LP (axi_aw_buffer_ID_WIDTH4_ADDR_WIDTH32_USER_WIDTH1_BUFFER_DEPTH4)
+                                      1.49e-06    0.000 1.63e-06  3.12e-06   0.1
+        buffer_i_cg_cell (cluster_clock_gating_13892)
+                                      1.70e-07    0.000 1.87e-08  1.88e-07   0.0
+      axi_mem_if_SP_i_READ_CTRL (axi_read_only_ctrl_AXI4_ADDRESS_WIDTH32_AXI4_RDATA_WIDTH32_AXI4_WDATA_WIDTH32_AXI4_ID_WIDTH4_AXI4_USER_WIDTH1_AXI_NUMBYTES4_MEM_ADDR_WIDTH16)
+                                      1.58e-05 6.10e-06 1.65e-06  2.35e-05   0.7
+      axi_mem_if_SP_i_Slave_b_buffer_LP (axi_b_buffer_ID_WIDTH4_USER_WIDTH1_BUFFER_DEPTH4)
+                                      1.50e-06    0.000 3.60e-07  1.86e-06   0.1
+      axi_mem_if_SP_i_Slave_w_buffer_LP (axi_w_buffer_DATA_WIDTH32_USER_WIDTH1_BUFFER_DEPTH4)
+                                      1.49e-06    0.000 3.54e-06  5.04e-06   0.1
+        buffer_i_cg_cell (cluster_clock_gating_13890)
+                                      1.70e-07    0.000 2.30e-08  1.93e-07   0.0
+      axi_mem_if_SP_i_Slave_ar_buffer_LP (axi_ar_buffer_ID_WIDTH4_ADDR_WIDTH32_USER_WIDTH1_BUFFER_DEPTH4)
+                                      1.50e-06    0.000 1.61e-06  3.11e-06   0.1
+        buffer_i_cg_cell (cluster_clock_gating_13891)
+                                      1.78e-07    0.000 2.40e-08  2.02e-07   0.0
+      axi_mem_if_SP_i_WRITE_CTRL (axi_write_only_ctrl_AXI4_ADDRESS_WIDTH32_AXI4_RDATA_WIDTH32_AXI4_WDATA_WIDTH32_AXI4_ID_WIDTH4_AXI4_USER_WIDTH1_AXI_NUMBYTES4_MEM_ADDR_WIDTH16)
+                                      4.19e-06    0.000 4.59e-07  4.65e-06   0.1
+    data_mem (sp_ram_wrap_RAM_SIZE32768_DATA_WIDTH32)
+                                      6.37e-05 3.19e-05 2.84e-06  9.84e-05   2.9
+    data_ram_mux_i (ram_mux_ADDR_WIDTH15_OUT_WIDTH32_IN0_WIDTH32_IN1_WIDTH32)
+                                      7.38e-07 1.01e-06 2.08e-07  1.95e-06   0.1
+    CORE.RISCV_CORE (riscv_core_N_EXT_PERF_COUNTERS0_FPU0_SHARED_FP0_SHARED_FP_DIVSQRT2)
+                                      6.61e-04 4.30e-04 7.78e-05  1.17e-03  34.2
+      load_store_unit_i (riscv_load_store_unit)
+                                      1.12e-05 4.88e-06 1.84e-06  1.79e-05   0.5
+        ADD_UNS_OP (add_unsigned_1331_17116)
+                                      2.84e-07 6.99e-07 1.15e-07  1.10e-06   0.0
+      cs_registers_i (riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE0)
+                                      1.98e-05 7.83e-07 2.85e-06  2.34e-05   0.7
+        inc_ADD_UNS_OP_75 (increment_unsigned_988_989)
+                                         0.000    0.000 1.03e-07  1.03e-07   0.0
+      debug_unit_i (riscv_debug_unit) 1.48e-05    0.000 1.55e-06  1.63e-05   0.5
+      id_stage_i (riscv_id_stage_N_HWLP2_PULP_SECURE0_FPU0_APU0_SHARED_FP0_SHARED_DSP_MULT0_SHARED_INT_DIV0_SHARED_FP_DIVSQRT2_WAPUTYPE0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5)
+                                      4.08e-04 1.87e-04 4.28e-05  6.38e-04  18.7
+        controller_i (riscv_controller_FPU0)
+                                      4.53e-06 3.50e-06 6.13e-07  8.64e-06   0.3
+        hwloop_regs_i (riscv_hwloop_regs_N_REGS2)
+                                      4.23e-05    0.000 4.02e-06  4.63e-05   1.4
+          dec_sub_103_50_I2_7 (decrement_unsigned_990_991_24833)
+                                         0.000    0.000 2.71e-07  2.71e-07   0.0
+          dec_sub_103_50_I1_12 (decrement_unsigned_990_991)
+                                         0.000    0.000 2.48e-07  2.48e-07   0.0
+        int_controller_i (riscv_int_controller_PULP_SECURE0)
+                                      1.54e-06    0.000 1.45e-07  1.68e-06   0.0
+        add_537_37_Y_add_536_37 (add_unsigned_1331_17118)
+                                      3.97e-07 4.70e-07 1.06e-07  9.73e-07   0.0
+        dec_sub_468_53_74 (decrement_unsigned_990_991_17152)
+                                      5.15e-07 9.95e-07 2.02e-07  1.71e-06   0.1
+        registers_i (riscv_register_file_ADDR_WIDTH6_FPU0)
+                                      2.32e-04 7.22e-05 2.61e-05  3.30e-04   9.7
+        add_584_49_Y_add_581_38_Y_add_580_38 (add_unsigned_1331_17117)
+                                      1.88e-06 4.89e-06 1.22e-07  6.90e-06   0.2
+        decoder_i (riscv_decoder_FPU0_PULP_SECURE0_SHARED_FP0_SHARED_DSP_MULT0_SHARED_INT_DIV0_SHARED_FP_DIVSQRT2_WAPUTYPE0_APU_WOP_CPU6)
+                                      3.22e-06 9.02e-06 9.14e-07  1.32e-05   0.4
+      core_clock_gate_i (cluster_clock_gating)
+                                      3.12e-07 1.59e-07 2.53e-08  4.96e-07   0.0
+      ex_stage_i (riscv_ex_stage_FPU0_SHARED_FP0_SHARED_DSP_MULT0_SHARED_INT_DIV0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5)
+                                      4.06e-05 4.43e-05 1.87e-05  1.04e-04   3.0
+        alu_i (riscv_alu_SHARED_INT_DIV0_FPU0)
+                                      3.56e-05 3.74e-05 9.10e-06  8.21e-05   2.4
+          sra_269_105 (arith_shift_right_vlog_unsigned)
+                                      3.36e-07 5.40e-07 1.41e-07  1.02e-06   0.0
+          add_182_44 (add_unsigned_1331)
+                                      3.12e-07 1.91e-07 1.12e-07  6.15e-07   0.0
+          csa_tree_alu_popcnt_i_add_1154_39_groupi (csa_tree_alu_popcnt_i_add_1154_39_group_17940)
+                                      5.23e-07 5.50e-07 1.10e-07  1.18e-06   0.0
+          sll_882_39 (shift_left_vlog_unsigned_2311_17111)
+                                      1.75e-08 5.86e-08 4.30e-07  5.06e-07   0.0
+          sra_270_105 (arith_shift_right_vlog_unsigned_17112)
+                                      2.94e-07 4.95e-07 1.34e-07  9.23e-07   0.0
+          int_div.div_i (riscv_alu_div)
+                                      2.55e-05 8.81e-06 3.43e-06  3.77e-05   1.1
+            gt_103_58 (gt_unsigned_1521)
+                                         0.000    0.000 9.05e-08  9.05e-08   0.0
+            minus_100_38 (sub_unsigned_1529)
+                                         0.000    0.000 1.52e-07  1.52e-07   0.0
+            sub_107_68_Y_add_107_46 (addsub_unsigned_45908)
+                                         0.000    0.000 2.10e-07  2.10e-07   0.0
+          srl_283_46 (shift_right_vlog_unsigned)
+                                      1.06e-06 2.02e-06 4.50e-07  3.53e-06   0.1
+          alu_ff_i (alu_ff)              0.000    0.000 1.71e-07  1.71e-07   0.0
+          add_168_54 (add_signed_17119)
+                                      3.88e-07 1.46e-06 1.40e-07  1.99e-06   0.1
+        mult_i (riscv_mult_SHARED_DSP_MULT0)
+                                      1.48e-06 8.62e-07 9.39e-06  1.17e-05   0.3
+          csa_tree_add_114_70_groupi (csa_tree_add_114_70_group_17936)
+                                      9.40e-08 1.37e-07 1.72e-06  1.95e-06   0.1
+          add_230_39_Y_add_283_68_Y_add_270_60 (add_signed_2860)
+                                      1.80e-09 2.63e-09 1.09e-07  1.13e-07   0.0
+          add_230_63_Y_add_283_102_Y_add_270_87 (add_signed_2860_17164)
+                                      2.48e-08 2.52e-08 1.19e-07  1.69e-07   0.0
+          mul_266_61_Y_mul_280_63 (mult_signed_4529)
+                                         0.000    0.000 1.37e-06  1.37e-06   0.0
+          mul_267_61 (mult_signed_3315)
+                                         0.000    0.000 4.94e-07  4.94e-07   0.0
+          csa_tree_add_269_87_groupi (csa_tree_add_269_87_group_17938)
+                                      1.78e-08 1.39e-08 4.48e-07  4.79e-07   0.0
+          mul_281_63_Y_mul_230_87_Y_mul_265_61 (mult_signed_4383)
+                                      1.95e-07 3.90e-07 3.33e-06  3.91e-06   0.1
+          sra_117_128 (arith_shift_right_vlog_unsigned_3259)
+                                      4.17e-08 1.02e-07 3.77e-07  5.20e-07   0.0
+      if_stage_i (riscv_if_stage_N_HWLP2_RDATA_WIDTH32_FPU0)
+                                      1.44e-04 7.56e-05 9.20e-06  2.29e-04   6.7
+        prefetch_32.prefetch_buffer_i (riscv_prefetch_buffer)
+                                      1.09e-04 5.24e-05 6.35e-06  1.68e-04   4.9
+          add_115_54 (add_unsigned_17150)
+                                      2.91e-07 1.67e-07 9.33e-08  5.52e-07   0.0
+          fifo_i (riscv_fetch_fifo)   9.21e-05 3.85e-05 4.98e-06  1.36e-04   4.0
+            add_182_49 (add_unsigned) 1.02e-07 6.52e-08 9.33e-08  2.60e-07   0.0
+        compressed_decoder_i (riscv_compressed_decoder_FPU0)
+                                      2.47e-06 5.37e-06 5.86e-07  8.42e-06   0.2
+        hwloop_controller_i (riscv_hwloop_controller_N_REGS2)
+                                      6.16e-07 4.13e-07 6.07e-07  1.64e-06   0.0
+  pulpino_top_rtl_inst_axi_interconnect_i (axi_node_intf_wrap_NB_MASTER3_NB_SLAVE3_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_ID_WIDTH2_AXI_USER_WIDTH1_slave_AXI_BUS_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_ID_WIDTH2_AXI_USER_WIDTH1_Slave_master_AXI_BUS_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_ID_WIDTH4_AXI_USER_WIDTH1_Master)
+                                      3.73e-05 3.24e-06 1.09e-05  5.15e-05   1.5
+    axi_node_i__RESP_BLOCK_GEN[1].RESP_BLOCK (axi_response_block_AXI_ADDRESS_W32_AXI_DATA_W32_AXI_USER_W1_N_INIT_PORT3_N_TARG_PORT3_FIFO_DEPTH_DW8_AXI_ID_IN2_N_REGION1_1)
+                                      8.57e-06 1.42e-09 2.37e-06  1.09e-05   0.3
+      BW_ALLOC (axi_BW_allocator_AXI_USER_W1_N_INIT_PORT3_N_TARG_PORT3_AXI_DATA_W32_AXI_ID_IN2_1)
+                                      2.87e-06    0.000 5.02e-07  3.37e-06   0.1
+      BR_ALLOC (axi_BR_allocator_AXI_USER_W1_N_INIT_PORT3_N_TARG_PORT3_AXI_DATA_W32_AXI_ID_IN2_1)
+                                      3.10e-06    0.000 8.47e-07  3.95e-06   0.1
+      DW_ADDR_DEC (axi_address_decoder_DW_N_INIT_PORT3_FIFO_DEPTH8_2_13856)
+                                      1.94e-06    0.000 8.32e-07  2.77e-06   0.1
+      AW_ADDR_DEC (axi_address_decoder_AW_ADDR_WIDTH32_N_INIT_PORT3_N_REGION1_13851)
+                                      4.44e-07 1.42e-09 1.12e-07  5.58e-07   0.0
+      AR_ADDR_DEC (axi_address_decoder_AR_ADDR_WIDTH32_N_INIT_PORT3_N_REGION1_13849)
+                                      2.20e-07    0.000 8.14e-08  3.01e-07   0.0
+    axi_node_i__REQ_BLOCK_GEN[0].REQ_BLOCK (axi_request_block_AXI_ADDRESS_W32_AXI_DATA_W32_AXI_USER_W1_N_INIT_PORT3_N_TARG_PORT3_FIFO_DW_DEPTH8_AXI_ID_IN2)
+                                      3.04e-06    0.000 1.23e-06  4.27e-06   0.1
+      AR_ALLOCATOR (axi_AR_allocator_AXI_ADDRESS_W32_AXI_USER_W1_N_TARG_PORT3_AXI_ID_IN2)
+                                      4.40e-07    0.000 9.79e-08  5.38e-07   0.0
+      BR_DECODER (axi_address_decoder_BR_N_TARG_PORT3_AXI_ID_IN2)
+                                         0.000    0.000 1.97e-08  1.97e-08   0.0
+      BW_DECODER (axi_address_decoder_BW_N_TARG_PORT3_AXI_ID_IN2)
+                                         0.000    0.000 2.06e-08  2.06e-08   0.0
+      DW_ALLOC (axi_DW_allocator_AXI_USER_W1_N_TARG_PORT3_FIFO_DEPTH8_AXI_DATA_W32)
+                                      2.16e-06    0.000 9.64e-07  3.12e-06   0.1
+      AW_ALLOCATOR (axi_AW_allocator_AXI_ADDRESS_W32_AXI_USER_W1_N_TARG_PORT3_AXI_ID_IN2)
+                                      4.39e-07    0.000 1.28e-07  5.68e-07   0.0
+    axi_node_i__REQ_BLOCK_GEN[1].REQ_BLOCK (axi_request_block_AXI_ADDRESS_W32_AXI_DATA_W32_AXI_USER_W1_N_INIT_PORT3_N_TARG_PORT3_FIFO_DW_DEPTH8_AXI_ID_IN2_13864)
+                                      3.04e-06    0.000 1.25e-06  4.30e-06   0.1
+      AR_ALLOCATOR (axi_AR_allocator_AXI_ADDRESS_W32_AXI_USER_W1_N_TARG_PORT3_AXI_ID_IN2_13794)
+                                      4.40e-07    0.000 1.03e-07  5.43e-07   0.0
+      BR_DECODER (axi_address_decoder_BR_N_TARG_PORT3_AXI_ID_IN2_13853)
+                                         0.000    0.000 1.71e-08  1.71e-08   0.0
+      BW_DECODER (axi_address_decoder_BW_N_TARG_PORT3_AXI_ID_IN2_13855)
+                                         0.000    0.000 2.06e-08  2.06e-08   0.0
+      DW_ALLOC (axi_DW_allocator_AXI_USER_W1_N_TARG_PORT3_FIFO_DEPTH8_AXI_DATA_W32_13807)
+                                      2.16e-06    0.000 9.88e-07  3.15e-06   0.1
+      AW_ALLOCATOR (axi_AW_allocator_AXI_ADDRESS_W32_AXI_USER_W1_N_TARG_PORT3_AXI_ID_IN2_13796)
+                                      4.39e-07    0.000 1.25e-07  5.65e-07   0.0
+    axi_node_i__REQ_BLOCK_GEN[2].REQ_BLOCK (axi_request_block_AXI_ADDRESS_W32_AXI_DATA_W32_AXI_USER_W1_N_INIT_PORT3_N_TARG_PORT3_FIFO_DW_DEPTH8_AXI_ID_IN2_13863)
+                                      3.76e-06 9.72e-07 1.28e-06  6.01e-06   0.2
+      BR_DECODER (axi_address_decoder_BR_N_TARG_PORT3_AXI_ID_IN2_13852)
+                                      3.09e-08 1.17e-07 2.34e-08  1.71e-07   0.0
+      AR_ALLOCATOR (axi_AR_allocator_AXI_ADDRESS_W32_AXI_USER_W1_N_TARG_PORT3_AXI_ID_IN2_13793)
+                                      9.95e-07 7.35e-07 1.31e-07  1.86e-06   0.1
+      BW_DECODER (axi_address_decoder_BW_N_TARG_PORT3_AXI_ID_IN2_13854)
+                                      1.16e-09 3.92e-09 2.27e-08  2.78e-08   0.0
+      DW_ALLOC (axi_DW_allocator_AXI_USER_W1_N_TARG_PORT3_FIFO_DEPTH8_AXI_DATA_W32_13806)
+                                      2.26e-06 7.93e-08 9.53e-07  3.30e-06   0.1
+      AW_ALLOCATOR (axi_AW_allocator_AXI_ADDRESS_W32_AXI_USER_W1_N_TARG_PORT3_AXI_ID_IN2_13795)
+                                      4.63e-07 3.53e-08 1.48e-07  6.46e-07   0.0
+    axi_node_i__RESP_BLOCK_GEN[0].RESP_BLOCK (axi_response_block_AXI_ADDRESS_W32_AXI_DATA_W32_AXI_USER_W1_N_INIT_PORT3_N_TARG_PORT3_FIFO_DEPTH_DW8_AXI_ID_IN2_N_REGION1)
+                                      1.03e-05 2.27e-06 2.39e-06  1.50e-05   0.4
+      BW_ALLOC (axi_BW_allocator_AXI_USER_W1_N_INIT_PORT3_N_TARG_PORT3_AXI_DATA_W32_AXI_ID_IN2)
+                                      2.94e-06 5.57e-08 4.44e-07  3.44e-06   0.1
+      BR_ALLOC (axi_BR_allocator_AXI_USER_W1_N_INIT_PORT3_N_TARG_PORT3_AXI_DATA_W32_AXI_ID_IN2)
+                                      4.63e-06 1.89e-06 8.92e-07  7.41e-06   0.2
+      DW_ADDR_DEC (axi_address_decoder_DW_N_INIT_PORT3_FIFO_DEPTH8)
+                                      2.05e-06 6.66e-08 8.40e-07  2.96e-06   0.1
+      AW_ADDR_DEC (axi_address_decoder_AW_ADDR_WIDTH32_N_INIT_PORT3_N_REGION1)
+                                      4.46e-07 1.21e-08 1.25e-07  5.83e-07   0.0
+      AR_ADDR_DEC (axi_address_decoder_AR_ADDR_WIDTH32_N_INIT_PORT3_N_REGION1)
+                                      2.82e-07 2.47e-07 9.10e-08  6.19e-07   0.0
+    axi_node_i__RESP_BLOCK_GEN[2].RESP_BLOCK (axi_response_block_AXI_ADDRESS_W32_AXI_DATA_W32_AXI_USER_W1_N_INIT_PORT3_N_TARG_PORT3_FIFO_DEPTH_DW8_AXI_ID_IN2_N_REGION1_2)
+                                      8.56e-06    0.000 2.36e-06  1.09e-05   0.3
+      BW_ALLOC (axi_BW_allocator_AXI_USER_W1_N_INIT_PORT3_N_TARG_PORT3_AXI_DATA_W32_AXI_ID_IN2_2)
+                                      2.87e-06    0.000 4.81e-07  3.35e-06   0.1
+      DW_ADDR_DEC (axi_address_decoder_DW_N_INIT_PORT3_FIFO_DEPTH8_2)
+                                      1.94e-06    0.000 8.20e-07  2.76e-06   0.1
+      AW_ADDR_DEC (axi_address_decoder_AW_ADDR_WIDTH32_N_INIT_PORT3_N_REGION1_13850)
+                                      4.43e-07    0.000 1.13e-07  5.55e-07   0.0
+      BR_ALLOC (axi_BR_allocator_AXI_USER_W1_N_INIT_PORT3_N_TARG_PORT3_AXI_DATA_W32_AXI_ID_IN2_2)
+                                      3.09e-06    0.000 8.53e-07  3.95e-06   0.1
+      AR_ADDR_DEC (axi_address_decoder_AR_ADDR_WIDTH32_N_INIT_PORT3_N_REGION1_13848)
+                                      2.19e-07    0.000 8.83e-08  3.08e-07   0.0
+  pulpino_top_rtl_inst_peripherals_i (peripherals_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_USER_WIDTH1_AXI_SLAVE_ID_WIDTH4_AXI_MASTER_ID_WIDTH2_axi_spi_master_AXI_BUS_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_ID_WIDTH2_AXI_USER_WIDTH1_Master_debug_DEBUG_BUS_Master_slave_AXI_BUS_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_ID_WIDTH4_AXI_USER_WIDTH1_Slave)
+                                      8.10e-04 2.97e-04 8.95e-05  1.20e-03  35.0
+    apb_pulpino_i (apb_pulpino_BOOT_ADDR32h00008000)
+                                      6.64e-05 1.61e-05 6.09e-06  8.85e-05   2.6
+    apb_gpio_i (apb_gpio)             1.21e-04 4.28e-05 1.09e-05  1.75e-04   5.1
+    genblk1[3].core_clock_gate (cluster_clock_gating_13874)
+                                      3.04e-07 1.39e-07 1.96e-08  4.63e-07   0.0
+    apb_event_unit_i (apb_event_unit) 8.53e-05 3.30e-05 6.59e-06  1.25e-04   3.7
+      i_interrupt_unit (generic_service_unit_APB_ADDR_WIDTH12)
+                                      3.53e-05    0.000 2.73e-06  3.80e-05   1.1
+      i_sleep_unit (sleep_unit_APB_ADDR_WIDTH12)
+                                      7.68e-06    0.000 7.02e-07  8.38e-06   0.2
+      i_event_unit (generic_service_unit_APB_ADDR_WIDTH12_13919)
+                                      3.53e-05    0.000 2.79e-06  3.81e-05   1.1
+    apb2per_debug_i (apb2per_PER_ADDR_WIDTH15_APB_ADDR_WIDTH32)
+                                      2.20e-07    0.000 2.55e-08  2.45e-07   0.0
+    apb_uart_i (apb_uart)             3.54e-04 1.32e-04 3.21e-05  5.18e-04  15.2
+      UART_ED_DCD (slib_edge_detect_13921)
+                                      2.21e-07    0.000 1.19e-08  2.33e-07   0.0
+      UART_ED_RI (slib_edge_detect_13922)
+                                      2.21e-07    0.000 1.65e-08  2.38e-07   0.0
+      UART_IS_DCD (slib_input_sync_4_13933)
+                                      4.39e-07    0.000 2.72e-08  4.66e-07   0.0
+      UART_FEDET (slib_edge_detect_13926)
+                                      2.19e-07    0.000 9.85e-09  2.29e-07   0.0
+      UART_BG16 (uart_baudgen)        8.01e-06 2.85e-06 4.51e-07  1.13e-05   0.3
+      UART_IS_SIN (slib_input_sync)   4.37e-07    0.000 3.03e-08  4.67e-07   0.0
+      UART_IF_DSR (slib_input_filter_SIZE2_13930)
+                                      6.62e-07    0.000 8.11e-08  7.43e-07   0.0
+      UART_ED_CTS (slib_edge_detect_13924)
+                                      2.19e-07    0.000 1.50e-08  2.34e-07   0.0
+      UART_IS_CTS (slib_input_sync_13932)
+                                      4.43e-07    0.000 3.29e-08  4.75e-07   0.0
+      UART_RXFF (slib_fifo_WIDTH11_SIZE_E6)
+                                      1.65e-04 2.97e-05 1.53e-05  2.10e-04   6.2
+      UART_IF_DCD (slib_input_filter_SIZE2_13929)
+                                      6.63e-07    0.000 7.85e-08  7.41e-07   0.0
+      UART_RX (uart_receiver)         7.15e-06 3.12e-07 8.30e-07  8.30e-06   0.2
+      UART_IS_RI (slib_input_sync_4)  4.39e-07    0.000 2.54e-08  4.64e-07   0.0
+      UART_BIDET (slib_edge_detect_13925)
+                                      2.19e-07    0.000 9.13e-09  2.28e-07   0.0
+      UART_TX (uart_transmitter)      1.94e-06 3.27e-07 2.73e-07  2.54e-06   0.1
+      UART_IIC (uart_interrupt)       8.92e-07    0.000 6.94e-08  9.61e-07   0.0
+      UART_RCLK (slib_edge_detect_13920)
+                                      5.49e-07 8.91e-08 7.11e-09  6.46e-07   0.0
+      UART_IF_RI (slib_input_filter_SIZE2_13928)
+                                      6.63e-07    0.000 8.10e-08  7.44e-07   0.0
+      UART_ED_DSR (slib_edge_detect_13923)
+                                      2.19e-07    0.000 1.31e-08  2.32e-07   0.0
+      UART_IF_CTS (slib_input_filter_SIZE2)
+                                      6.62e-07    0.000 8.54e-08  7.48e-07   0.0
+      UART_TXFF (slib_fifo_WIDTH8_SIZE_E6)
+                                      1.21e-04 1.79e-05 1.16e-05  1.51e-04   4.4
+      UART_IS_DSR (slib_input_sync_13931)
+                                      4.43e-07    0.000 3.39e-08  4.76e-07   0.0
+      UART_PEDET (slib_edge_detect_13927)
+                                      2.19e-07    0.000 9.75e-09  2.29e-07   0.0
+      UART_IIC_THRE_ED (slib_edge_detect)
+                                      2.19e-07    0.000 1.16e-08  2.31e-07   0.0
+      UART_BG2 (slib_clock_div_RATIO8)
+                                      2.81e-06 6.34e-07 7.80e-08  3.53e-06   0.1
+    axi_spi_slave_i (axi_spi_slave_wrap_AXI_ADDRESS_WIDTH32_AXI_DATA_WIDTH32_AXI_ID_WIDTH2_AXI_USER_WIDTH1_axi_master_AXI_BUS_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_ID_WIDTH2_AXI_USER_WIDTH1_Master)
+                                      1.00e-04 3.91e-05 1.92e-05  1.59e-04   4.6
+      axi_spi_slave_i_u_dcfifo_tx (spi_slave_dc_fifo_DATA_WIDTH32_BUFFER_DEPTH8_13937)
+                                      6.18e-05 1.58e-05 5.69e-06  8.32e-05   2.4
+        u_din_full (dc_full_detector_BUFFER_DEPTH8_13898)
+                                      6.58e-07    0.000 6.52e-08  7.23e-07   0.0
+        u_din_buffer (dc_data_buffer_DATA_WIDTH32_BUFFER_DEPTH8_13897)
+                                      5.77e-05 7.89e-06 5.01e-06  7.06e-05   2.1
+        u_dout (dc_token_ring_fifo_dout_DATA_WIDTH32_BUFFER_DEPTH8_13904)
+                                         0.000    0.000 4.13e-07  4.13e-07   0.0
+        u_din_write_tr (dc_token_ring_BUFFER_DEPTH8_RESET_VALUE32h0000000c_13902)
+                                      1.79e-06    0.000 1.40e-07  1.93e-06   0.1
+      axi_spi_slave_i_u_axiplug (spi_slave_axi_plug_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_USER_WIDTH1_AXI_ID_WIDTH2)
+                                      2.55e-05    0.000 2.33e-06  2.79e-05   0.8
+        add_154_29 (add_unsigned_17149)
+                                         0.000    0.000 9.76e-08  9.76e-08   0.0
+      axi_spi_slave_i_u_syncro (spi_slave_syncro_AXI_ADDR_WIDTH32)
+                                      1.56e-06    0.000 9.75e-08  1.66e-06   0.0
+      axi_spi_slave_i_u_txreg (spi_slave_tx)
+                                         0.000    0.000 1.17e-06  1.17e-06   0.0
+      axi_spi_slave_i_u_slave_sm (spi_slave_controller_DUMMY_CYCLES32)
+                                         0.000    0.000 2.07e-06  2.07e-06   0.1
+        u_spiregs (spi_slave_regs_REG_SIZE8)
+                                         0.000    0.000 6.79e-07  6.79e-07   0.0
+        u_cmd_parser (spi_slave_cmd_parser)
+                                         0.000    0.000 5.89e-08  5.89e-08   0.0
+      axi_spi_slave_i_u_rxreg (spi_slave_rx)
+                                         0.000    0.000 1.01e-06  1.01e-06   0.0
+      axi_spi_slave_i_u_dcfifo_rx (spi_slave_dc_fifo_DATA_WIDTH32_BUFFER_DEPTH8)
+                                      5.35e-06    0.000 6.43e-06  1.18e-05   0.3
+        u_dout (dc_token_ring_fifo_dout_DATA_WIDTH32_BUFFER_DEPTH8)
+                                      5.35e-06    0.000 4.70e-07  5.82e-06   0.2
+        u_din_full (dc_full_detector_BUFFER_DEPTH8)
+                                         0.000    0.000 9.87e-08  9.87e-08   0.0
+        u_din_write_tr (dc_token_ring_BUFFER_DEPTH8_RESET_VALUE32h0000000c)
+                                         0.000    0.000 1.56e-07  1.56e-07   0.0
+    genblk1[0].core_clock_gate (cluster_clock_gating_13877)
+                                      3.05e-07 1.78e-07 2.21e-08  5.04e-07   0.0
+    genblk1[2].core_clock_gate (cluster_clock_gating_13875)
+                                      3.05e-07 2.29e-07 1.63e-08  5.50e-07   0.0
+    axi2apb_i (axi2apb_wrap_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_USER_WIDTH1_AXI_ID_WIDTH4_APB_ADDR_WIDTH32_axi_slave_AXI_BUS_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_ID_WIDTH4_AXI_USER_WIDTH1_Slave_apb_master_APB_BUS_Master)
+                                      2.12e-05 9.16e-06 7.25e-06  3.76e-05   1.1
+      genblk1.axi2apb_i_Slave_b_buffer (axi_b_buffer_ID_WIDTH4_USER_WIDTH1_BUFFER_DEPTH2)
+                                      1.11e-06 3.95e-08 2.17e-07  1.37e-06   0.0
+      genblk1.axi2apb_i_Slave_aw_buffer (axi_aw_buffer_ID_WIDTH4_ADDR_WIDTH32_USER_WIDTH1_BUFFER_DEPTH2)
+                                      1.18e-06 8.96e-08 1.47e-06  2.74e-06   0.1
+        buffer_i_cg_cell (cluster_clock_gating_13882)
+                                      1.80e-07 9.58e-09 2.12e-08  2.11e-07   0.0
+      genblk1.axi2apb_i_Slave_r_buffer (axi_r_buffer_ID_WIDTH4_DATA_WIDTH32_USER_WIDTH1_BUFFER_DEPTH2)
+                                      4.10e-06 2.18e-06 1.67e-06  7.95e-06   0.2
+        buffer_i_cg_cell (cluster_clock_gating_13880)
+                                      4.37e-07 1.76e-07 2.22e-08  6.36e-07   0.0
+      genblk1.axi2apb_i_Slave_ar_buffer (axi_ar_buffer_ID_WIDTH4_ADDR_WIDTH32_USER_WIDTH1_BUFFER_DEPTH2)
+                                      4.55e-06 2.38e-06 1.54e-06  8.46e-06   0.2
+        buffer_i_cg_cell (cluster_clock_gating_13881)
+                                      4.50e-07 1.89e-07 2.39e-08  6.63e-07   0.0
+      genblk1.axi2apb_i_Slave_w_buffer (axi_w_buffer_DATA_WIDTH32_USER_WIDTH1_BUFFER_DEPTH2_1)
+                                      1.20e-06 1.44e-07 1.59e-06  2.93e-06   0.1
+        buffer_i_cg_cell (cluster_clock_gating_13878)
+                                      1.80e-07 6.84e-09 2.23e-08  2.09e-07   0.0
+    apb_timer_i (apb_timer)           5.95e-05 2.19e-05 6.19e-06  8.76e-05   2.6
+      TIMER_GEN[1].timer_i (timer_13938)
+                                      2.82e-05    0.000 3.02e-06  3.12e-05   0.9
+        inc_add_73_43_17 (increment_unsigned_988_989_17144)
+                                         0.000    0.000 1.52e-07  1.52e-07   0.0
+        inc_add_80_53_38 (increment_unsigned_988_989_17142)
+                                         0.000    0.000 9.96e-08  9.96e-08   0.0
+        gte_86_29 (geq_unsigned_16101)
+                                         0.000    0.000 1.21e-07  1.21e-07   0.0
+      TIMER_GEN[0].timer_i (timer)    2.82e-05    0.000 2.97e-06  3.12e-05   0.9
+        inc_add_73_43_17 (increment_unsigned_988_989_17143)
+                                         0.000    0.000 1.32e-07  1.32e-07   0.0
+        inc_add_80_53_38 (increment_unsigned_988_989_17141)
+                                         0.000    0.000 9.96e-08  9.96e-08   0.0
+        gte_86_29 (geq_unsigned_16100)
+                                         0.000    0.000 1.21e-07  1.21e-07   0.0
+    periph_bus_i (periph_bus_wrap_APB_ADDR_WIDTH32_APB_DATA_WIDTH32_apb_slave_APB_BUS_Slave_uart_master_APB_BUS_Master_gpio_master_APB_BUS_Master_timer_master_APB_BUS_Master_event_unit_master_APB_BUS_Master_soc_ctrl_master_APB_BUS_Master_debug_master_APB_BUS_Master)
+                                      2.67e-07 1.13e-06 6.32e-07  2.03e-06   0.1
+    genblk1[1].core_clock_gate (cluster_clock_gating_13876)
+                                      3.05e-07 4.35e-07 1.79e-08  7.58e-07   0.0
+    genblk1[4].core_clock_gate (cluster_clock_gating_13873)
+                                      3.05e-07 2.10e-07 2.13e-08  5.36e-07   0.0
+
+
+                                      Peak     Peak            Glitch   X-tran
+Hierarchy                             Power    Time            Power    Power
+--------------------------------------------------------------------------------
+pulpino_top_rtl_w_pads                   3.808 4936101.027-4936101.028
+                                                                  0.000 5.09e-05
+  pulpino_top_rtl_inst_core_region_i (core_region_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_ID_MASTER_WIDTH2_AXI_ID_SLAVE_WIDTH4_AXI_USER_WIDTH1_USE_ZERO_RISCY0_RISCY_RV32F0_ZERO_RV32M1_ZERO_RV32E0_core_master_AXI_BUS_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_ID_WIDTH2_AXI_USER_WIDTH1_Master_dbg_master_AXI_BUS_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_ID_WIDTH2_AXI_USER_WIDTH1_Master_data_slave_AXI_BUS_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_ID_WIDTH4_AXI_USER_WIDTH1_Slave_instr_slave_AXI_BUS_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_ID_WIDTH4_AXI_USER_WIDTH1_Slave_debug_DEBUG_BUS_Slave)
+                                         3.647 4936101.027-4936101.028
+                                                                  0.000 5.09e-05
+    data_mem_axi_if (axi_mem_if_SP_wrap_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_ID_WIDTH4_AXI_USER_WIDTH1_MEM_ADDR_WIDTH15_slave_AXI_BUS_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_ID_WIDTH4_AXI_USER_WIDTH1_Slave)
+                                      3.41e-02 4500401.020-4500401.021
+                                                                  0.000 1.17e-07
+      axi_mem_if_SP_i_Slave_aw_buffer_LP (axi_aw_buffer_ID_WIDTH4_ADDR_WIDTH32_USER_WIDTH1_BUFFER_DEPTH4_13858)
+                                      2.98e-03 4127481.019-4127481.020
+                                                                  0.000    0.000
+        buffer_i_cg_cell (cluster_clock_gating_13887)
+                                      3.83e-04 4127520.557-4127520.558
+                                                                  0.000    0.000
+      axi_mem_if_SP_i_Slave_r_buffer_LP (axi_r_buffer_ID_WIDTH4_DATA_WIDTH32_USER_WIDTH1_BUFFER_DEPTH4_13862)
+                                      2.94e-03 4500321.034-4500321.035
+                                                                  0.000 1.36e-09
+        buffer_i_cg_cell (cluster_clock_gating_13884)
+                                      4.27e-04 4127480.557-4127480.558
+                                                                  0.000    0.000
+      axi_mem_if_SP_i_Slave_ar_buffer_LP (axi_ar_buffer_ID_WIDTH4_ADDR_WIDTH32_USER_WIDTH1_BUFFER_DEPTH4_13857)
+                                      2.94e-03 4127481.020-4127481.021
+                                                                  0.000    0.000
+        buffer_i_cg_cell (cluster_clock_gating_13886)
+                                      3.85e-04 4127520.557-4127520.558
+                                                                  0.000    0.000
+      axi_mem_if_SP_i_Slave_b_buffer_LP (axi_b_buffer_ID_WIDTH4_USER_WIDTH1_BUFFER_DEPTH4_13859)
+                                      2.98e-03 4127481.014-4127481.015
+                                                                  0.000    0.000
+      axi_mem_if_SP_i_WRITE_CTRL (axi_write_only_ctrl_AXI4_ADDRESS_WIDTH32_AXI4_RDATA_WIDTH32_AXI4_WDATA_WIDTH32_AXI4_ID_WIDTH4_AXI4_USER_WIDTH1_AXI_NUMBYTES4_MEM_ADDR_WIDTH15)
+                                      9.02e-03 4127481.019-4127481.020
+                                                                  0.000    0.000
+      axi_mem_if_SP_i_READ_CTRL (axi_read_only_ctrl_AXI4_ADDRESS_WIDTH32_AXI4_RDATA_WIDTH32_AXI4_WDATA_WIDTH32_AXI4_ID_WIDTH4_AXI4_USER_WIDTH1_AXI_NUMBYTES4_MEM_ADDR_WIDTH15)
+                                      1.27e-02 4349961.020-4349961.021
+                                                                  0.000 3.23e-08
+      axi_mem_if_SP_i_Slave_w_buffer_LP (axi_w_buffer_DATA_WIDTH32_USER_WIDTH1_BUFFER_DEPTH4_13865)
+                                      2.98e-03 4127481.020-4127481.021
+                                                                  0.000    0.000
+        buffer_i_cg_cell (cluster_clock_gating_13885)
+                                      4.27e-04 4127480.557-4127480.558
+                                                                  0.000    0.000
+    instr_ram_mux_i (ram_mux_ADDR_WIDTH16_OUT_WIDTH32_IN0_WIDTH32_IN1_WIDTH32)
+                                      1.01e-03 6214800.914-6214800.915
+                                                                  0.000    0.000
+    axi_slice_core2axi (axi_slice_wrap_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_USER_WIDTH1_AXI_ID_WIDTH2_SLICE_DEPTH2_axi_slave_AXI_BUS_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_ID_WIDTH2_AXI_USER_WIDTH1_Slave_axi_master_AXI_BUS_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_ID_WIDTH2_AXI_USER_WIDTH1_Master)
+                                      3.71e-02 4794000.966-4794000.967
+                                                                  0.000    0.000
+      WITH_SLICE.axi_slice_i_w_buffer_i (axi_w_buffer_DATA_WIDTH32_USER_WIDTH1_BUFFER_DEPTH2)
+                                      3.71e-02 4794000.966-4794000.967
+                                                                  0.000    0.000
+        buffer_i_cg_cell (cluster_clock_gating_13894)
+                                      3.83e-04 4128280.563-4128280.564
+                                                                  0.000    0.000
+      WITH_SLICE.axi_slice_i_r_buffer_i (axi_r_buffer_ID_WIDTH2_DATA_WIDTH32_USER_WIDTH1_BUFFER_DEPTH2)
+                                      3.27e-02 6220440.976-6220440.977
+                                                                  0.000    0.000
+        buffer_i_cg_cell (cluster_clock_gating_13893)
+                                      3.83e-04 4127680.557-4127680.558
+                                                                  0.000    0.000
+      WITH_SLICE.axi_slice_i_b_buffer_i (axi_b_buffer_ID_WIDTH2_USER_WIDTH1_BUFFER_DEPTH2)
+                                      3.24e-03 6202121.014-6202121.015
+                                                                  0.000    0.000
+      WITH_SLICE.axi_slice_i_aw_buffer_i (axi_aw_buffer_ID_WIDTH2_ADDR_WIDTH32_USER_WIDTH1_BUFFER_DEPTH2)
+                                      2.97e-02 6214680.952-6214680.953
+                                                                  0.000    0.000
+        buffer_i_cg_cell (cluster_clock_gating_13896)
+                                      3.83e-04 4127520.557-4127520.558
+                                                                  0.000    0.000
+      WITH_SLICE.axi_slice_i_ar_buffer_i (axi_ar_buffer_ID_WIDTH2_ADDR_WIDTH32_USER_WIDTH1_BUFFER_DEPTH2)
+                                      2.97e-02 4127480.957-4127480.958
+                                                                  0.000    0.000
+        buffer_i_cg_cell (cluster_clock_gating_13895)
+                                      3.83e-04 4127520.557-4127520.558
+                                                                  0.000    0.000
+    core2axi_i (core2axi_wrap_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_USER_WIDTH1_AXI_ID_WIDTH2_REGISTERED_GRANT40h46414c5345_master_AXI_BUS_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_ID_WIDTH2_AXI_USER_WIDTH1_Master)
+                                      2.01e-03 6214881.019-6214881.020
+                                                                  0.000    0.000
+    adv_dbg_if_i (adv_dbg_if_NB_CORES1_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_USER_WIDTH1_AXI_ID_WIDTH2)
+                                      1.59e-02 4128401.030-4128401.031
+                                                                  0.000    0.000
+      dbg_module_i_i_dbg_cpu_or1k (adbg_or1k_module_NB_CORES1)
+                                      2.47e-03 4127480.990-4127480.991
+                                                                  0.000    0.000
+        or1k_crc_i (adbg_crc32_13792) 7.90e-07 4127461.065-4127461.066
+                                                                  0.000    0.000
+        or1k_statusreg_i (adbg_or1k_status_reg_NB_CORES1)
+                                      2.29e-08 4127461.065-4127461.066
+                                                                  0.000    0.000
+        or1k_biu_i (adbg_or1k_biu_NB_CORES1)
+                                      2.46e-03 4127480.990-4127480.991
+                                                                  0.000    0.000
+      cluster_tap_i (adbg_tap_top)    1.18e-06 4127461.065-4127461.066
+                                                                  0.000    0.000
+      dbg_module_i_i_dbg_axi (adbg_axi_module_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_USER_WIDTH1_AXI_ID_WIDTH2)
+                                      1.59e-02 4128401.030-4128401.031
+                                                                  0.000    0.000
+        axi_crc_i (adbg_crc32)        7.60e-07 4127461.065-4127461.066
+                                                                  0.000    0.000
+        axi_biu_i (adbg_axi_biu_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_USER_WIDTH1_AXI_ID_WIDTH2)
+                                      1.59e-02 4128401.030-4128401.031
+                                                                  0.000    0.000
+        add_383_50 (add_unsigned_2766)
+                                      1.05e-07 4127461.065-4127461.066
+                                                                  0.000    0.000
+    instr_mem (instr_ram_wrap_RAM_SIZE32768_DATA_WIDTH32)
+                                         1.386 6214981.005-6214981.006
+                                                                  0.000 1.72e-05
+      boot_rom_wrap_i (boot_rom_wrap_DATA_WIDTH32)
+                                      4.98e-03 5883240.980-5883240.981
+                                                                  0.000    0.000
+    instr_mem_axi_if (axi_mem_if_SP_wrap_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_ID_WIDTH4_AXI_USER_WIDTH1_MEM_ADDR_WIDTH16_slave_AXI_BUS_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_ID_WIDTH4_AXI_USER_WIDTH1_Slave)
+                                      3.56e-02 4129400.929-4129400.930
+                                                                  0.000 9.55e-06
+      axi_mem_if_SP_i_Slave_r_buffer_LP (axi_r_buffer_ID_WIDTH4_DATA_WIDTH32_USER_WIDTH1_BUFFER_DEPTH4)
+                                      2.97e-03 4142760.929-4142760.930
+                                                                  0.000 8.07e-08
+        buffer_i_cg_cell (cluster_clock_gating_13889)
+                                      4.27e-04 4127480.563-4127480.564
+                                                                  0.000    0.000
+      axi_mem_if_SP_i_Slave_aw_buffer_LP (axi_aw_buffer_ID_WIDTH4_ADDR_WIDTH32_USER_WIDTH1_BUFFER_DEPTH4)
+                                      2.95e-03 4127480.928-4127480.929
+                                                                  0.000    0.000
+        buffer_i_cg_cell (cluster_clock_gating_13892)
+                                      3.83e-04 4127520.557-4127520.558
+                                                                  0.000    0.000
+      axi_mem_if_SP_i_READ_CTRL (axi_read_only_ctrl_AXI4_ADDRESS_WIDTH32_AXI4_RDATA_WIDTH32_AXI4_WDATA_WIDTH32_AXI4_ID_WIDTH4_AXI4_USER_WIDTH1_AXI_NUMBYTES4_MEM_ADDR_WIDTH16)
+                                      1.59e-02 4142760.914-4142760.915
+                                                                  0.000 8.22e-06
+      axi_mem_if_SP_i_Slave_b_buffer_LP (axi_b_buffer_ID_WIDTH4_USER_WIDTH1_BUFFER_DEPTH4)
+                                      2.95e-03 4127481.019-4127481.020
+                                                                  0.000    0.000
+      axi_mem_if_SP_i_Slave_w_buffer_LP (axi_w_buffer_DATA_WIDTH32_USER_WIDTH1_BUFFER_DEPTH4)
+                                      2.95e-03 4127480.928-4127480.929
+                                                                  0.000    0.000
+        buffer_i_cg_cell (cluster_clock_gating_13890)
+                                      4.27e-04 4127480.563-4127480.564
+                                                                  0.000    0.000
+      axi_mem_if_SP_i_Slave_ar_buffer_LP (axi_ar_buffer_ID_WIDTH4_ADDR_WIDTH32_USER_WIDTH1_BUFFER_DEPTH4)
+                                      2.97e-03 4127480.928-4127480.929
+                                                                  0.000    0.000
+        buffer_i_cg_cell (cluster_clock_gating_13891)
+                                      3.85e-04 4127520.557-4127520.558
+                                                                  0.000    0.000
+      axi_mem_if_SP_i_WRITE_CTRL (axi_write_only_ctrl_AXI4_ADDRESS_WIDTH32_AXI4_RDATA_WIDTH32_AXI4_WDATA_WIDTH32_AXI4_ID_WIDTH4_AXI4_USER_WIDTH1_AXI_NUMBYTES4_MEM_ADDR_WIDTH16)
+                                      9.40e-03 4127520.928-4127520.929
+                                                                  0.000    0.000
+    data_mem (sp_ram_wrap_RAM_SIZE32768_DATA_WIDTH32)
+                                         2.755 5806621.020-5806621.021
+                                                                  0.000 1.86e-07
+    data_ram_mux_i (ram_mux_ADDR_WIDTH15_OUT_WIDTH32_IN0_WIDTH32_IN1_WIDTH32)
+                                      3.38e-03 5005424.978-5005424.979
+                                                                  0.000    0.000
+    CORE.RISCV_CORE (riscv_core_N_EXT_PERF_COUNTERS0_FPU0_SHARED_FP0_SHARED_FP_DIVSQRT2)
+                                         0.517 5702961.005-5702961.006
+                                                                  0.000 1.24e-05
+      load_store_unit_i (riscv_load_store_unit)
+                                      2.60e-02 5537081.010-5537081.011
+                                                                  0.000 2.22e-07
+        ADD_UNS_OP (add_unsigned_1331_17116)
+                                      1.39e-03 5815384.030-5815384.031
+                                                                  0.000    0.000
+      cs_registers_i (riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE0)
+                                      3.12e-02 4128561.000-4128561.001
+                                                                  0.000    0.000
+        inc_ADD_UNS_OP_75 (increment_unsigned_988_989)
+                                      1.03e-07 4127461.065-4127461.066
+                                                                  0.000    0.000
+      debug_unit_i (riscv_debug_unit) 1.78e-02 4151960.929-4151960.930
+                                                                  0.000    0.000
+      id_stage_i (riscv_id_stage_N_HWLP2_PULP_SECURE0_FPU0_APU0_SHARED_FP0_SHARED_DSP_MULT0_SHARED_INT_DIV0_SHARED_FP_DIVSQRT2_WAPUTYPE0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5)
+                                         0.345 5811801.005-5811801.006
+                                                                  0.000 1.79e-07
+        controller_i (riscv_controller_FPU0)
+                                      3.45e-03 4129601.000-4129601.001
+                                                                  0.000    0.000
+        hwloop_regs_i (riscv_hwloop_regs_N_REGS2)
+                                      4.33e-02 5685541.026-5685541.027
+                                                                  0.000    0.000
+          dec_sub_103_50_I2_7 (decrement_unsigned_990_991_24833)
+                                      2.71e-07 4127461.065-4127461.066
+                                                                  0.000    0.000
+          dec_sub_103_50_I1_12 (decrement_unsigned_990_991)
+                                      2.48e-07 4127461.065-4127461.066
+                                                                  0.000    0.000
+        int_controller_i (riscv_int_controller_PULP_SECURE0)
+                                      3.47e-03 4127481.000-4127481.001
+                                                                  0.000    0.000
+        add_537_37_Y_add_536_37 (add_unsigned_1331_17118)
+                                      3.69e-04 5870224.304-5870224.305
+                                                                  0.000    0.000
+        dec_sub_468_53_74 (decrement_unsigned_990_991_17152)
+                                      1.06e-03 4811144.937-4811144.938
+                                                                  0.000    0.000
+        registers_i (riscv_register_file_ADDR_WIDTH6_FPU0)
+                                         0.234 5544801.005-5544801.006
+                                                                  0.000 8.31e-08
+        add_584_49_Y_add_581_38_Y_add_580_38 (add_unsigned_1331_17117)
+                                      9.44e-04 5815184.252-5815184.253
+                                                                  0.000    0.000
+        decoder_i (riscv_decoder_FPU0_PULP_SECURE0_SHARED_FP0_SHARED_DSP_MULT0_SHARED_INT_DIV0_SHARED_FP_DIVSQRT2_WAPUTYPE0_APU_WOP_CPU6)
+                                      3.25e-03 4129424.161-4129424.162
+                                                                  0.000    0.000
+      core_clock_gate_i (cluster_clock_gating)
+                                      4.09e-04 4127480.383-4127480.384
+                                                                  0.000    0.000
+      ex_stage_i (riscv_ex_stage_FPU0_SHARED_FP0_SHARED_DSP_MULT0_SHARED_INT_DIV0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5)
+                                      5.60e-02 5883080.986-5883080.987
+                                                                  0.000    0.000
+        alu_i (riscv_alu_SHARED_INT_DIV0_FPU0)
+                                      4.95e-02 5815360.982-5815360.983
+                                                                  0.000    0.000
+          sra_269_105 (arith_shift_right_vlog_unsigned)
+                                      1.21e-03 4147502.745-4147502.746
+                                                                  0.000    0.000
+          add_182_44 (add_unsigned_1331)
+                                      5.06e-04 5063984.454-5063984.455
+                                                                  0.000    0.000
+          csa_tree_alu_popcnt_i_add_1154_39_groupi (csa_tree_alu_popcnt_i_add_1154_39_group_17940)
+                                      8.55e-04 5082344.058-5082344.059
+                                                                  0.000    0.000
+          sll_882_39 (shift_left_vlog_unsigned_2311_17111)
+                                      4.69e-03 4147502.056-4147502.057
+                                                                  0.000    0.000
+          sra_270_105 (arith_shift_right_vlog_unsigned_17112)
+                                      1.27e-02 5478344.411-5478344.412
+                                                                  0.000    0.000
+          int_div.div_i (riscv_alu_div)
+                                      4.95e-02 5815360.982-5815360.983
+                                                                  0.000    0.000
+            gt_103_58 (gt_unsigned_1521)
+                                      9.05e-08 4127461.065-4127461.066
+                                                                  0.000    0.000
+            minus_100_38 (sub_unsigned_1529)
+                                      1.52e-07 4127461.065-4127461.066
+                                                                  0.000    0.000
+            sub_107_68_Y_add_107_46 (addsub_unsigned_45908)
+                                      2.10e-07 4127461.065-4127461.066
+                                                                  0.000    0.000
+          srl_283_46 (shift_right_vlog_unsigned)
+                                      1.78e-02 4145584.696-4145584.697
+                                                                  0.000    0.000
+          alu_ff_i (alu_ff)           1.71e-07 4127461.065-4127461.066
+                                                                  0.000    0.000
+          add_168_54 (add_signed_17119)
+                                      1.41e-03 5623264.611-5623264.612
+                                                                  0.000    0.000
+        mult_i (riscv_mult_SHARED_DSP_MULT0)
+                                      1.29e-02 4206463.279-4206463.280
+                                                                  0.000    0.000
+          csa_tree_add_114_70_groupi (csa_tree_add_114_70_group_17936)
+                                      9.76e-03 5742383.280-5742383.281
+                                                                  0.000    0.000
+          add_230_39_Y_add_283_68_Y_add_270_60 (add_signed_2860)
+                                      1.75e-04 4147344.093-4147344.094
+                                                                  0.000    0.000
+          add_230_63_Y_add_283_102_Y_add_270_87 (add_signed_2860_17164)
+                                      8.48e-04 5000702.928-5000702.929
+                                                                  0.000    0.000
+          mul_266_61_Y_mul_280_63 (mult_signed_4529)
+                                      1.37e-06 4127461.065-4127461.066
+                                                                  0.000    0.000
+          mul_267_61 (mult_signed_3315)
+                                      4.94e-07 4127461.065-4127461.066
+                                                                  0.000    0.000
+          csa_tree_add_269_87_groupi (csa_tree_add_269_87_group_17938)
+                                      4.07e-04 4142504.766-4142504.767
+                                                                  0.000    0.000
+          mul_281_63_Y_mul_230_87_Y_mul_265_61 (mult_signed_4383)
+                                      1.13e-02 5748263.565-5748263.566
+                                                                  0.000    0.000
+          sra_117_128 (arith_shift_right_vlog_unsigned_3259)
+                                      1.38e-03 5082184.583-5082184.584
+                                                                  0.000    0.000
+      if_stage_i (riscv_if_stage_N_HWLP2_RDATA_WIDTH32_FPU0)
+                                         0.162 5856641.001-5856641.002
+                                                                  0.000 1.19e-05
+        prefetch_32.prefetch_buffer_i (riscv_prefetch_buffer)
+                                         0.149 5856641.001-5856641.002
+                                                                  0.000 6.01e-06
+          add_115_54 (add_unsigned_17150)
+                                      2.39e-04 5818023.789-5818023.790
+                                                                  0.000    0.000
+          fifo_i (riscv_fetch_fifo)      0.130 5856641.001-5856641.002
+                                                                  0.000 6.01e-06
+            add_182_49 (add_unsigned) 3.08e-04 5883304.109-5883304.110
+                                                                  0.000    0.000
+        compressed_decoder_i (riscv_compressed_decoder_FPU0)
+                                      1.72e-03 5856822.983-5856822.984
+                                                                  0.000 3.96e-06
+        hwloop_controller_i (riscv_hwloop_controller_N_REGS2)
+                                      7.91e-04 5883304.195-5883304.196
+                                                                  0.000    0.000
+  pulpino_top_rtl_inst_axi_interconnect_i (axi_node_intf_wrap_NB_MASTER3_NB_SLAVE3_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_ID_WIDTH2_AXI_USER_WIDTH1_slave_AXI_BUS_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_ID_WIDTH2_AXI_USER_WIDTH1_Slave_master_AXI_BUS_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_ID_WIDTH4_AXI_USER_WIDTH1_Master)
+                                      3.98e-02 5690081.021-5690081.022
+                                                                  0.000    0.000
+    axi_node_i__RESP_BLOCK_GEN[1].RESP_BLOCK (axi_response_block_AXI_ADDRESS_W32_AXI_DATA_W32_AXI_USER_W1_N_INIT_PORT3_N_TARG_PORT3_FIFO_DEPTH_DW8_AXI_ID_IN2_N_REGION1_1)
+                                      8.90e-03 4130161.020-4130161.021
+                                                                  0.000    0.000
+      BW_ALLOC (axi_BW_allocator_AXI_USER_W1_N_INIT_PORT3_N_TARG_PORT3_AXI_DATA_W32_AXI_ID_IN2_1)
+                                      3.95e-03 4127481.020-4127481.021
+                                                                  0.000    0.000
+      BR_ALLOC (axi_BR_allocator_AXI_USER_W1_N_INIT_PORT3_N_TARG_PORT3_AXI_DATA_W32_AXI_ID_IN2_1)
+                                      5.96e-03 4128001.034-4128001.035
+                                                                  0.000    0.000
+      DW_ADDR_DEC (axi_address_decoder_DW_N_INIT_PORT3_FIFO_DEPTH8_2_13856)
+                                      2.47e-03 4127481.017-4127481.018
+                                                                  0.000    0.000
+      AW_ADDR_DEC (axi_address_decoder_AW_ADDR_WIDTH32_N_INIT_PORT3_N_REGION1_13851)
+                                      9.91e-04 4128281.020-4128281.021
+                                                                  0.000    0.000
+      AR_ADDR_DEC (axi_address_decoder_AR_ADDR_WIDTH32_N_INIT_PORT3_N_REGION1_13849)
+                                      4.95e-04 4127481.020-4127481.021
+                                                                  0.000    0.000
+    axi_node_i__REQ_BLOCK_GEN[0].REQ_BLOCK (axi_request_block_AXI_ADDRESS_W32_AXI_DATA_W32_AXI_USER_W1_N_INIT_PORT3_N_TARG_PORT3_FIFO_DW_DEPTH8_AXI_ID_IN2)
+                                      3.46e-03 4601801.005-4601801.006
+                                                                  0.000    0.000
+      AR_ALLOCATOR (axi_AR_allocator_AXI_ADDRESS_W32_AXI_USER_W1_N_TARG_PORT3_AXI_ID_IN2)
+                                      9.81e-04 4127481.020-4127481.021
+                                                                  0.000    0.000
+      BR_DECODER (axi_address_decoder_BR_N_TARG_PORT3_AXI_ID_IN2)
+                                      1.97e-08 4127461.065-4127461.066
+                                                                  0.000    0.000
+      BW_DECODER (axi_address_decoder_BW_N_TARG_PORT3_AXI_ID_IN2)
+                                      2.06e-08 4127461.065-4127461.066
+                                                                  0.000    0.000
+      DW_ALLOC (axi_DW_allocator_AXI_USER_W1_N_TARG_PORT3_FIFO_DEPTH8_AXI_DATA_W32)
+                                      3.46e-03 4601801.005-4601801.006
+                                                                  0.000    0.000
+      AW_ALLOCATOR (axi_AW_allocator_AXI_ADDRESS_W32_AXI_USER_W1_N_TARG_PORT3_AXI_ID_IN2)
+                                      9.79e-04 4127481.020-4127481.021
+                                                                  0.000    0.000
+    axi_node_i__REQ_BLOCK_GEN[1].REQ_BLOCK (axi_request_block_AXI_ADDRESS_W32_AXI_DATA_W32_AXI_USER_W1_N_INIT_PORT3_N_TARG_PORT3_FIFO_DW_DEPTH8_AXI_ID_IN2_13864)
+                                      4.47e-03 4601801.005-4601801.006
+                                                                  0.000    0.000
+      AR_ALLOCATOR (axi_AR_allocator_AXI_ADDRESS_W32_AXI_USER_W1_N_TARG_PORT3_AXI_ID_IN2_13794)
+                                      9.81e-04 4127481.020-4127481.021
+                                                                  0.000    0.000
+      BR_DECODER (axi_address_decoder_BR_N_TARG_PORT3_AXI_ID_IN2_13853)
+                                      1.71e-08 4127461.065-4127461.066
+                                                                  0.000    0.000
+      BW_DECODER (axi_address_decoder_BW_N_TARG_PORT3_AXI_ID_IN2_13855)
+                                      2.06e-08 4127461.065-4127461.066
+                                                                  0.000    0.000
+      DW_ALLOC (axi_DW_allocator_AXI_USER_W1_N_TARG_PORT3_FIFO_DEPTH8_AXI_DATA_W32_13807)
+                                      4.47e-03 4601801.005-4601801.006
+                                                                  0.000    0.000
+      AW_ALLOCATOR (axi_AW_allocator_AXI_ADDRESS_W32_AXI_USER_W1_N_TARG_PORT3_AXI_ID_IN2_13796)
+                                      9.79e-04 4127481.014-4127481.015
+                                                                  0.000    0.000
+    axi_node_i__REQ_BLOCK_GEN[2].REQ_BLOCK (axi_request_block_AXI_ADDRESS_W32_AXI_DATA_W32_AXI_USER_W1_N_INIT_PORT3_N_TARG_PORT3_FIFO_DW_DEPTH8_AXI_ID_IN2_13863)
+                                      1.18e-02 5984240.945-5984240.946
+                                                                  0.000    0.000
+      BR_DECODER (axi_address_decoder_BR_N_TARG_PORT3_AXI_ID_IN2_13852)
+                                      1.12e-04 4127624.195-4127624.196
+                                                                  0.000    0.000
+      AR_ALLOCATOR (axi_AR_allocator_AXI_ADDRESS_W32_AXI_USER_W1_N_TARG_PORT3_AXI_ID_IN2_13793)
+                                      2.03e-03 4194361.020-4194361.021
+                                                                  0.000    0.000
+      BW_DECODER (axi_address_decoder_BW_N_TARG_PORT3_AXI_ID_IN2_13854)
+                                      1.17e-04 4128423.307-4128423.308
+                                                                  0.000    0.000
+      DW_ALLOC (axi_DW_allocator_AXI_USER_W1_N_TARG_PORT3_FIFO_DEPTH8_AXI_DATA_W32_13806)
+                                      1.18e-02 6189200.945-6189200.946
+                                                                  0.000    0.000
+      AW_ALLOCATOR (axi_AW_allocator_AXI_ADDRESS_W32_AXI_USER_W1_N_TARG_PORT3_AXI_ID_IN2_13795)
+                                      2.03e-03 6189161.020-6189161.021
+                                                                  0.000    0.000
+    axi_node_i__RESP_BLOCK_GEN[0].RESP_BLOCK (axi_response_block_AXI_ADDRESS_W32_AXI_DATA_W32_AXI_USER_W1_N_INIT_PORT3_N_TARG_PORT3_FIFO_DEPTH_DW8_AXI_ID_IN2_N_REGION1)
+                                      1.60e-02 5996961.020-5996961.021
+                                                                  0.000    0.000
+      BW_ALLOC (axi_BW_allocator_AXI_USER_W1_N_INIT_PORT3_N_TARG_PORT3_AXI_DATA_W32_AXI_ID_IN2)
+                                      8.00e-03 6202081.014-6202081.015
+                                                                  0.000    0.000
+      BR_ALLOC (axi_BR_allocator_AXI_USER_W1_N_INIT_PORT3_N_TARG_PORT3_AXI_DATA_W32_AXI_ID_IN2)
+                                      5.53e-03 6220801.034-6220801.035
+                                                                  0.000    0.000
+      DW_ADDR_DEC (axi_address_decoder_DW_N_INIT_PORT3_FIFO_DEPTH8)
+                                      1.19e-02 4141200.962-4141200.963
+                                                                  0.000    0.000
+      AW_ADDR_DEC (axi_address_decoder_AW_ADDR_WIDTH32_N_INIT_PORT3_N_REGION1)
+                                      9.91e-04 4128241.014-4128241.015
+                                                                  0.000    0.000
+      AR_ADDR_DEC (axi_address_decoder_AR_ADDR_WIDTH32_N_INIT_PORT3_N_REGION1)
+                                      4.95e-04 4127881.020-4127881.021
+                                                                  0.000    0.000
+    axi_node_i__RESP_BLOCK_GEN[2].RESP_BLOCK (axi_response_block_AXI_ADDRESS_W32_AXI_DATA_W32_AXI_USER_W1_N_INIT_PORT3_N_TARG_PORT3_FIFO_DEPTH_DW8_AXI_ID_IN2_N_REGION1_2)
+                                      7.90e-03 4128001.034-4128001.035
+                                                                  0.000    0.000
+      BW_ALLOC (axi_BW_allocator_AXI_USER_W1_N_INIT_PORT3_N_TARG_PORT3_AXI_DATA_W32_AXI_ID_IN2_2)
+                                      6.43e-03 4127481.020-4127481.021
+                                                                  0.000    0.000
+      DW_ADDR_DEC (axi_address_decoder_DW_N_INIT_PORT3_FIFO_DEPTH8_2)
+                                      3.45e-03 4127481.034-4127481.035
+                                                                  0.000    0.000
+      AW_ADDR_DEC (axi_address_decoder_AW_ADDR_WIDTH32_N_INIT_PORT3_N_REGION1_13850)
+                                      9.91e-04 4127481.034-4127481.035
+                                                                  0.000    0.000
+      BR_ALLOC (axi_BR_allocator_AXI_USER_W1_N_INIT_PORT3_N_TARG_PORT3_AXI_DATA_W32_AXI_ID_IN2_2)
+                                      3.97e-03 4128000.990-4128000.991
+                                                                  0.000    0.000
+      AR_ADDR_DEC (axi_address_decoder_AR_ADDR_WIDTH32_N_INIT_PORT3_N_REGION1_13848)
+                                      5.02e-04 4127481.030-4127481.031
+                                                                  0.000    0.000
+  pulpino_top_rtl_inst_peripherals_i (peripherals_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_USER_WIDTH1_AXI_SLAVE_ID_WIDTH4_AXI_MASTER_ID_WIDTH2_axi_spi_master_AXI_BUS_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_ID_WIDTH2_AXI_USER_WIDTH1_Master_debug_DEBUG_BUS_Master_slave_AXI_BUS_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_ID_WIDTH4_AXI_USER_WIDTH1_Slave)
+                                         0.566 6111901.051-6111901.052
+                                                                  0.000    0.000
+    apb_pulpino_i (apb_pulpino_BOOT_ADDR32h00008000)
+                                      7.80e-02 4194320.938-4194320.939
+                                                                  0.000    0.000
+    apb_gpio_i (apb_gpio)                0.208 4147801.027-4147801.028
+                                                                  0.000    0.000
+    genblk1[3].core_clock_gate (cluster_clock_gating_13874)
+                                      4.14e-04 4142840.563-4142840.564
+                                                                  0.000    0.000
+    apb_event_unit_i (apb_event_unit)    0.149 4128561.017-4128561.018
+                                                                  0.000    0.000
+      i_interrupt_unit (generic_service_unit_APB_ADDR_WIDTH12)
+                                      5.79e-02 4128561.017-4128561.018
+                                                                  0.000    0.000
+      i_sleep_unit (sleep_unit_APB_ADDR_WIDTH12)
+                                      1.53e-02 4127481.017-4127481.018
+                                                                  0.000    0.000
+      i_event_unit (generic_service_unit_APB_ADDR_WIDTH12_13919)
+                                      7.52e-02 4128561.017-4128561.018
+                                                                  0.000    0.000
+    apb2per_debug_i (apb2per_PER_ADDR_WIDTH15_APB_ADDR_WIDTH32)
+                                      4.95e-04 4127480.914-4127480.915
+                                                                  0.000    0.000
+    apb_uart_i (apb_uart)                0.354 5024481.008-5024481.009
+                                                                  0.000    0.000
+      UART_ED_DCD (slib_edge_detect_13921)
+                                      4.94e-04 4127481.010-4127481.011
+                                                                  0.000    0.000
+      UART_ED_RI (slib_edge_detect_13922)
+                                      4.94e-04 4127481.000-4127481.001
+                                                                  0.000    0.000
+      UART_IS_DCD (slib_input_sync_4_13933)
+                                      9.68e-04 4127481.000-4127481.001
+                                                                  0.000    0.000
+      UART_FEDET (slib_edge_detect_13926)
+                                      4.90e-04 4127481.010-4127481.011
+                                                                  0.000    0.000
+      UART_BG16 (uart_baudgen)        9.43e-03 4896241.011-4896241.012
+                                                                  0.000    0.000
+      UART_IS_SIN (slib_input_sync)   9.64e-04 4127481.010-4127481.011
+                                                                  0.000    0.000
+      UART_IF_DSR (slib_input_filter_SIZE2_13930)
+                                      1.49e-03 4127561.000-4127561.001
+                                                                  0.000    0.000
+      UART_ED_CTS (slib_edge_detect_13924)
+                                      4.84e-04 4127481.010-4127481.011
+                                                                  0.000    0.000
+      UART_IS_CTS (slib_input_sync_13932)
+                                      9.91e-04 4127481.000-4127481.001
+                                                                  0.000    0.000
+      UART_RXFF (slib_fifo_WIDTH11_SIZE_E6)
+                                         0.194 5006440.981-5006440.982
+                                                                  0.000    0.000
+      UART_IF_DCD (slib_input_filter_SIZE2_13929)
+                                      1.48e-03 4127561.000-4127561.001
+                                                                  0.000    0.000
+      UART_RX (uart_receiver)         1.58e-02 4128240.999-4128241.000
+                                                                  0.000    0.000
+      UART_IS_RI (slib_input_sync_4)  9.68e-04 4127481.000-4127481.001
+                                                                  0.000    0.000
+      UART_BIDET (slib_edge_detect_13925)
+                                      4.90e-04 4127481.010-4127481.011
+                                                                  0.000    0.000
+      UART_TX (uart_transmitter)      3.99e-03 6211401.010-6211401.011
+                                                                  0.000    0.000
+      UART_IIC (uart_interrupt)       1.58e-03 4127501.053-4127501.054
+                                                                  0.000    0.000
+      UART_RCLK (slib_edge_detect_13920)
+                                      1.01e-03 4127480.999-4127481.000
+                                                                  0.000    0.000
+      UART_IF_RI (slib_input_filter_SIZE2_13928)
+                                      1.48e-03 4127561.000-4127561.001
+                                                                  0.000    0.000
+      UART_ED_DSR (slib_edge_detect_13923)
+                                      4.84e-04 4127481.010-4127481.011
+                                                                  0.000    0.000
+      UART_IF_CTS (slib_input_filter_SIZE2)
+                                      1.49e-03 4127561.000-4127561.001
+                                                                  0.000    0.000
+      UART_TXFF (slib_fifo_WIDTH8_SIZE_E6)
+                                         0.227 5574681.011-5574681.012
+                                                                  0.000    0.000
+      UART_IS_DSR (slib_input_sync_13931)
+                                      4.96e-04 4127481.000-4127481.001
+                                                                  0.000    0.000
+      UART_PEDET (slib_edge_detect_13927)
+                                      4.90e-04 4127481.010-4127481.011
+                                                                  0.000    0.000
+      UART_IIC_THRE_ED (slib_edge_detect)
+                                      4.90e-04 4127481.010-4127481.011
+                                                                  0.000    0.000
+      UART_BG2 (slib_clock_div_RATIO8)
+                                      4.24e-03 6220321.005-6220321.006
+                                                                  0.000    0.000
+    axi_spi_slave_i (axi_spi_slave_wrap_AXI_ADDRESS_WIDTH32_AXI_DATA_WIDTH32_AXI_ID_WIDTH2_AXI_USER_WIDTH1_axi_master_AXI_BUS_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_ID_WIDTH2_AXI_USER_WIDTH1_Master)
+                                      9.89e-02 4149601.022-4149601.023
+                                                                  0.000    0.000
+      axi_spi_slave_i_u_dcfifo_tx (spi_slave_dc_fifo_DATA_WIDTH32_BUFFER_DEPTH8_13937)
+                                      9.89e-02 4142841.022-4142841.023
+                                                                  0.000    0.000
+        u_din_full (dc_full_detector_BUFFER_DEPTH8_13898)
+                                      1.45e-03 4127481.022-4127481.023
+                                                                  0.000    0.000
+        u_din_buffer (dc_data_buffer_DATA_WIDTH32_BUFFER_DEPTH8_13897)
+                                      9.34e-02 4142841.022-4142841.023
+                                                                  0.000    0.000
+        u_dout (dc_token_ring_fifo_dout_DATA_WIDTH32_BUFFER_DEPTH8_13904)
+                                      4.13e-07 4127461.065-4127461.066
+                                                                  0.000    0.000
+        u_din_write_tr (dc_token_ring_BUFFER_DEPTH8_RESET_VALUE32h0000000c_13902)
+                                      4.03e-03 4127561.022-4127561.023
+                                                                  0.000    0.000
+      axi_spi_slave_i_u_axiplug (spi_slave_axi_plug_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_USER_WIDTH1_AXI_ID_WIDTH2)
+                                      4.94e-02 4149600.999-4149601.000
+                                                                  0.000    0.000
+        add_154_29 (add_unsigned_17149)
+                                      9.76e-08 4127461.065-4127461.066
+                                                                  0.000    0.000
+      axi_spi_slave_i_u_syncro (spi_slave_syncro_AXI_ADDR_WIDTH32)
+                                      3.48e-03 4127481.008-4127481.009
+                                                                  0.000    0.000
+      axi_spi_slave_i_u_txreg (spi_slave_tx)
+                                      1.17e-06 4127461.065-4127461.066
+                                                                  0.000    0.000
+      axi_spi_slave_i_u_slave_sm (spi_slave_controller_DUMMY_CYCLES32)
+                                      2.07e-06 4127461.065-4127461.066
+                                                                  0.000    0.000
+        u_spiregs (spi_slave_regs_REG_SIZE8)
+                                      6.79e-07 4127461.065-4127461.066
+                                                                  0.000    0.000
+        u_cmd_parser (spi_slave_cmd_parser)
+                                      5.89e-08 4127461.065-4127461.066
+                                                                  0.000    0.000
+      axi_spi_slave_i_u_rxreg (spi_slave_rx)
+                                      1.01e-06 4127461.065-4127461.066
+                                                                  0.000    0.000
+      axi_spi_slave_i_u_dcfifo_rx (spi_slave_dc_fifo_DATA_WIDTH32_BUFFER_DEPTH8)
+                                      1.00e-02 4127481.008-4127481.009
+                                                                  0.000    0.000
+        u_dout (dc_token_ring_fifo_dout_DATA_WIDTH32_BUFFER_DEPTH8)
+                                      1.00e-02 4127481.008-4127481.009
+                                                                  0.000    0.000
+        u_din_full (dc_full_detector_BUFFER_DEPTH8)
+                                      9.87e-08 4127461.065-4127461.066
+                                                                  0.000    0.000
+        u_din_write_tr (dc_token_ring_BUFFER_DEPTH8_RESET_VALUE32h0000000c)
+                                      1.56e-07 4127461.065-4127461.066
+                                                                  0.000    0.000
+    genblk1[0].core_clock_gate (cluster_clock_gating_13877)
+                                      4.19e-04 4127480.565-4127480.566
+                                                                  0.000    0.000
+    genblk1[2].core_clock_gate (cluster_clock_gating_13875)
+                                      4.22e-04 4127480.565-4127480.566
+                                                                  0.000    0.000
+    axi2apb_i (axi2apb_wrap_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_USER_WIDTH1_AXI_ID_WIDTH4_APB_ADDR_WIDTH32_axi_slave_AXI_BUS_AXI_ADDR_WIDTH32_AXI_DATA_WIDTH32_AXI_ID_WIDTH4_AXI_USER_WIDTH1_Slave_apb_master_APB_BUS_Master)
+                                      3.47e-02 6124720.976-6124720.977
+                                                                  0.000    0.000
+      genblk1.axi2apb_i_Slave_b_buffer (axi_b_buffer_ID_WIDTH4_USER_WIDTH1_BUFFER_DEPTH2)
+                                      3.30e-03 6214841.020-6214841.021
+                                                                  0.000    0.000
+      genblk1.axi2apb_i_Slave_aw_buffer (axi_aw_buffer_ID_WIDTH4_ADDR_WIDTH32_USER_WIDTH1_BUFFER_DEPTH2)
+                                      3.30e-02 6201960.969-6201960.970
+                                                                  0.000    0.000
+        buffer_i_cg_cell (cluster_clock_gating_13882)
+                                      3.83e-04 4127520.557-4127520.558
+                                                                  0.000    0.000
+      genblk1.axi2apb_i_Slave_r_buffer (axi_r_buffer_ID_WIDTH4_DATA_WIDTH32_USER_WIDTH1_BUFFER_DEPTH2)
+                                      3.47e-02 6124720.976-6124720.977
+                                                                  0.000    0.000
+        buffer_i_cg_cell (cluster_clock_gating_13880)
+                                      3.83e-04 4127520.557-4127520.558
+                                                                  0.000    0.000
+      genblk1.axi2apb_i_Slave_ar_buffer (axi_ar_buffer_ID_WIDTH4_ADDR_WIDTH32_USER_WIDTH1_BUFFER_DEPTH2)
+                                      3.18e-02 4194400.963-4194400.964
+                                                                  0.000    0.000
+        buffer_i_cg_cell (cluster_clock_gating_13881)
+                                      3.85e-04 4127560.557-4127560.558
+                                                                  0.000    0.000
+      genblk1.axi2apb_i_Slave_w_buffer (axi_w_buffer_DATA_WIDTH32_USER_WIDTH1_BUFFER_DEPTH2_1)
+                                      3.24e-02 6163720.964-6163720.965
+                                                                  0.000    0.000
+        buffer_i_cg_cell (cluster_clock_gating_13878)
+                                      3.83e-04 4127520.563-4127520.564
+                                                                  0.000    0.000
+    apb_timer_i (apb_timer)              0.127 4213841.018-4213841.019
+                                                                  0.000    0.000
+      TIMER_GEN[1].timer_i (timer_13938)
+                                      6.34e-02 4128241.018-4128241.019
+                                                                  0.000    0.000
+        inc_add_73_43_17 (increment_unsigned_988_989_17144)
+                                      1.52e-07 4127461.065-4127461.066
+                                                                  0.000    0.000
+        inc_add_80_53_38 (increment_unsigned_988_989_17142)
+                                      9.96e-08 4127461.065-4127461.066
+                                                                  0.000    0.000
+        gte_86_29 (geq_unsigned_16101)
+                                      1.21e-07 4127461.065-4127461.066
+                                                                  0.000    0.000
+      TIMER_GEN[0].timer_i (timer)    6.34e-02 4213841.018-4213841.019
+                                                                  0.000    0.000
+        inc_add_73_43_17 (increment_unsigned_988_989_17143)
+                                      1.32e-07 4127461.065-4127461.066
+                                                                  0.000    0.000
+        inc_add_80_53_38 (increment_unsigned_988_989_17141)
+                                      9.96e-08 4127461.065-4127461.066
+                                                                  0.000    0.000
+        gte_86_29 (geq_unsigned_16100)
+                                      1.21e-07 4127461.065-4127461.066
+                                                                  0.000    0.000
+    periph_bus_i (periph_bus_wrap_APB_ADDR_WIDTH32_APB_DATA_WIDTH32_apb_slave_APB_BUS_Slave_uart_master_APB_BUS_Master_gpio_master_APB_BUS_Master_timer_master_APB_BUS_Master_event_unit_master_APB_BUS_Master_soc_ctrl_master_APB_BUS_Master_debug_master_APB_BUS_Master)
+                                      1.22e-03 6188864.719-6188864.720
+                                                                  0.000    0.000
+    genblk1[1].core_clock_gate (cluster_clock_gating_13876)
+                                      4.22e-04 4127480.383-4127480.384
+                                                                  0.000    0.000
+    genblk1[4].core_clock_gate (cluster_clock_gating_13873)
+                                      4.22e-04 4127480.565-4127480.566
+                                                                  0.000    0.000
+1
