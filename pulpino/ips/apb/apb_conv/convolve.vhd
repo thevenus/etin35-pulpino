@@ -47,36 +47,72 @@ begin
                 el3 <= row3(14 downto 12);
                 el4 <= row4(14 downto 12);
                 el5 <= row5(14 downto 12);
+
+                filel1 <= filter(74 downto 72);
+                filel2 <= filter(59 downto 57);
+                filel3 <= filter(44 downto 42);
+                filel4 <= filter(29 downto 27);
+                filel5 <= filter(14 downto 12);
             when 1 =>
                 el1 <= row1(11 downto 9);
                 el2 <= row2(11 downto 9);
                 el3 <= row3(11 downto 9);
                 el4 <= row4(11 downto 9);
                 el5 <= row5(11 downto 9);
+
+                filel1 <= filter(71 downto 69);
+                filel2 <= filter(56 downto 54);
+                filel3 <= filter(41 downto 39);
+                filel4 <= filter(26 downto 24);
+                filel5 <= filter(11 downto 9);
             when 2 =>
                 el1 <= row1(8 downto 6);
                 el2 <= row2(8 downto 6);
                 el3 <= row3(8 downto 6);
                 el4 <= row4(8 downto 6);
                 el5 <= row5(8 downto 6);
+
+                filel1 <= filter(68 downto 66);
+                filel2 <= filter(53 downto 51);
+                filel3 <= filter(38 downto 36);
+                filel4 <= filter(23 downto 21);
+                filel5 <= filter(8 downto 6);
             when 3 =>
                 el1 <= row1(5 downto 3);
                 el2 <= row2(5 downto 3);
                 el3 <= row3(5 downto 3);
                 el4 <= row4(5 downto 3);
                 el5 <= row5(5 downto 3);
+
+                filel1 <= filter(65 downto 63);
+                filel2 <= filter(50 downto 48);
+                filel3 <= filter(35 downto 33);
+                filel4 <= filter(20 downto 18);
+                filel5 <= filter(5 downto 3);
             when 4 =>
                 el1 <= row1(2 downto 0);
                 el2 <= row2(2 downto 0);
                 el3 <= row3(2 downto 0);
                 el4 <= row4(2 downto 0);
                 el5 <= row5(2 downto 0);
+
+                filel1 <= filter(62 downto 60);
+                filel2 <= filter(47 downto 45);
+                filel3 <= filter(32 downto 30);
+                filel4 <= filter(17 downto 15);
+                filel5 <= filter(2 downto 0);
             when others =>
                 el1 <= (others => '0');
                 el2 <= (others => '0');
                 el3 <= (others => '0');
                 el4 <= (others => '0');
                 el5 <= (others => '0');
+
+                filel1 <= (others => '0');
+                filel2 <= (others => '0');
+                filel3 <= (others => '0');
+                filel4 <= (others => '0');
+                filel5 <= (others => '0');
         end case;
             
 
@@ -139,11 +175,7 @@ begin
 
             when s_calculate =>
                 if valid_data = '1' then
-                    temp_res_next <= temp_res_reg + row1[14-it_cnt*3:12-it_cnt*3]*filter[74-it_cnt*15:72-it_cnt*15]
-                        + row2[14-it_cnt*3:12-it_cnt*3]*filter[71-it_cnt*15:69-it_cnt*15]
-                        + row3[14-it_cnt*3:12-it_cnt*3]*filter[68-it_cnt*15:66-it_cnt*15]
-                        + row4[14-it_cnt*3:12-it_cnt*3]*filter[65-it_cnt*15:63-it_cnt*15]
-                        + row5[14-it_cnt*3:12-it_cnt*3]*filter[62-it_cnt*15:60-it_cnt*15];
+                    temp_res_next <= temp_res_reg + el1 * filel1 + el2 * filel2 + el3 * filel3 + el4 * filel4 + el5 * filel5;
                     it_cnt_next <= it_cnt_reg + 1;
                     state_next <= s_calculate;
                 else 
