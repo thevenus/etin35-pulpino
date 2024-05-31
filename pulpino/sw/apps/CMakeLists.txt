@@ -194,6 +194,7 @@ endmacro()
 
 add_subdirectory(helloworld)
 add_subdirectory(riscv_mmu)
+add_subdirectory(pconv_demo)
 
 if(${ARDUINO_LIB})
   add_subdirectory(Arduino_tests)
