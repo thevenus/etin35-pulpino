@@ -185,8 +185,8 @@ begin
         variable msb_pos: integer;
         variable lsb_pos: integer; 
     begin
-        msb_pos := 95 - (unsigned(conv_ncol_i) * 3);
-        lsb_pos := 81 - (unsigned(conv_ncol_i) * 3);
+        msb_pos := 95 - to_integer((unsigned(conv_ncol_i) * 3));
+        lsb_pos := 81 - to_integer((unsigned(conv_ncol_i) * 3));
         input_window_o <= indata_reg(0)(msb_pos downto lsb_pos) & indata_reg(1)(msb_pos downto lsb_pos) & indata_reg(2)(msb_pos downto lsb_pos) & indata_reg(3)(msb_pos downto lsb_pos) & indata_reg(4)(msb_pos downto lsb_pos);
     end process;
 
