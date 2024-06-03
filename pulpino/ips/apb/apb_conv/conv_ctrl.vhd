@@ -99,26 +99,22 @@ begin
             if (PADDR = x"1A103500") then -- ctrl register address
                 ctrl_next <= PWDATA(0);
             elsif (PADDR = x"1A103508") then -- indata address
-                if (indata_row_cnt > "100") then
+                if (indata_rx_cnt = "00") then
                     indata_next(0) <= indata_reg(1);
                     indata_next(1) <= indata_reg(2);
                     indata_next(2) <= indata_reg(3);
                     indata_next(3) <= indata_reg(4);
                     indata_next(4)(89 downto 60) <= PWDATA(29 downto 0);
-                    indata_row_cnt <= "100";
-                    indata_rx_cnt_next <= "01";        
-                else
-                    if (indata_rx_cnt = "00") then
-                        indata_next(to_integer(indata_row_cnt))(89 downto 60) <= PWDATA(29 downto 0);
-                        indata_rx_cnt_next <= indata_rx_cnt + 1;
-                    elsif (indata_rx_cnt = "01") then
-                        indata_next(to_integer(indata_row_cnt))(59 downto 30) <= PWDATA(29 downto 0);
-                        indata_rx_cnt_next <= indata_rx_cnt + 1;
-                    elsif (indata_rx_cnt = "10") then
-                        indata_next(to_integer(indata_row_cnt))(29 downto 6) <= PWDATA(23 downto 0);
-                        indata_rx_cnt_next <= (others => '0');
-                        indata_row_cnt_next <= indata_row_cnt + 1;
-                    end if;
+                    indata_rx_cnt_next <= indata_rx_cnt + 1;
+                
+                elsif (indata_rx_cnt = "01") then
+                    indata_next(4)(59 downto 30) <= PWDATA(29 downto 0);
+                    indata_rx_cnt_next <= indata_rx_cnt + 1;
+                
+                elsif (indata_rx_cnt = "10") then
+                    indata_next(4)(29 downto 6) <= PWDATA(23 downto 0);
+                    indata_rx_cnt_next <= (others => '0');
+                    -- indata_row_cnt_next <= indata_row_cnt + 1;
                 end if;
             elsif (PADDR = x"1A103900") then -- filter reg 1 address
                 filter_reg_next(74 downto 45) <= PWDATA(29 downto 0);
@@ -165,7 +161,7 @@ begin
     filter_o <= filter_reg;
 
     --update column data process
-    process (conv_ncol_i, indata_reg)
+    process (conv_ncol_i, conv_nrow_i, indata_reg)
         variable msb_pos: integer;
         variable lsb_pos: integer; 
     begin
@@ -221,7 +217,7 @@ begin
 
         case state_reg is 
             when s_WAIT_DATA =>
-                if (conv_nrow_i < "11010") then -- 26
+                if (conv_nrow_i < "11001") then -- 26
                     if (ctrl_reg = '1') then -- start = 1
                         clear_start_bit <= '1';
                         status_next <= "000";

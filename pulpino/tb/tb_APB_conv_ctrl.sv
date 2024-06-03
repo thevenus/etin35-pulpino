@@ -60,10 +60,10 @@ module tb_APB_conv_ctrl;
       end
     end
 
-    #10ns;
+    #20ns;
     $fclose(inp_m);
 
-    #10ns;
+    #20ns;
     // filt_m = $fopen("/h/d9/n/vi0873st-s/Downloads/w.txt", "r");
     filt_m = $fopen("/h/d9/n/fu6315ma-s/Downloads/w.txt", "r");
     for (int channel = 0; channel < 3; channel++) begin
@@ -74,10 +74,10 @@ module tb_APB_conv_ctrl;
       end
     end
 
-    #10ns;
+    #20ns;
     $fclose(filt_m);
 
-    #10ns;
+    #20ns;
     // res_m = $fopen("/h/d9/n/vi0873st-s/Downloads/ofm.txt", "r");
     res_m = $fopen("/h/d9/n/fu6315ma-s/Downloads/ofm.txt", "r");
     for (int channel = 0; channel < 3; channel++) begin
@@ -88,10 +88,10 @@ module tb_APB_conv_ctrl;
       end
     end
 
-    #10ns;
+    #20ns;
     $fclose(res_m);
 
-    #10ns;
+    #20ns;
 
     start_transfer = 1'b0;
     for (int channel = 0; channel < 3; channel++) begin
@@ -137,7 +137,7 @@ module tb_APB_conv_ctrl;
         end
         
         start_transfer = 1'b1;
-        wait(Psel);
+        wait(Penable);
         start_transfer = 1'b0;
         wait(Penable == 1'b0);
 
@@ -157,7 +157,7 @@ module tb_APB_conv_ctrl;
               wd_cnt -= 3;
             end
             start_transfer = 1'b1;
-            wait(Psel);
+            wait(Penable);
             start_transfer = 1'b0;
             wait(Penable == 1'b0);
             // Pwdata = {2'b0, input_matrix[channel][row][27-loc*10 -:9]};
@@ -170,59 +170,62 @@ module tb_APB_conv_ctrl;
               wd_cnt -= 3;
             end
             start_transfer = 1'b1;
-            wait(Psel);
+            wait(Penable);
             start_transfer = 1'b0;
             wait(Penable == 1'b0);
           end
+        end
 
           // don't set the start bit until the first 3 rows have been loaded
           // if the row number is 2 it means we have loaded 3 rows already
-          if (row >= 2) begin
-            // set the start bit as 1
-            Paddr = 'h1A10_3500;
-            Pwrite = 1'b1;
-            Pwdata = {31'b0, 1'b1};
+        if (row >= 2) begin
+          // set the start bit as 1
+          Paddr = 'h1A10_3500;
+          Pwrite = 1'b1;
+          Pwdata = {31'b0, 1'b1};
 
-            start_transfer = 1'b1;
-            wait(Psel);
-            start_transfer = 1'b0;
-            wait(Penable == 1'b0);
+          start_transfer = 1'b1;
+          wait(Penable);
+          start_transfer = 1'b0;
+          wait(Penable == 1'b0);
 
-            // wait for the row done bit to get set
-            while (1) begin
-              Paddr = 'h1A10_3504;
-              Pwrite = 1'b0;
-
-              start_transfer = 1'b1;
-              wait(Psel);
-              start_transfer = 1'b0;
-              wait(Penable == 1'b0);
-
-              if (Prdata[1] == 1'b1)
-                break;
-            end
-
-          end else begin
-            continue;
-          end
+          // wait for the row done bit to get set
+          Paddr = 'h1A10_3504;
+          Pwrite = 1'b0;
+          start_transfer = 1'b1;
+          wait(Prdata[1] == 1'b1);
+          start_transfer = 1'b0;
+          wait(Penable == 1'b0);
+        end
 
           // #10ns;
-        end
       end
 
       // wait for the channel done bit
-      while (1) begin
-        Paddr = 'h1A10_3504;
-        Pwrite = 1'b0;
+      Paddr = 'h1A10_3504;
+      Pwrite = 1'b0;
+      start_transfer = 1'b1;
+      wait(Prdata[2] == 1'b1);
+      start_transfer = 1'b0;
+      wait(Penable == 1'b0);
 
-        start_transfer = 1'b1;
-        wait(Psel);
-        start_transfer = 1'b0;
-        wait(Penable == 1'b0);
+      // while (1) begin
+      //   Paddr = 'h1A10_3504;
+      //   Pwrite = 1'b0;
 
-        if (Prdata[2] == 1'b1)
-          break;
-      end
+      //   start_transfer = 1'b1;
+      //   wait(Penable);
+
+      //   if (Prdata[2] == 1'b1) begin
+      //     start_transfer = 1'b0;
+      //     wait(Penable == 1'b0);
+      //     break;
+      //   end
+
+      //   start_transfer = 1'b0;
+      //   wait(Penable == 1'b0);
+
+      // end
     end
 
     $stop();        
