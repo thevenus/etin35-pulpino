@@ -104,18 +104,18 @@ begin
                     indata_next(1) <= indata_reg(2);
                     indata_next(2) <= indata_reg(3);
                     indata_next(3) <= indata_reg(4);
-                    indata_next(4)(89 downto 62) <= PWDATA(27 downto 0);
+                    indata_next(4)(89 downto 60) <= PWDATA(29 downto 0);
                     indata_row_cnt <= "100";
                     indata_rx_cnt_next <= "01";        
                 else
                     if (indata_rx_cnt = "00") then
-                        indata_next(to_integer(indata_row_cnt))(89 downto 62) <= PWDATA(27 downto 0);
+                        indata_next(to_integer(indata_row_cnt))(89 downto 60) <= PWDATA(29 downto 0);
                         indata_rx_cnt_next <= indata_rx_cnt + 1;
                     elsif (indata_rx_cnt = "01") then
-                        indata_next(to_integer(indata_row_cnt))(61 downto 34) <= PWDATA(27 downto 0);
+                        indata_next(to_integer(indata_row_cnt))(59 downto 30) <= PWDATA(29 downto 0);
                         indata_rx_cnt_next <= indata_rx_cnt + 1;
                     elsif (indata_rx_cnt = "10") then
-                        indata_next(to_integer(indata_row_cnt))(33 downto 6) <= PWDATA(27 downto 0);
+                        indata_next(to_integer(indata_row_cnt))(29 downto 6) <= PWDATA(23 downto 0);
                         indata_rx_cnt_next <= (others => '0');
                         indata_row_cnt_next <= indata_row_cnt + 1;
                     end if;
