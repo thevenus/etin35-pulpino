@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-06-03T11:24:00.975Z" agent="Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0" etag="8aPQtqVlNoxSRbP3XYPe" version="24.4.13" type="github" pages="8">
+<mxfile host="app.diagrams.net" modified="2024-06-03T11:27:18.950Z" agent="Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0" etag="JSiP1wgYoUrrg-uHMARb" version="24.4.13" type="github" pages="8">
   <diagram name="APB MMU and Conv RegMap" id="DrLnBsjFnaRuIujhH_x-">
     <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="1100" pageHeight="1700" math="0" shadow="0">
       <root>
@@ -2072,7 +2072,7 @@
         <mxCell id="Jiy41CIcT1c2Q3pZhyHe-17" value="Bank 3 - 2048x32" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="330" y="420" width="320" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="Jiy41CIcT1c2Q3pZhyHe-21" value="" style="shape=trapezoid;perimeter=trapezoidPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rotation=-90;" vertex="1" parent="1">
+        <mxCell id="Jiy41CIcT1c2Q3pZhyHe-21" value="11&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 10&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 01&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; 00" style="shape=trapezoid;perimeter=trapezoidPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rotation=-90;" vertex="1" parent="1">
           <mxGeometry x="130" y="350" width="200" height="40" as="geometry" />
         </mxCell>
         <mxCell id="Jiy41CIcT1c2Q3pZhyHe-27" value="" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;rounded=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;exitX=0.845;exitY=1.004;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="Jiy41CIcT1c2Q3pZhyHe-21" target="Jiy41CIcT1c2Q3pZhyHe-14">
@@ -2147,7 +2147,7 @@
             <mxPoint x="819.9999999999998" y="364.9999999999999" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Jiy41CIcT1c2Q3pZhyHe-44" value="" style="shape=trapezoid;perimeter=trapezoidPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;" vertex="1" parent="1">
+        <mxCell id="Jiy41CIcT1c2Q3pZhyHe-44" value="00 &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 01 &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; 10 &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; 11" style="shape=trapezoid;perimeter=trapezoidPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;" vertex="1" parent="1">
           <mxGeometry x="630" y="345" width="180" height="40" as="geometry" />
         </mxCell>
         <mxCell id="Jiy41CIcT1c2Q3pZhyHe-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0.139;entryY=1.009;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="Jiy41CIcT1c2Q3pZhyHe-14" target="Jiy41CIcT1c2Q3pZhyHe-44">
