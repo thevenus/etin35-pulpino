@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-06-03T10:15:40.399Z" agent="Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0" etag="gF2MhFrV7wKpPA2Jesdw" version="24.4.13" type="github" pages="8">
+<mxfile host="app.diagrams.net" modified="2024-06-03T11:24:00.975Z" agent="Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0" etag="8aPQtqVlNoxSRbP3XYPe" version="24.4.13" type="github" pages="8">
   <diagram name="APB MMU and Conv RegMap" id="DrLnBsjFnaRuIujhH_x-">
     <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="1100" pageHeight="1700" math="0" shadow="0">
       <root>
@@ -2048,7 +2048,7 @@
         <mxCell id="Jiy41CIcT1c2Q3pZhyHe-70" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="Jiy41CIcT1c2Q3pZhyHe-14" target="Jiy41CIcT1c2Q3pZhyHe-15">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="Jiy41CIcT1c2Q3pZhyHe-14" value="Bank 0 -2048x32" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="Jiy41CIcT1c2Q3pZhyHe-14" value="Bank 0 - 2048x32" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="330" y="270" width="320" height="40" as="geometry" />
         </mxCell>
         <mxCell id="Jiy41CIcT1c2Q3pZhyHe-71" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="Jiy41CIcT1c2Q3pZhyHe-15" target="Jiy41CIcT1c2Q3pZhyHe-16">
@@ -2194,6 +2194,9 @@
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="567.8399999999999" y="270.00000000000006" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="Jiy41CIcT1c2Q3pZhyHe-77" value="write enable is used together with byte enable to allow byte selection of a row during the write cycle" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;fontColor=#000000;darkOpacity=0.05;fillColor=#FFF9B2;strokeColor=none;fillStyle=solid;direction=west;gradientDirection=north;gradientColor=#FFF2A1;shadow=1;size=20;pointerEvents=1;spacingLeft=7;spacingRight=7;" vertex="1" parent="1">
+          <mxGeometry x="810" y="168.68" width="160" height="110" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
