@@ -50,6 +50,8 @@ architecture Behavioural of conv_ctrl is
     signal outdata_cnt_reg, outdata_cnt_next : unsigned(9 downto 0);
     -- signal temp_outdata_reg, temp_outdata_next : unsigned(8 downto 0);
     signal indata_rst_flag_reg, indata_rst_flag_next : std_logic;
+    signal lsb_pos : unsigned(9 downto 0);
+    signal outdata_slice_lsb : unsigned(4 downto 0);
 
     signal temp_outdata : unsigned (8 downto 0);
 
@@ -172,37 +174,31 @@ begin
 
     filter_o <= filter_reg;
 
+    lsb_pos <= 81 - unsigned(conv_ncol_i) * 3;
     --update column data process
-    process (conv_ncol_i, conv_nrow_i, indata_reg)
-        variable msb_pos: integer;
-        variable lsb_pos: integer; 
+    process (conv_ncol_i, conv_nrow_i, indata_reg, lsb_pos)
     begin
-        msb_pos := 95 - to_integer((unsigned(conv_ncol_i) * 3));
-        lsb_pos := 81 - to_integer((unsigned(conv_ncol_i) * 3));
         case conv_nrow_i is 
             when "11010" => -- 26
                 input_window_o <= (others => '0');
-                input_window_o(74 downto 15) <= indata_reg(1)(msb_pos downto lsb_pos) & indata_reg(2)(msb_pos downto lsb_pos) & 
-                                                indata_reg(3)(msb_pos downto lsb_pos) & indata_reg(4)(msb_pos downto lsb_pos);
+                input_window_o(74 downto 15) <= indata_reg(1)(to_integer(lsb_pos)+14 downto to_integer(lsb_pos)) & indata_reg(2)(to_integer(lsb_pos)+14 downto to_integer(lsb_pos)) & 
+                                                indata_reg(3)(to_integer(lsb_pos)+14 downto to_integer(lsb_pos)) & indata_reg(4)(to_integer(lsb_pos)+14 downto to_integer(lsb_pos));
             when "11011" => -- 27
                 input_window_o <= (others => '0');
-                input_window_o(74 downto 30) <= indata_reg(2)(msb_pos downto lsb_pos) & 
-                                                indata_reg(3)(msb_pos downto lsb_pos) & 
-                                                indata_reg(4)(msb_pos downto lsb_pos);
+                input_window_o(74 downto 30) <= indata_reg(2)(to_integer(lsb_pos)+14 downto to_integer(lsb_pos)) & 
+                                                indata_reg(3)(to_integer(lsb_pos)+14 downto to_integer(lsb_pos)) & 
+                                                indata_reg(4)(to_integer(lsb_pos)+14 downto to_integer(lsb_pos));
             when others =>
-                input_window_o <= indata_reg(0)(msb_pos downto lsb_pos) & indata_reg(1)(msb_pos downto lsb_pos) & 
-                                  indata_reg(2)(msb_pos downto lsb_pos) & indata_reg(3)(msb_pos downto lsb_pos) & 
-                                  indata_reg(4)(msb_pos downto lsb_pos);
+                input_window_o <= indata_reg(0)(to_integer(lsb_pos)+14 downto to_integer(lsb_pos)) & indata_reg(1)(to_integer(lsb_pos)+14 downto to_integer(lsb_pos)) & 
+                                  indata_reg(2)(to_integer(lsb_pos)+14 downto to_integer(lsb_pos)) & indata_reg(3)(to_integer(lsb_pos)+14 downto to_integer(lsb_pos)) & 
+                                  indata_reg(4)(to_integer(lsb_pos)+14 downto to_integer(lsb_pos));
         end case;
     end process;
     
-    process (outdata_reg, outdata_cnt_reg, conv_res_i)
-	    variable outdata_slice_msb : integer;
-        variable outdata_slice_lsb : integer;
+    outdata_slice_lsb <= unsigned(outdata_cnt_reg(1 downto 0) & "000");
+    process (outdata_reg, outdata_cnt_reg, conv_res_i, outdata_slice_lsb)
     begin
-	    outdata_slice_msb := to_integer(outdata_cnt_reg(1 downto 0) & "111");
-        outdata_slice_lsb := to_integer(outdata_cnt_reg(1 downto 0) & "000");
-	    temp_outdata <= unsigned(('0' & outdata_reg(to_integer(outdata_cnt_reg(9 downto 2)))(outdata_slice_msb downto outdata_slice_lsb))) + unsigned('0' & conv_res_i);
+	    temp_outdata <= unsigned(('0' & outdata_reg(to_integer(outdata_cnt_reg(9 downto 2)))(to_integer(outdata_slice_lsb)+7 downto to_integer(outdata_slice_lsb)))) + unsigned('0' & conv_res_i);
     end process;
 
     process (HCLK, HRESETn)
@@ -221,13 +217,8 @@ begin
     end process;
 
     process (state_reg, temp_outdata, outdata_reg, outdata_cnt_reg, ctrl_reg, status_reg, 
-             conv_res_i, conv_res_rdy_i, conv_ncol_i, conv_nrow_i, conv_nchn_i, indata_rst_flag_reg)
-        variable outdata_slice_msb : integer;
-        variable outdata_slice_lsb : integer;
+             conv_res_i, conv_res_rdy_i, conv_ncol_i, conv_nrow_i, conv_nchn_i, indata_rst_flag_reg, outdata_slice_lsb)
     begin
-        outdata_slice_msb := to_integer(outdata_cnt_reg(1 downto 0) & "111");
-        outdata_slice_lsb := to_integer(outdata_cnt_reg(1 downto 0) & "000");
-
         status_next <= status_reg;
         state_next <= state_reg;
         -- temp_outdata_next <= temp_outdata_reg;
@@ -257,9 +248,9 @@ begin
                     valid_data_o <= '0';
 		            outdata_cnt_next <= outdata_cnt_reg + 1;
                     if (temp_outdata > "011111111") then -- 255
-                        outdata_next(to_integer(outdata_cnt_reg(9 downto 2)))(outdata_slice_msb downto outdata_slice_lsb) <= "11111111";
+                        outdata_next(to_integer(outdata_cnt_reg(9 downto 2)))(to_integer(outdata_slice_lsb)+7 downto to_integer(outdata_slice_lsb)) <= "11111111";
                     else
-                        outdata_next(to_integer(outdata_cnt_reg(9 downto 2)))(outdata_slice_msb downto outdata_slice_lsb) <= std_logic_vector(temp_outdata(7 downto 0));
+                        outdata_next(to_integer(outdata_cnt_reg(9 downto 2)))(to_integer(outdata_slice_lsb)+7 downto to_integer(outdata_slice_lsb)) <= std_logic_vector(temp_outdata(7 downto 0));
                     end if;
 
                     if (conv_ncol_i /= "11011") then --27

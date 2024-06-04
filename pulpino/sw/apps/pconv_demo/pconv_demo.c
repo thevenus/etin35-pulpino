@@ -74,11 +74,24 @@ int __attribute__ ((optimize("-O0"))) main ()
     while (!(CNSR & 1));
 
     // load output data registers into here
+    int tmp = 0;
     for (int i = 0; i < 196; i++) {
-        printf("%x\n", REG(CONV_OUTPUT + i*4));
+        tmp = REG(CONV_OUTPUT + i*4);
+        calculated_ofm[i*4] = tmp & 0xFF;
+        calculated_ofm[i*4+1] = (tmp >> 8) & 0xFF;
+        calculated_ofm[i*4+2] = (tmp >> 16) & 0xFF;
+        calculated_ofm[i*4+3] = (tmp >> 24) & 0xFF;
     }
 
-    printf("The result is right!");
+    for (int i = 0; i < 784; i++) {
+        if (expected_ofm[i] != calculated_ofm[i]) {
+            printf("The result is WRONG!\n");
+            printf("%d: expected=%d, actual=%d\n", i, expected_ofm[i], calculated_ofm[i]);
+            return 0;
+        }
+    }
+
+    printf("The result is right!\n");
 
     return 0;
 }
