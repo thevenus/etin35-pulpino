@@ -39,16 +39,18 @@ architecture Behavioural of conv_ctrl is
     signal ctrl_reg, ctrl_next : std_logic;
     signal status_reg, status_next : std_logic_vector(2 downto 0);
     signal clear_start_bit : std_logic;
-    signal indata_row_cnt, indata_row_cnt_next : unsigned(2 downto 0);
+    --signal indata_row_cnt, indata_row_cnt_next : unsigned(2 downto 0);
     signal indata_rx_cnt, indata_rx_cnt_next : unsigned(1 downto 0);
     signal apb_addr_trimmed : std_logic_vector(9 downto 0);
     signal filter_reg, filter_reg_next: std_logic_vector(74 downto 0);
 
     -- conv controller signals
-    type state_type is (s_WAIT_DATA, s_WAIT_CALC, s_STORE_RESULT);
+    type state_type is (s_WAIT_DATA, s_WAIT_CALC);
     signal state_reg, state_next : state_type;
     signal outdata_cnt_reg, outdata_cnt_next : unsigned(9 downto 0);
-    signal temp_outdata_reg, temp_outdata_next : unsigned(8 downto 0);
+    -- signal temp_outdata_reg, temp_outdata_next : unsigned(8 downto 0);
+
+    signal temp_outdata : unsigned (8 downto 0);
 
 begin
 
@@ -68,7 +70,7 @@ begin
         if (rising_edge(HCLK)) then
             if (HRESETn = '0') then
                 indata_reg <= (others => (others => '0'));
-                indata_row_cnt <= "010";
+                --indata_row_cnt <= "010";
                 indata_rx_cnt <= (others => '0');
                 ctrl_reg <= '0';
                 status_reg <= (others => '0');
@@ -76,7 +78,7 @@ begin
                 filter_reg <= (others => '0');
             else 
                 indata_reg <= indata_next;
-                indata_row_cnt <= indata_row_cnt_next;
+                --indata_row_cnt <= indata_row_cnt_next;
                 indata_rx_cnt <= indata_rx_cnt_next;
                 ctrl_reg <= ctrl_next;
                 status_reg <= status_next;
@@ -87,11 +89,11 @@ begin
     end process apb_reg_update;
 
     -- write register logic
-    apb_write_logic : process (PSEL, PENABLE, PWRITE, PADDR, PWDATA, indata_reg, indata_rx_cnt, indata_row_cnt, filter_reg, clear_start_bit, ctrl_reg)
-    begin
+    apb_write_logic : process (PSEL, PENABLE, PWRITE, PADDR, PWDATA, indata_reg, indata_rx_cnt, filter_reg, clear_start_bit, ctrl_reg)
+    begin --, indata_row_cnt
         indata_next <= indata_reg;
         indata_rx_cnt_next <= indata_rx_cnt;
-        indata_row_cnt_next <= indata_row_cnt;
+        --indata_row_cnt_next <= indata_row_cnt;
         filter_reg_next <= filter_reg;
         ctrl_next <= ctrl_reg;
 
@@ -106,7 +108,6 @@ begin
                     indata_next(3) <= indata_reg(4);
                     indata_next(4)(89 downto 60) <= PWDATA(29 downto 0);
                     indata_rx_cnt_next <= indata_rx_cnt + 1;
-                
                 elsif (indata_rx_cnt = "01") then
                     indata_next(4)(59 downto 30) <= PWDATA(29 downto 0);
                     indata_rx_cnt_next <= indata_rx_cnt + 1;
@@ -128,6 +129,14 @@ begin
         if (clear_start_bit = '1') then
             ctrl_next <= '0';
         end if;
+	
+	if (status_reg(2) = '1') then
+	     indata_next(0) <= (others => '0');
+             indata_next(1) <= (others => '0');
+             indata_next(2) <= (others => '0');
+             indata_next(3) <= (others => '0');
+             indata_next(4) <= (others => '0');
+	end if;
 
     end process apb_write_logic;
 
@@ -183,6 +192,15 @@ begin
                                   indata_reg(4)(msb_pos downto lsb_pos);
         end case;
     end process;
+    
+    process (outdata_reg, outdata_cnt_reg, conv_res_i)
+	variable outdata_slice_msb : integer;
+        variable outdata_slice_lsb : integer;
+    begin
+	outdata_slice_msb := to_integer(outdata_cnt_reg(1 downto 0) & "111");
+        outdata_slice_lsb := to_integer(outdata_cnt_reg(1 downto 0) & "000");
+	temp_outdata <= unsigned(('0' & outdata_reg(to_integer(outdata_cnt_reg(9 downto 2)))(outdata_slice_msb downto outdata_slice_lsb))) + unsigned('0' & conv_res_i);
+    end process;
 
     process (HCLK, HRESETn)
     begin
@@ -190,16 +208,16 @@ begin
             if (HRESETn = '0') then
                 outdata_cnt_reg <= (others => '0');
                 state_reg <= s_WAIT_DATA;
-                temp_outdata_reg <= (others => '0');
+                -- temp_outdata_reg <= (others => '0');
             else
                 outdata_cnt_reg <= outdata_cnt_next;
                 state_reg <= state_next;
-                temp_outdata_reg <= temp_outdata_next;
+                -- temp_outdata_reg <= temp_outdata_next;
             end if;
         end if;
     end process;
 
-    process (state_reg, temp_outdata_reg, outdata_reg, outdata_cnt_reg, ctrl_reg, status_reg, 
+    process (state_reg, temp_outdata, outdata_reg, outdata_cnt_reg, ctrl_reg, status_reg, 
              conv_res_i, conv_res_rdy_i, conv_ncol_i, conv_nrow_i, conv_nchn_i)
         variable outdata_slice_msb : integer;
         variable outdata_slice_lsb : integer;
@@ -209,7 +227,7 @@ begin
 
         status_next <= status_reg;
         state_next <= state_reg;
-        temp_outdata_next <= temp_outdata_reg;
+        -- temp_outdata_next <= temp_outdata_reg;
         outdata_cnt_next <= outdata_cnt_reg;
         outdata_next <= outdata_reg;
         clear_start_bit <= '0';
@@ -217,7 +235,7 @@ begin
 
         case state_reg is 
             when s_WAIT_DATA =>
-                if (conv_nrow_i < "11001") then -- 26
+                if (conv_nrow_i < "11010") then -- 26
                     if (ctrl_reg = '1') then -- start = 1
                         clear_start_bit <= '1';
                         status_next <= "000";
@@ -233,33 +251,29 @@ begin
                 valid_data_o <= '1';
                 if (conv_res_rdy_i = '1') then
                     valid_data_o <= '0';
-                    temp_outdata_next <= unsigned(('0' & outdata_reg(to_integer(outdata_cnt_reg(9 downto 2)))(outdata_slice_msb downto outdata_slice_lsb))) + unsigned('0' & conv_res_i);
-                    state_next <= s_STORE_RESULT;
-                else
-                    state_next <= s_WAIT_CALC;
-                end if;
-            
-            when s_STORE_RESULT =>
-                outdata_cnt_next <= outdata_cnt_reg + 1;
-                if (temp_outdata_reg > "011111111") then -- 255
-                    outdata_next(to_integer(outdata_cnt_reg(9 downto 2)))(outdata_slice_msb downto outdata_slice_lsb) <= "11111111";
-                else
-                    outdata_next(to_integer(outdata_cnt_reg(9 downto 2)))(outdata_slice_msb downto outdata_slice_lsb) <= std_logic_vector(temp_outdata_reg(7 downto 0));
-                end if;
-
-                if (conv_ncol_i /= "11011") then --27
-                    state_next <= s_WAIT_CALC;
-                else
-                    status_next(1) <= '1'; -- row_done_bit <= '1'
-                    if (conv_nrow_i = "11011") then -- 27
-                        status_next(2) <= '1'; -- channel_done_bit <= '1'
-                        outdata_cnt_next <= (others => '0');
-                        if (conv_nchn_i = "10") then
-                            status_next(0) <= '1'; -- done_bit <= '1'
-                        end if;
+		    outdata_cnt_next <= outdata_cnt_reg + 1;
+                    if (temp_outdata > "011111111") then -- 255
+                        outdata_next(to_integer(outdata_cnt_reg(9 downto 2)))(outdata_slice_msb downto outdata_slice_lsb) <= "11111111";
+                    else
+                        outdata_next(to_integer(outdata_cnt_reg(9 downto 2)))(outdata_slice_msb downto outdata_slice_lsb) <= std_logic_vector(temp_outdata(7 downto 0));
                     end if;
-                    state_next <= s_WAIT_DATA;
-                end if;
+
+                    if (conv_ncol_i /= "11011") then --27
+                        state_next <= s_WAIT_CALC;
+                    else
+                        status_next(1) <= '1'; -- row_done_bit <= '1'
+                        if (conv_nrow_i = "11011") then -- 27
+                            status_next(2) <= '1'; -- channel_done_bit <= '1'
+                            outdata_cnt_next <= (others => '0');
+                            if (conv_nchn_i = "10") then
+                                status_next(0) <= '1'; -- done_bit <= '1'
+                            end if;
+                        end if;
+                        state_next <= s_WAIT_DATA;
+                    end if;
+                else
+                    state_next <= s_WAIT_CALC;
+                end if;                
         end case;
 
     end process;

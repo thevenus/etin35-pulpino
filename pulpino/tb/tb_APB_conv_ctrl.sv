@@ -50,8 +50,8 @@ module tb_APB_conv_ctrl;
     Hresetn = 1'b1;    
 
     #20000ns;
-    // inp_m = $fopen("/h/d9/n/vi0873st-s/Downloads/ifm.txt", "r");
-    inp_m = $fopen("/h/d9/n/fu6315ma-s/Downloads/ifm.txt", "r");
+    inp_m = $fopen("/h/d7/z/vi0873st-s/Downloads/ifm.txt", "r");
+    //inp_m = $fopen("/h/d9/n/fu6315ma-s/Downloads/ifm.txt", "r");
     for (int channel = 0; channel < 3; channel++) begin
       for (int row = 0; row < 28; row++) begin
         for (int col = 0; col < 28; col++) begin
@@ -64,8 +64,8 @@ module tb_APB_conv_ctrl;
     $fclose(inp_m);
 
     #20ns;
-    // filt_m = $fopen("/h/d9/n/vi0873st-s/Downloads/w.txt", "r");
-    filt_m = $fopen("/h/d9/n/fu6315ma-s/Downloads/w.txt", "r");
+    filt_m = $fopen("/h/d7/z/vi0873st-s/Downloads/w.txt", "r");
+    //filt_m = $fopen("/h/d9/n/fu6315ma-s/Downloads/w.txt", "r");
     for (int channel = 0; channel < 3; channel++) begin
       for (int row = 0; row < 5; row++) begin
         for (int col = 0; col < 5; col++) begin
@@ -78,8 +78,8 @@ module tb_APB_conv_ctrl;
     $fclose(filt_m);
 
     #20ns;
-    // res_m = $fopen("/h/d9/n/vi0873st-s/Downloads/ofm.txt", "r");
-    res_m = $fopen("/h/d9/n/fu6315ma-s/Downloads/ofm.txt", "r");
+    res_m = $fopen("/h/d7/z/vi0873st-s/Downloads/ofm.txt", "r");
+    //res_m = $fopen("/h/d9/n/fu6315ma-s/Downloads/ofm.txt", "r");
     for (int channel = 0; channel < 3; channel++) begin
       for (int row = 0; row < 28; row++) begin
         for (int col = 0; col < 28; col++) begin
