@@ -12,7 +12,7 @@ uint8_t pconv_done()
 
 void pconv_load_filter(uint8_t* kernel)
 {
-    CNFTRA = kernel[0] << 
+    // CNFTRA = kernel[0] << 
 }
 
 void pconv_load_input(uint8_t* input)

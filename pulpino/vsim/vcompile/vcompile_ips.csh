@@ -25,3 +25,4 @@ tcsh ${PULP_PATH}/./vsim/vcompile/ips/vcompile_apb_uart.csh || exit 1
 tcsh ${PULP_PATH}/./vsim/vcompile/ips/vcompile_axi_slice.csh || exit 1
 tcsh ${PULP_PATH}/./vsim/vcompile/ips/vcompile_adv_dbg_if.csh || exit 1
 tcsh ${PULP_PATH}/./vsim/vcompile/ips/vcompile_apb2per.csh || exit 1
+tcsh ${PULP_PATH}/./vsim/vcompile/ips/vcompile_apb_conv.csh || exit 1

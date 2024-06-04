@@ -22,4 +22,5 @@ set VSIM_IP_LIBS " \
   -L axi_slice_lib \
   -L adv_dbg_if_lib \
   -L apb2per_lib \
+  -L apb_conv_lib \
 "
