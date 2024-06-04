@@ -15,50 +15,50 @@ Pad: PcornerUL NW PADSPACE_C_74x74u_CH
 # # NORTH
 # # ------------------------------------------------ #
 
-Pad: InPad_0  N CPAD_S_74x50u_IN
-Pad: InPad_1  N CPAD_S_74x50u_IN
-Pad: InPad_2  N CPAD_S_74x50u_IN
-Pad: InPad_3  N CPAD_S_74x50u_IN
+Pad: InPads[0].InPad  N CPAD_S_74x50u_IN
+Pad: InPads[1].InPad  N CPAD_S_74x50u_IN
+Pad: InPads[2].InPad  N CPAD_S_74x50u_IN
+Pad: InPads[3].InPad  N CPAD_S_74x50u_IN
 Pad: PVDD1    N CPAD_S_74x50u_VDD
 Pad: PVDD2    N CPAD_S_74x50u_VDD
-Pad: InPad_4  N CPAD_S_74x50u_IN
-Pad: InPad_5  N CPAD_S_74x50u_IN
+Pad: InPads[4].InPad  N CPAD_S_74x50u_IN
+Pad: InPads[5].InPad  N CPAD_S_74x50u_IN
 
 # # ------------------------------------------------ #
 # # WEST 
 # # ------------------------------------------------ #
 Pad: jtag_clk_pad W CPAD_S_74x50u_IN
-Pad: InPad_6  W CPAD_S_74x50u_IN
-Pad: InPad_7  W CPAD_S_74x50u_IN
-Pad: InPad_8  W CPAD_S_74x50u_IN
-Pad: InPad_9  W CPAD_S_74x50u_IN
-Pad: InPad_10 W CPAD_S_74x50u_IN
-Pad: InPad_11 W CPAD_S_74x50u_IN
+Pad: InPads[6].InPad  W CPAD_S_74x50u_IN
+Pad: InPads[7].InPad  W CPAD_S_74x50u_IN
+Pad: InPads[8].InPad  W CPAD_S_74x50u_IN
+Pad: InPads[9].InPad  W CPAD_S_74x50u_IN
+Pad: InPads[10].InPad W CPAD_S_74x50u_IN
+Pad: InPads[11].InPad W CPAD_S_74x50u_IN
 Pad: clkpad   W CPAD_S_74x50u_IN
 # # ------------------------------------------------ #
 # # SOUTH
 # # ------------------------------------------------ #
 
-Pad: OutPad_0 S CPAD_S_74x50u_OUT
-Pad: OutPad_1 S CPAD_S_74x50u_OUT
-Pad: OutPad_2 S CPAD_S_74x50u_OUT
-Pad: OutPad_3 S CPAD_S_74x50u_OUT
+Pad: OutPads[0].OutPad S CPAD_S_74x50u_OUT
+Pad: OutPads[1].OutPad S CPAD_S_74x50u_OUT
+Pad: OutPads[2].OutPad S CPAD_S_74x50u_OUT
+Pad: OutPads[3].OutPad S CPAD_S_74x50u_OUT
 Pad: PGND1    S CPAD_S_74x50u_GND
 Pad: PGND2    S CPAD_S_74x50u_GND
-Pad: OutPad_4 S CPAD_S_74x50u_OUT
-Pad: OutPad_5 S CPAD_S_74x50u_OUT
+Pad: OutPads[4].OutPad S CPAD_S_74x50u_OUT
+Pad: OutPads[5].OutPad S CPAD_S_74x50u_OUT
 
 # # ------------------------------------------------ #
 # # EAST 
 # # ------------------------------------------------ #
 
 Pad: spi_clk_pad  E CPAD_S_74x50u_IN
-Pad: InPad_12 E CPAD_S_74x50u_IN
-Pad: InPad_13 E CPAD_S_74x50u_IN
-Pad: OutPad_6 E CPAD_S_74x50u_OUT
-Pad: OutPad_7 E CPAD_S_74x50u_OUT
-Pad: OutPad_8 E CPAD_S_74x50u_OUT
-Pad: OutPad_9 E CPAD_S_74x50u_OUT
-Pad: OutPad_10 E CPAD_S_74x50u_OUT
+Pad: InPads[12].InPad E CPAD_S_74x50u_IN
+Pad: InPads[13].InPad E CPAD_S_74x50u_IN
+Pad: OutPads[6].OutPad E CPAD_S_74x50u_OUT
+Pad: OutPads[7].OutPad E CPAD_S_74x50u_OUT
+Pad: OutPads[8].OutPad E CPAD_S_74x50u_OUT
+Pad: OutPads[9].OutPad E CPAD_S_74x50u_OUT
+Pad: OutPads[10].OutPad E CPAD_S_74x50u_OUT
 
 

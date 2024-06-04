@@ -22,6 +22,7 @@ set_attr init_hdl_search_path { \
 	../pulpino/ips/apb/apb_timer \
 	../pulpino/ips/apb/apb_uart \
 	../pulpino/ips/apb/apb_uart_sv \
+	../pulpino/ips/apb/apb_conv \
 	../pulpino/ips/axi/axi2apb \
 	../pulpino/ips/axi/axi_mem_if_DP \
 	../pulpino/ips/axi/axi_node \
@@ -104,6 +105,7 @@ set DESIGN_FILES_V { \
 }
 
 set DESIGN_FILES_VHDL { \
+	apb_conv.vhd conv_ctrl.vhd convolve.vhd \
 	apb_uart.vhd slib_clock_div.vhd slib_counter.vhd slib_edge_detect.vhd \
 	slib_fifo.vhd slib_input_filter.vhd slib_input_sync.vhd \
 	slib_mv_filter.vhd uart_baudgen.vhd uart_interrupt.vhd \

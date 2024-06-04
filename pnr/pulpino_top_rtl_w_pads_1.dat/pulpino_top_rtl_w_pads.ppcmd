@@ -1,0 +1,301 @@
+# PPCMD 1 
+# sroute -connect { blockPin padPin padRing corePin floatingStripe } -layerChangeRange { M1(1) AP(8) } -blockPinTarget { nearestTarget } -padPinPortConnect { allPort oneGeom } -padPinTarget { nearestTarget } -corePinTarget { firstAfterRowEnd } -floatingStripeTarget { blockring padring ring stripe ringpin blockpin followpin } -allowJogging 1 -crossoverViaLayerRange { M1(1) AP(8) } -nets { GND VDD } -allowLayerChange 1 -blockPin useLef -targetViaLayerRange { M1(1) AP(8) }
+# 10 
+# 16 
+# 0 
+# 0 
+# 0 
+# 0 
+# BOX_LIST 
+# END_BOX_LIST 
+# NET_INFO_LIST 
+# END_NET_INFO_LIST 
+# END_PPCMD 1 
+
+# PPCMD 2 
+# addStripe -skip_via_on_wire_shape Noshape -block_ring_top_layer_limit M1 -max_same_layer_jog_length 6 -padcore_ring_bottom_layer_limit M1 -set_to_set_distance 100 -skip_via_on_pin Standardcell -stacked_via_top_layer AP -padcore_ring_top_layer_limit M1 -spacing 2 -merge_stripes_value 2.5 -direction horizontal -layer M3 -block_ring_bottom_layer_limit M1 -stop_x 0 -stop_y 0 -width 2 -area {} -nets {GND VDD} -start_x 0 -stacked_via_bottom_layer M1 -start_y 0
+# 9 
+# 2 
+# 1 
+# 0 
+# 0 
+# 2 
+# BOX_LIST 
+# 87500 89500 1701500 1703500 0 
+# 91500 93500 1697500 1699500 0 
+# END_BOX_LIST 
+# NET_INFO_LIST 
+# VDD 2000 3 0 99500 1695500 100000 0 0 
+# GND 2000 3 0 95500 1695500 100000 0 0 
+# END_NET_INFO_LIST 
+# END_PPCMD 2 
+
+# PPCMD 3 
+# addStripe -skip_via_on_wire_shape Noshape -block_ring_top_layer_limit M1 -max_same_layer_jog_length 6 -padcore_ring_bottom_layer_limit M1 -set_to_set_distance 100 -skip_via_on_pin Standardcell -stacked_via_top_layer AP -padcore_ring_top_layer_limit M1 -spacing 2 -merge_stripes_value 2.5 -layer M4 -block_ring_bottom_layer_limit M1 -stop_x 0 -stop_y 0 -width 2 -area {} -nets {GND VDD} -start_x 0 -stacked_via_bottom_layer M1 -start_y 0
+# 8 
+# 2 
+# 1 
+# 0 
+# 0 
+# 2 
+# BOX_LIST 
+# 87500 87500 1701500 1701500 0 
+# 91500 91500 1697500 1697500 0 
+# END_BOX_LIST 
+# NET_INFO_LIST 
+# VDD 2000 4 0 99500 1695500 100000 0 0 
+# GND 2000 4 0 95500 1695500 100000 0 0 
+# END_NET_INFO_LIST 
+# END_PPCMD 3 
+
+# PPCMD 4 
+# addRing -skip_via_on_wire_shape Noshape -spacing_bottom 2 -width_left 2 -width_bottom 2 -width_top 2 -left 0 -top 0 -spacing_top 2 -skip_via_on_pin Standardcell -layer_bottom M3 -stacked_via_top_layer AP -width_right 2 -around selected -jog_distance 0.4 -offset_bottom 2 -layer_top M3 -threshold 0.4 -offset_left 2 -spacing_right 2 -spacing_left 2 -type block_rings -offset_right 2 -offset_top 2 -layer_right M4 -nets {GND VDD} -follow core -stacked_via_bottom_layer M1 -layer_left M4
+# 7 
+# 8 
+# 1 
+# 0 
+# 0 
+# 0 
+# SELECTED_OBJECTS 
+# selectInst {pulpino_top_rtl_inst_core_region_i/data_mem/sp_ram_i_ram_row[1].ram_byte[1].sram_2k1}
+# END_SELECTED_OBJECTS 
+# BOX_LIST 
+# END_BOX_LIST 
+# NET_INFO_LIST 
+# VDD 2000 3 1 0 0 0 0 0 
+# RING_PT_INFO_LIST 
+# 147100 1338915 
+# END_RING_PT_INFO_LIST 
+# VDD 2000 4 1 0 0 0 0 0 
+# RING_PT_INFO_LIST 
+# 205700 1428015 
+# END_RING_PT_INFO_LIST 
+# GND 2000 3 1 0 0 0 0 0 
+# RING_PT_INFO_LIST 
+# 147100 1342915 
+# END_RING_PT_INFO_LIST 
+# GND 2000 4 1 0 0 0 0 0 
+# RING_PT_INFO_LIST 
+# 201700 1432607 
+# END_RING_PT_INFO_LIST 
+# END_NET_INFO_LIST 
+# END_PPCMD 4 
+
+# PPCMD 5 
+# addRing -skip_via_on_wire_shape Noshape -spacing_bottom 2 -width_left 2 -width_bottom 2 -width_top 2 -left 0 -top 0 -spacing_top 2 -skip_via_on_pin Standardcell -layer_bottom M3 -stacked_via_top_layer AP -width_right 2 -around selected -jog_distance 0.4 -offset_bottom 2 -layer_top M3 -threshold 0.4 -offset_left 2 -spacing_right 2 -spacing_left 2 -type block_rings -offset_right 2 -offset_top 2 -layer_right M4 -nets {GND VDD} -follow core -stacked_via_bottom_layer M1 -layer_left M4
+# 6 
+# 8 
+# 1 
+# 0 
+# 0 
+# 0 
+# SELECTED_OBJECTS 
+# selectInst {pulpino_top_rtl_inst_core_region_i/data_mem/sp_ram_i_ram_row[1].ram_byte[2].sram_2k1}
+# selectInst {pulpino_top_rtl_inst_core_region_i/data_mem/sp_ram_i_ram_row[1].ram_byte[3].sram_2k1}
+# selectInst {pulpino_top_rtl_inst_core_region_i/data_mem/sp_ram_i_ram_row[2].ram_byte[0].sram_2k1}
+# selectInst {pulpino_top_rtl_inst_core_region_i/data_mem/sp_ram_i_ram_row[2].ram_byte[1].sram_2k1}
+# selectInst {pulpino_top_rtl_inst_core_region_i/data_mem/sp_ram_i_ram_row[2].ram_byte[2].sram_2k1}
+# selectInst {pulpino_top_rtl_inst_core_region_i/data_mem/sp_ram_i_ram_row[2].ram_byte[3].sram_2k1}
+# selectInst {pulpino_top_rtl_inst_core_region_i/data_mem/sp_ram_i_ram_row[3].ram_byte[0].sram_2k1}
+# selectInst {pulpino_top_rtl_inst_core_region_i/data_mem/sp_ram_i_ram_row[3].ram_byte[1].sram_2k1}
+# selectInst {pulpino_top_rtl_inst_core_region_i/data_mem/sp_ram_i_ram_row[3].ram_byte[2].sram_2k1}
+# selectInst {pulpino_top_rtl_inst_core_region_i/data_mem/sp_ram_i_ram_row[3].ram_byte[3].sram_2k1}
+# selectInst {pulpino_top_rtl_inst_core_region_i/data_mem/sp_ram_i_ram_row[0].ram_byte[0].sram_2k1}
+# selectInst {pulpino_top_rtl_inst_core_region_i/data_mem/sp_ram_i_ram_row[0].ram_byte[1].sram_2k1}
+# selectInst {pulpino_top_rtl_inst_core_region_i/data_mem/sp_ram_i_ram_row[0].ram_byte[2].sram_2k1}
+# selectInst {pulpino_top_rtl_inst_core_region_i/data_mem/sp_ram_i_ram_row[0].ram_byte[3].sram_2k1}
+# selectInst {pulpino_top_rtl_inst_core_region_i/data_mem/sp_ram_i_ram_row[1].ram_byte[0].sram_2k1}
+# END_SELECTED_OBJECTS 
+# BOX_LIST 
+# END_BOX_LIST 
+# NET_INFO_LIST 
+# VDD 2000 3 1 0 0 0 0 0 
+# RING_PT_INFO_LIST 
+# 869500 1518300 
+# END_RING_PT_INFO_LIST 
+# VDD 2000 4 1 0 0 0 0 0 
+# RING_PT_INFO_LIST 
+# 1650500 1610400 
+# END_RING_PT_INFO_LIST 
+# GND 2000 3 1 0 0 0 0 0 
+# RING_PT_INFO_LIST 
+# 869500 1522300 
+# END_RING_PT_INFO_LIST 
+# GND 2000 4 1 0 0 0 0 0 
+# RING_PT_INFO_LIST 
+# 1646500 1610400 
+# END_RING_PT_INFO_LIST 
+# END_NET_INFO_LIST 
+# END_PPCMD 5 
+
+# PPCMD 6 
+# addRing -skip_via_on_wire_shape Noshape -spacing_bottom 2 -width_left 2 -width_bottom 2 -width_top 2 -left 0 -spacing_top 2 -skip_via_on_pin Standardcell -layer_bottom M3 -stacked_via_top_layer AP -width_right 2 -around selected -jog_distance 0.4 -offset_bottom 2 -bottom 0 -layer_top M3 -threshold 0.4 -offset_left 2 -spacing_right 2 -spacing_left 2 -type block_rings -offset_right 2 -offset_top 2 -layer_right M4 -nets {GND VDD} -follow core -stacked_via_bottom_layer M1 -layer_left M4
+# 5 
+# 8 
+# 1 
+# 0 
+# 0 
+# 0 
+# SELECTED_OBJECTS 
+# selectInst {pulpino_top_rtl_inst_core_region_i/instr_mem/sp_ram_wrap_i_sp_ram_i_ram_row[0].ram_byte[0].sram_2k1}
+# END_SELECTED_OBJECTS 
+# BOX_LIST 
+# END_BOX_LIST 
+# NET_INFO_LIST 
+# VDD 2000 3 1 0 0 0 0 0 
+# RING_PT_INFO_LIST 
+# 147100 452520 
+# END_RING_PT_INFO_LIST 
+# VDD 2000 4 1 0 0 0 0 0 
+# RING_PT_INFO_LIST 
+# 205700 363420 
+# END_RING_PT_INFO_LIST 
+# GND 2000 3 1 0 0 0 0 0 
+# RING_PT_INFO_LIST 
+# 147100 448520 
+# END_RING_PT_INFO_LIST 
+# GND 2000 4 1 0 0 0 0 0 
+# RING_PT_INFO_LIST 
+# 201700 358610 
+# END_RING_PT_INFO_LIST 
+# END_NET_INFO_LIST 
+# END_PPCMD 6 
+
+# PPCMD 7 
+# addRing -skip_via_on_wire_shape Noshape -spacing_bottom 2 -width_left 2 -width_bottom 2 -width_top 2 -left 0 -spacing_top 2 -skip_via_on_pin Standardcell -layer_bottom M3 -stacked_via_top_layer AP -width_right 2 -around selected -jog_distance 0.4 -offset_bottom 2 -bottom 0 -layer_top M3 -threshold 0.4 -offset_left 2 -spacing_right 2 -spacing_left 2 -type block_rings -offset_right 2 -offset_top 2 -layer_right M4 -nets {GND VDD} -follow core -stacked_via_bottom_layer M1 -layer_left M4
+# 4 
+# 8 
+# 1 
+# 0 
+# 0 
+# 0 
+# SELECTED_OBJECTS 
+# selectInst {pulpino_top_rtl_inst_core_region_i/instr_mem/sp_ram_wrap_i_sp_ram_i_ram_row[0].ram_byte[1].sram_2k1}
+# selectInst {pulpino_top_rtl_inst_core_region_i/instr_mem/sp_ram_wrap_i_sp_ram_i_ram_row[0].ram_byte[2].sram_2k1}
+# selectInst {pulpino_top_rtl_inst_core_region_i/instr_mem/sp_ram_wrap_i_sp_ram_i_ram_row[0].ram_byte[3].sram_2k1}
+# selectInst {pulpino_top_rtl_inst_core_region_i/instr_mem/sp_ram_wrap_i_sp_ram_i_ram_row[1].ram_byte[0].sram_2k1}
+# selectInst {pulpino_top_rtl_inst_core_region_i/instr_mem/sp_ram_wrap_i_sp_ram_i_ram_row[1].ram_byte[1].sram_2k1}
+# selectInst {pulpino_top_rtl_inst_core_region_i/instr_mem/sp_ram_wrap_i_sp_ram_i_ram_row[1].ram_byte[2].sram_2k1}
+# selectInst {pulpino_top_rtl_inst_core_region_i/instr_mem/sp_ram_wrap_i_sp_ram_i_ram_row[1].ram_byte[3].sram_2k1}
+# selectInst {pulpino_top_rtl_inst_core_region_i/instr_mem/sp_ram_wrap_i_sp_ram_i_ram_row[2].ram_byte[0].sram_2k1}
+# selectInst {pulpino_top_rtl_inst_core_region_i/instr_mem/sp_ram_wrap_i_sp_ram_i_ram_row[2].ram_byte[1].sram_2k1}
+# selectInst {pulpino_top_rtl_inst_core_region_i/instr_mem/sp_ram_wrap_i_sp_ram_i_ram_row[2].ram_byte[2].sram_2k1}
+# selectInst {pulpino_top_rtl_inst_core_region_i/instr_mem/sp_ram_wrap_i_sp_ram_i_ram_row[2].ram_byte[3].sram_2k1}
+# selectInst {pulpino_top_rtl_inst_core_region_i/instr_mem/sp_ram_wrap_i_sp_ram_i_ram_row[3].ram_byte[0].sram_2k1}
+# selectInst {pulpino_top_rtl_inst_core_region_i/instr_mem/sp_ram_wrap_i_sp_ram_i_ram_row[3].ram_byte[1].sram_2k1}
+# selectInst {pulpino_top_rtl_inst_core_region_i/instr_mem/sp_ram_wrap_i_sp_ram_i_ram_row[3].ram_byte[2].sram_2k1}
+# selectInst {pulpino_top_rtl_inst_core_region_i/instr_mem/sp_ram_wrap_i_sp_ram_i_ram_row[3].ram_byte[3].sram_2k1}
+# END_SELECTED_OBJECTS 
+# BOX_LIST 
+# END_BOX_LIST 
+# NET_INFO_LIST 
+# VDD 2000 3 1 0 0 0 0 0 
+# RING_PT_INFO_LIST 
+# 869500 272700 
+# END_RING_PT_INFO_LIST 
+# VDD 2000 4 1 0 0 0 0 0 
+# RING_PT_INFO_LIST 
+# 1650500 180600 
+# END_RING_PT_INFO_LIST 
+# GND 2000 3 1 0 0 0 0 0 
+# RING_PT_INFO_LIST 
+# 869500 268700 
+# END_RING_PT_INFO_LIST 
+# GND 2000 4 1 0 0 0 0 0 
+# RING_PT_INFO_LIST 
+# 1646500 180600 
+# END_RING_PT_INFO_LIST 
+# END_NET_INFO_LIST 
+# END_PPCMD 7 
+
+# PPCMD 8 
+# addRing -skip_via_on_wire_shape Noshape -spacing_bottom 2 -width_left 2 -width_bottom 2 -width_top 2 -spacing_top 2 -skip_via_on_pin Standardcell -layer_bottom M3 -stacked_via_top_layer AP -width_right 2 -type core_rings -jog_distance 0.4 -offset_bottom 2 -layer_top M3 -threshold 0.4 -offset_left 2 -spacing_right 2 -spacing_left 2 -offset_right 2 -offset_top 2 -layer_right M4 -nets {GND VDD} -follow core -stacked_via_bottom_layer M1 -layer_left M4
+# 3 
+# 32 
+# 1 
+# 0 
+# 0 
+# 0 
+# BOX_LIST 
+# END_BOX_LIST 
+# NET_INFO_LIST 
+# VDD 2000 3 1 0 0 0 0 0 
+# RING_PT_INFO_LIST 
+# 895500 88500 895500 1702500 
+# END_RING_PT_INFO_LIST 
+# VDD 2000 4 1 0 0 0 0 0 
+# RING_PT_INFO_LIST 
+# 88500 895500 1702500 895500 
+# END_RING_PT_INFO_LIST 
+# GND 2000 3 1 0 0 0 0 0 
+# RING_PT_INFO_LIST 
+# 895500 92500 895500 1698500 
+# END_RING_PT_INFO_LIST 
+# GND 2000 4 1 0 0 0 0 0 
+# RING_PT_INFO_LIST 
+# 92500 895500 1698500 895500 
+# END_RING_PT_INFO_LIST 
+# END_NET_INFO_LIST 
+# END_PPCMD 8 
+
+# PPCMD 9 
+# addRing -skip_via_on_wire_shape Noshape -spacing_bottom 2 -width_left 2 -width_bottom 2 -width_top 2 -left 0 -spacing_top 2 -skip_via_on_pin Standardcell -layer_bottom M3 -stacked_via_top_layer AP -width_right 2 -type core_rings -jog_distance 0.4 -offset_bottom 2 -bottom 0 -layer_top M3 -threshold 0.4 -offset_left 2 -spacing_right 2 -spacing_left 2 -offset_right 2 -offset_top 2 -layer_right M4 -nets {GND VDD} -follow core -stacked_via_bottom_layer M1 -layer_left M4
+# 2 
+# 32 
+# 0 
+# 0 
+# 0 
+# 0 
+# SELECTED_OBJECTS 
+# selectInst {pulpino_top_rtl_inst_core_region_i/instr_mem/sp_ram_wrap_i_sp_ram_i_ram_row[0].ram_byte[1].sram_2k1}
+# selectInst {pulpino_top_rtl_inst_core_region_i/instr_mem/sp_ram_wrap_i_sp_ram_i_ram_row[0].ram_byte[2].sram_2k1}
+# selectInst {pulpino_top_rtl_inst_core_region_i/instr_mem/sp_ram_wrap_i_sp_ram_i_ram_row[0].ram_byte[3].sram_2k1}
+# selectInst {pulpino_top_rtl_inst_core_region_i/instr_mem/sp_ram_wrap_i_sp_ram_i_ram_row[1].ram_byte[0].sram_2k1}
+# selectInst {pulpino_top_rtl_inst_core_region_i/instr_mem/sp_ram_wrap_i_sp_ram_i_ram_row[1].ram_byte[1].sram_2k1}
+# selectInst {pulpino_top_rtl_inst_core_region_i/instr_mem/sp_ram_wrap_i_sp_ram_i_ram_row[1].ram_byte[2].sram_2k1}
+# selectInst {pulpino_top_rtl_inst_core_region_i/instr_mem/sp_ram_wrap_i_sp_ram_i_ram_row[1].ram_byte[3].sram_2k1}
+# selectInst {pulpino_top_rtl_inst_core_region_i/instr_mem/sp_ram_wrap_i_sp_ram_i_ram_row[2].ram_byte[0].sram_2k1}
+# selectInst {pulpino_top_rtl_inst_core_region_i/instr_mem/sp_ram_wrap_i_sp_ram_i_ram_row[2].ram_byte[1].sram_2k1}
+# selectInst {pulpino_top_rtl_inst_core_region_i/instr_mem/sp_ram_wrap_i_sp_ram_i_ram_row[2].ram_byte[2].sram_2k1}
+# selectInst {pulpino_top_rtl_inst_core_region_i/instr_mem/sp_ram_wrap_i_sp_ram_i_ram_row[2].ram_byte[3].sram_2k1}
+# selectInst {pulpino_top_rtl_inst_core_region_i/instr_mem/sp_ram_wrap_i_sp_ram_i_ram_row[3].ram_byte[0].sram_2k1}
+# selectInst {pulpino_top_rtl_inst_core_region_i/instr_mem/sp_ram_wrap_i_sp_ram_i_ram_row[3].ram_byte[1].sram_2k1}
+# selectInst {pulpino_top_rtl_inst_core_region_i/instr_mem/sp_ram_wrap_i_sp_ram_i_ram_row[3].ram_byte[2].sram_2k1}
+# selectInst {pulpino_top_rtl_inst_core_region_i/instr_mem/sp_ram_wrap_i_sp_ram_i_ram_row[3].ram_byte[3].sram_2k1}
+# END_SELECTED_OBJECTS 
+# BOX_LIST 
+# END_BOX_LIST 
+# NET_INFO_LIST 
+# END_NET_INFO_LIST 
+# END_PPCMD 9 
+
+# PPCMD 10 
+# addRing -skip_via_on_wire_shape Noshape -spacing_bottom 2 -width_left 2 -width_bottom 2 -width_top 2 -spacing_top 2 -skip_via_on_pin Standardcell -layer_bottom M3 -stacked_via_top_layer AP -width_right 2 -type core_rings -jog_distance 0.4 -offset_bottom 2 -layer_top M3 -threshold 0.4 -offset_left 2 -spacing_right 2 -spacing_left 2 -offset_right 2 -offset_top 2 -layer_right M4 -nets {GND VDD} -follow core -stacked_via_bottom_layer M1 -layer_left M4
+# 1 
+# 32 
+# 1 
+# 0 
+# 0 
+# 0 
+# BOX_LIST 
+# END_BOX_LIST 
+# NET_INFO_LIST 
+# VDD 2000 3 1 0 0 0 0 0 
+# RING_PT_INFO_LIST 
+# 895500 88500 895500 1702500 
+# END_RING_PT_INFO_LIST 
+# VDD 2000 4 1 0 0 0 0 0 
+# RING_PT_INFO_LIST 
+# 88500 895500 1702500 895500 
+# END_RING_PT_INFO_LIST 
+# GND 2000 3 1 0 0 0 0 0 
+# RING_PT_INFO_LIST 
+# 895500 92500 895500 1698500 
+# END_RING_PT_INFO_LIST 
+# GND 2000 4 1 0 0 0 0 0 
+# RING_PT_INFO_LIST 
+# 92500 895500 1698500 895500 
+# END_RING_PT_INFO_LIST 
+# END_NET_INFO_LIST 
+# END_PPCMD 10 
+
