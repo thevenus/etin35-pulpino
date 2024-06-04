@@ -49,6 +49,7 @@ architecture Behavioural of conv_ctrl is
     signal state_reg, state_next : state_type;
     signal outdata_cnt_reg, outdata_cnt_next : unsigned(9 downto 0);
     -- signal temp_outdata_reg, temp_outdata_next : unsigned(8 downto 0);
+    signal indata_rst_flag_reg, indata_rst_flag_next : std_logic;
 
     signal temp_outdata : unsigned (8 downto 0);
 
@@ -76,6 +77,7 @@ begin
                 status_reg <= (others => '0');
                 outdata_reg <= (others => (others => '0'));
                 filter_reg <= (others => '0');
+                indata_rst_flag_reg <= '0';
             else 
                 indata_reg <= indata_next;
                 --indata_row_cnt <= indata_row_cnt_next;
@@ -84,18 +86,31 @@ begin
                 status_reg <= status_next;
                 outdata_reg <= outdata_next;
                 filter_reg <= filter_reg_next;
+                indata_rst_flag_reg <= indata_rst_flag_next;
             end if;
         end if;
     end process apb_reg_update;
 
     -- write register logic
-    apb_write_logic : process (PSEL, PENABLE, PWRITE, PADDR, PWDATA, indata_reg, indata_rx_cnt, filter_reg, clear_start_bit, ctrl_reg)
+    apb_write_logic : process (PSEL, PENABLE, PWRITE, PADDR, PWDATA, indata_reg, indata_rx_cnt, filter_reg, clear_start_bit, ctrl_reg, indata_rst_flag_reg)
     begin --, indata_row_cnt
         indata_next <= indata_reg;
         indata_rx_cnt_next <= indata_rx_cnt;
         --indata_row_cnt_next <= indata_row_cnt;
         filter_reg_next <= filter_reg;
         ctrl_next <= ctrl_reg;
+
+        if (indata_rst_flag_reg = '1') then
+            indata_next(0) <= (others => '0');
+            indata_next(1) <= (others => '0');
+            indata_next(2) <= (others => '0');
+            indata_next(3) <= (others => '0');
+            indata_next(4) <= (others => '0');
+        end if;
+
+        if (clear_start_bit = '1') then
+            ctrl_next <= '0';
+        end if;
 
         if (PSEL = '1' and PENABLE = '1' and PWRITE = '1') then -- indata_row_cnt < 28
             if (PADDR = x"1A103500") then -- ctrl register address
@@ -125,18 +140,6 @@ begin
                 filter_reg_next(14 downto 0) <= PWDATA(14 downto 0);
             end if;
         end if;
-        
-        if (clear_start_bit = '1') then
-            ctrl_next <= '0';
-        end if;
-	
-	if (status_reg(2) = '1') then
-	     indata_next(0) <= (others => '0');
-             indata_next(1) <= (others => '0');
-             indata_next(2) <= (others => '0');
-             indata_next(3) <= (others => '0');
-             indata_next(4) <= (others => '0');
-	end if;
 
     end process apb_write_logic;
 
@@ -194,12 +197,12 @@ begin
     end process;
     
     process (outdata_reg, outdata_cnt_reg, conv_res_i)
-	variable outdata_slice_msb : integer;
+	    variable outdata_slice_msb : integer;
         variable outdata_slice_lsb : integer;
     begin
-	outdata_slice_msb := to_integer(outdata_cnt_reg(1 downto 0) & "111");
+	    outdata_slice_msb := to_integer(outdata_cnt_reg(1 downto 0) & "111");
         outdata_slice_lsb := to_integer(outdata_cnt_reg(1 downto 0) & "000");
-	temp_outdata <= unsigned(('0' & outdata_reg(to_integer(outdata_cnt_reg(9 downto 2)))(outdata_slice_msb downto outdata_slice_lsb))) + unsigned('0' & conv_res_i);
+	    temp_outdata <= unsigned(('0' & outdata_reg(to_integer(outdata_cnt_reg(9 downto 2)))(outdata_slice_msb downto outdata_slice_lsb))) + unsigned('0' & conv_res_i);
     end process;
 
     process (HCLK, HRESETn)
@@ -218,7 +221,7 @@ begin
     end process;
 
     process (state_reg, temp_outdata, outdata_reg, outdata_cnt_reg, ctrl_reg, status_reg, 
-             conv_res_i, conv_res_rdy_i, conv_ncol_i, conv_nrow_i, conv_nchn_i)
+             conv_res_i, conv_res_rdy_i, conv_ncol_i, conv_nrow_i, conv_nchn_i, indata_rst_flag_reg)
         variable outdata_slice_msb : integer;
         variable outdata_slice_lsb : integer;
     begin
@@ -232,6 +235,7 @@ begin
         outdata_next <= outdata_reg;
         clear_start_bit <= '0';
         valid_data_o <= '0';
+        indata_rst_flag_next <= '0';
 
         case state_reg is 
             when s_WAIT_DATA =>
@@ -251,7 +255,7 @@ begin
                 valid_data_o <= '1';
                 if (conv_res_rdy_i = '1') then
                     valid_data_o <= '0';
-		    outdata_cnt_next <= outdata_cnt_reg + 1;
+		            outdata_cnt_next <= outdata_cnt_reg + 1;
                     if (temp_outdata > "011111111") then -- 255
                         outdata_next(to_integer(outdata_cnt_reg(9 downto 2)))(outdata_slice_msb downto outdata_slice_lsb) <= "11111111";
                     else
@@ -264,6 +268,7 @@ begin
                         status_next(1) <= '1'; -- row_done_bit <= '1'
                         if (conv_nrow_i = "11011") then -- 27
                             status_next(2) <= '1'; -- channel_done_bit <= '1'
+                            indata_rst_flag_next <= '1';
                             outdata_cnt_next <= (others => '0');
                             if (conv_nchn_i = "10") then
                                 status_next(0) <= '1'; -- done_bit <= '1'
@@ -273,7 +278,7 @@ begin
                     end if;
                 else
                     state_next <= s_WAIT_CALC;
-                end if;                
+                end if;            
         end case;
 
     end process;

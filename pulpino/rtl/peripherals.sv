@@ -279,23 +279,23 @@ module peripherals
   ///                                                            ///
   //////////////////////////////////////////////////////////////////
 
-  apb_timer
-  apb_timer_i
+  apb_conv
+  apb_conv_i
   (
     .HCLK       ( clk_int[3]   ),
     .HRESETn    ( rst_n        ),
 
-    .PADDR      ( s_timer_bus.paddr[11:0]),
+    .PADDR      ( s_timer_bus.paddr ),
     .PWDATA     ( s_timer_bus.pwdata     ),
     .PWRITE     ( s_timer_bus.pwrite     ),
     .PSEL       ( s_timer_bus.psel       ),
     .PENABLE    ( s_timer_bus.penable    ),
     .PRDATA     ( s_timer_bus.prdata     ),
     .PREADY     ( s_timer_bus.pready     ),
-    .PSLVERR    ( s_timer_bus.pslverr    ),
-
-    .irq_o      ( timer_irq    )
+    .PSLVERR    ( s_timer_bus.pslverr    )
   );
+
+  
 
   //////////////////////////////////////////////////////////////////
   ///                                                            ///
